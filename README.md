@@ -21,11 +21,11 @@ php -s localhost:8000
 
 ## Author
 
-👤 **Kodikas România**
+👤 **Andrei Iașar**
 
-* Website: https://kodikas.ro
-* Twitter: [@kodikas](https://twitter.com/kodikas)
-* Github: [@kodikas-romania](https://github.com/kodikas-romania)
+* Website: https://andreiusq.dev
+* Instagram: [@kodikas](https://instagram.com/andrei.isr)
+* Github: [@andreiusq](https://github.com/andreiusq)
 
 ## 🤝 Contribuie
 Contribuțiile, problemele și funcționalitățile noi sunt binevenite! <br />Poți găsi problemele noastre pe [pagina de buguri](bugs.starquess.ro). Poți, bineînțeles, să te uiți și pe [ghidul contribuitorului](contribuie.starquess.ro)
