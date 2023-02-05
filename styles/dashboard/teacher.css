@@ -1,0 +1,156 @@
+body {
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+.all-students-stats {
+    position: relative;
+    top: 30px;
+    left: 350px;
+    color: #000;
+    background: white;
+    width: 350px;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.all-students-stats-circle {
+    border-radius: 45px;
+    background: #F0F7FF;
+    width: 90px;
+    height: 90px;
+    left: 15px;
+    top: 5px;
+}
+
+.all-students-stats-circle-text {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+}
+
+.all-students-stats-content-text {
+    position: relative;
+    top: -20px;
+    left: 140px;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #000;
+}
+
+
+.all-students-stats-content-icon {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+}
+
+
+.news-box {
+    position: absolute;
+    top: 30px;
+    left: 750px;
+    color: #000;
+    background: white;
+    width: 350px;
+    height: 200px;
+    border-radius: 25px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.news-top-buttons {
+    position: relative;
+    top: -10px;
+    left: 250px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+}
+
+.news-top-buttons-add {
+    background: transparent;
+    border: transparent;
+}
+
+.news-top-buttons-add:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+.news-top-buttons-edit {
+    background: transparent;
+    border: transparent;
+}
+
+.news-top-buttons-edit:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+
+.news-top-buttons-delete {
+    background: transparent;
+    border: transparent;
+}
+
+.news-top-buttons-delete:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+.news-box-news-content-news-ellipse {
+    position: relative;
+    margin-top: 10px;
+    left: 10px;
+    font-size: 1.0em;
+    font-weight: 400;
+    width: 320px;
+    height: 35px;
+    color: #fff;
+    background: #0077FF;
+    border: 80px;
+    border-radius: 40px;
+}
+
+.news-box-news-content-news-ellipse-text {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 400;
+    position: absolute;
+    left: 9px;
+    top: 5px;
+}
+
+.news-title {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+
+.news-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.news-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.news-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }

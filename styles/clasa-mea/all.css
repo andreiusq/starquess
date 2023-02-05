@@ -1,0 +1,453 @@
+body { 
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+.students-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.students-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.students-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.students-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+
+.best-classmates::-webkit-scrollbar {
+    width: 6px;
+}
+
+.best-classmates::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.best-classmates::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.best-classmates::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+.students-box {
+    position: relative;
+    top: 80px;
+    left: 300px;
+    width: 1200px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.students-box-content {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.students-title {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.students-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+}
+
+.students-box-list {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.students-box-list-item-content-left-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.students-box-list-item-content-right {
+    position: relative;
+    top: -30px;
+    left: 100px;
+}
+
+.students-box-list-item-content-left-text-email {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -60px;
+    left: 700px;
+}
+
+.students-box-list-item-content-left-text-name {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: -90px;
+}
+
+.performance-box {
+    border: 15px;
+    border-radius: 30px;
+    background-color: #fff;
+    width: 1250px;
+    height: 150px;
+    position: relative;
+    top: 100px;
+    left: 300px;
+    border: 15px;
+    height: 320px;
+    width: 620px;
+}
+
+.performance-box-title {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.performance-box-chart {
+    position: absolute;
+    top: 30px;
+    right: -35px;
+}
+
+
+.best-classmates {
+    position: relative;
+    top: -205px;
+    left: 1000px;
+    width: 325px;
+    height: 300px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.best-classmates-title {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.best-classmates-attention {
+    position: absolute;
+    top: 2px;
+    left: 250px;
+    color: #000;
+    font-size: 0.750em;
+    font-weight: 300;
+}
+
+.best-classmates-first-box {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    background: #FFD700;
+    border-radius: 40px;
+    width: 250px;
+    height: 60px;
+}
+
+.firstplace-student {
+    position: relative;
+    left: 60px;
+    top: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 600;
+}
+
+.firstplace-grade {
+    position: relative;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    top: 5px;
+    left: 60px;
+}
+
+.firstplace-image {
+    position: relative;
+    left: 200px;
+    top: -40px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+}
+
+.firstplace-initials {
+    background: #16D03B;
+    border-radius: 100px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 5px;
+}
+
+.firstplace-initials-text {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 800;
+}
+
+
+.best-classmates-second-box {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    background: #C0C0C0;
+    border-radius: 40px;
+    width: 250px;
+    height: 60px;
+}
+
+.secondplace-student {
+    position: relative;
+    left: 60px;
+    top: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 600;
+}
+
+.secondplace-grade {
+    position: relative;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    top: 5px;
+    left: 60px;
+}
+
+.secondplace-image {
+    position: relative;
+    left: 200px;
+    top: -40px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+}
+
+.secondplace-initials {
+    background: #0077FF;
+    border-radius: 100px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 5px;
+}
+
+.secondplace-initials-text {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 800;
+}
+
+.best-classmates-third-box {
+    position: relative;
+    top: 40px;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    background: #D9AB7D;
+    border-radius: 40px;
+    width: 250px;
+    height: 60px;
+}
+
+.thirdplace-student {
+    position: relative;
+    left: 60px;
+    top: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 600;
+}
+
+.thirdplace-grade {
+    position: relative;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    top: 5px;
+    left: 60px;
+}
+
+.thirdplace-image {
+    position: relative;
+    left: 200px;
+    top: -40px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+}
+
+.thirdplace-initials {
+    background: #FF1D86;
+    border-radius: 100px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 5px;
+}
+
+.thirdplace-initials-text {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 800;
+}
+
+
+.best-classmates-noplace-box {
+    position: relative;
+    top: 50px;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    background: #F0FFF3;
+    border-radius: 40px;
+    width: 250px;
+    height: 60px;
+}
+
+.noplace-student {
+    position: relative;
+    left: 60px;
+    top: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 600;
+}
+
+.noplace-grade {
+    position: relative;
+    left: 30px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    top: 5px;
+    left: 60px;
+}
+
+.noplace-image {
+    position: relative;
+    left: 200px;
+    top: -40px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+}
+
+.noplace-initials {
+    background: #FF1D86;
+    border-radius: 100px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 5px;
+}
+
+.noplace-initials-text {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 800;
+}
+
+.students-box-list-item-actions {
+    position: absolute;
+    top: -40px;
+    left: 120px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    flex-basis: 10px;
+}
+
+.students-box-list-item-actions-1:hover {
+    color: #16D03B;
+}
+
+.students-box-list-item-actions-2:hover {
+    color: red;
+}
+
+.students-box-list-item-actions-3:hover {
+    color: #0077FF;
+}
+
+.class-box {
+    position: relative;
+    top: 30px;
+    left: 500px;
+    color: #000;
+    font-size: 0.950em;
+    font-weight: 300;
+    background: #fff;
+    border-radius: 40px;
+    width: 450px;
+    height: 450px;
+}

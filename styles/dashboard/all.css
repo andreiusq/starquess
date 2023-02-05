@@ -1,0 +1,364 @@
+body { 
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+.welcome-box, .performance-box,.timetable-box,.message-box,.news-box{
+     
+  margin-left:20px;
+  }
+
+.welcome-box {
+    border: 15px;
+    border-radius: 30px;
+    background-color: #0077FF;
+    width: 1250px;
+    height: 180px;
+    position: relative;
+    top: 80px;
+    left: 300px;
+}
+
+.welcome-box-content {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: white;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+  min-width: 160px;
+  max-width: 600px;
+  min-height: 60px;
+  max-height: 100px;
+  margin: 1em auto;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+
+.performance-box {
+    border: 15px;
+    border-radius: 30px;
+    background-color: #fff;
+    width: 1250px;
+    height: 150px;
+    position: relative;
+    top: 100px;
+    left: 300px;
+    border: 15px;
+    height: 320px;
+    width: 620px;
+}
+
+.performance-box-title {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.performance-box-chart {
+    position: absolute;
+    top: 30px;
+    right: -35px;
+}
+
+
+.timetable-box {
+    width: 500px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing:initial;
+    border: 15px;
+    position: relative;
+    left: 980px;
+    top: -230px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.timetable-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.timetable-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.timetable-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.timetable-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+
+ 
+.timetable-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.timetable-box-hours-content-hour-circle {
+    width: 490px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #0077FF;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.timetable-subtitle {
+    font-size: 0.8em;
+    font-weight: 300;
+    color: #000;
+    margin-bottom: 10px;
+    position: relative;
+    top: -45px;
+    left: 380px;
+}
+
+.timetable-box-hours-content-hour-circle-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #fff;
+    position: relative;
+    left: 400px;
+    top: 6px;
+}
+
+.timetable-box-hours-content-hour-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #fff;
+    position: relative;
+    top: -25px;
+    left: 25px;
+}
+
+.message-box {
+    border: 15px;
+    border-radius: 30px;
+    background-color: #fff;
+    width: 1250px;
+    height: 150px;
+    position: relative;
+    top: -200px;
+    left: 300px;
+    border: 15px;
+    height: 320px;
+    width: 620px;
+    background: #FFF;
+}
+
+
+.message-title {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.message-box-messages-content-message-circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    font-weight: 400;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    background: #db0948;
+    border: 80px;
+    border-radius: 40px;
+}
+
+.message-box-messages-content-message-circle-text {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: absolute;
+    left: 7px;
+    top: -2px;
+}
+
+.message-subtitle {
+    position: absolute;
+    top: 20px;
+    left: 550px;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #0077FF;
+}
+
+.message-box-messages-content-message-text {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+}
+
+.message-box-messages-content-message-description-text {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #8A8A8A;
+}
+
+.line1 {
+    border-top: 1px solid black;
+    position: relative;
+    top: 15px;
+}
+
+.message-box-messages-content-message-time {
+    position: absolute;
+    left: 550px;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #8A8A8A;
+}
+
+.news-box {
+    border: 15px;
+    border-radius: 30px;
+    background-color: #fff;
+    width: 500px;
+    height: 290px;
+    position: relative;
+    left: 940px;
+    top: -520px;
+    border: 15px;
+    height: 320px;
+    width: 620px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.news-title {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.news-subtitle {
+    position: absolute;
+    top: 20px;
+    left: 550px;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #0077FF;
+}
+
+.news-box-news-content-news-ellipse {
+    position: relative;
+    margin-top: 30px;
+    left: 10px;
+    font-size: 1.0em;
+    font-weight: 400;
+    width: 600px;
+    height: 35px;
+    color: #fff;
+    background: #0077FF;
+    border: 80px;
+    border-radius: 40px;
+}
+
+.news-box-news-content-news-ellipse-text {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 400;
+    position: absolute;
+    left: 9px;
+    top: 5px;
+}
+
+.attention-box {
+    border: 15px;
+    border-radius: 30px;
+    background-color: #ff0000;
+    width: 1200px;
+    height: 120px;
+    position: relative;
+    left: 340px;
+    top: 0px;
+    color: #fff;
+}
+
+.attention-box-content {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    color: #fff;
+}
+
+.news-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.news-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.news-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }

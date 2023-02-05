@@ -1,0 +1,32 @@
+<?php
+define('BASEPATH', true);
+require("./backend/config/db.php");
+
+$input = $_GET['input'];
+$action = $_GET['action'];
+
+try {
+    if ($action == 'delete') {
+        $statement = $pdo->prepare("SELECT * FROM news ORDER BY id DESC LIMIT 1");
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $id = $result['id'];
+        $statement = $pdo->prepare("DELETE FROM news WHERE id = :id");
+        $statement->execute(array(':id' => $id));
+        echo "Response successfully deleted";
+    } elseif($action == 'edit') { 
+        $statement = $pdo->prepare("SELECT * FROM news ORDER BY id DESC LIMIT 1");
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $id = $result['id'];
+        $statement = $pdo->prepare("UPDATE news SET text = :input WHERE id = :id");
+        $statement->execute(array(':input' => $input, ':id' => $id));
+        echo "Response successfully edited: $input";
+    } else {
+        $statement = $pdo->prepare("INSERT INTO news (text) VALUES (:text)");
+        $statement->execute(array(':text' => $input));
+        echo "Response successfully added: $input";
+    }
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}

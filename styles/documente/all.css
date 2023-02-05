@@ -1,0 +1,167 @@
+body {
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+.documents-box {
+    position: relative;
+    top: 80px;
+    left: 300px;
+    width: 1200px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.documents-box-content {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.document-title {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+.documents-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.documents-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.documents-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.documents-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+ .document-uploaded {
+    position: absolute;
+    top: 0px;
+    left: 900px;
+    font-size: 0.795em;
+    font-weight: 600;
+    color: #000;
+}
+
+.contabilitate-box {
+    position: relative;
+    top: 100px;
+    left: 300px;
+    width: 600px;
+    height: 300px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.contabilitate-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contabilitate-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.contabilitate-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.contabilitate-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+ .contabilitate-box-content-title {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+ }
+
+ .contabilitate-box-content-documents {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    font-size: 0.795em;
+    font-weight: 600;
+    color: #000;
+ }
+
+ .document-title {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    display: inline;
+ }
+
+
+ .consiliu-box {
+    position: relative;
+    top: -200px;
+    left: 950px;
+    width: 600px;
+    height: 300px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+ }
+
+ .consiliu-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.consiliu-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.consiliu-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.consiliu-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+ .consiliu-box-content-title {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+ }
+
+ .consiliu-box-content-documents {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    font-size: 0.795em;
+    font-weight: 600;
+    color: #000;
+ }
