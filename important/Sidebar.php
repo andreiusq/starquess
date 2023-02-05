@@ -158,7 +158,7 @@ color:red;
             </a>
         </li>
 
-        <?php if($user['rank'] == 1) { ?> <li class="list" style="left: 30px">
+        <?php if($user['rank'] == 1 || $user['rank'] == 11) { ?> <li class="list" style="left: 30px">
             <a href="../clasa-mea.php">
             <span class="icon"><i class="fa-solid fa-users"></i></span>
             <span class="title">Clasa mea</span>
