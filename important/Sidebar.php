@@ -9,6 +9,10 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
@@ -151,14 +155,16 @@ color:red;
     </div>
 
     <ul style="top: 190px;">
+    <?php if($is_administrator == 0) { ?>
         <li class="list active" style="left: 30px;">
             <a href="../dashboard.php">
             <span class="icon"><i class="fa-solid fa-house"></i></span>
             <span class="title">Acasa</span>
             </a>
         </li>
+        <?php } ?>
 
-        <?php if($user['rank'] == 1 || $user['rank'] == 11) { ?> <li class="list" style="left: 30px">
+        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0) { ?> <li class="list" style="left: 30px">
             <a href="../clasa-mea.php">
             <span class="icon"><i class="fa-solid fa-users"></i></span>
             <span class="title">Clasa mea</span>
@@ -208,14 +214,80 @@ color:red;
          </li>
          
          <?php } ?>
-         <?php if($user["rank"] == 11) : ?>
+         <?php if($user["rank"] == 11 && $is_administrator == 0) { ?>
          <li class="list" style="left: 30px">
                <a href="../admin.php">
                <span class="icon"><i class="fa-solid fa-hammer"></i></span>
                <span class="title">Administrativ</span>
                </a>
          </li>
-         <?php endif; ?>
+         <?php } else if($user["rank"] == 11 && $is_administrator == 1) { ?>
+            <li class="list" style="left: 30px; top: 450px;">
+               <a href="../dashboard.php">
+               <span class="icon"><i class="fa-solid fa-home"></i></span>
+               <span class="title">Înapoi acasă</span>
+               </a>
+         </li>
+         <?php } ?>
+
+         <?php if($is_administrator == 1) { ?>
+         
+         
+         <li class="list active" style="left: 30px">
+            <a href="../administrator.php">
+            <span class="icon"><i class="fa-solid fa-home"></i></span>
+            <span class="title">Dashboard</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="../cadre-didactice.php">
+            <span class="icon"><i class="fa-solid fa-users"></i></span>
+            <span class="title">Cadre didactice</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="../clase.php">
+            <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+            <span class="title">Clase</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="../elevi.php">
+            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span class="title">Elevi</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="../orar.php">
+            <span class="icon"><i class="fa-solid fa-clock"></i></span>
+            <span class="title">Orar</span>
+            </a>
+         </li>
+
+
+         <li class="list" style="left: 30px">
+            <a href="../administrator.php">
+            <span class="icon"><i class="fa-solid fa-hammer"></i></span>
+            <span class="title">Acțiuni admin</span>
+            </a>
+         </li>
+
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="#">Action</a></li>
+               <li><a class="dropdown-item" href="#">Another action</a></li>
+               <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+         </div>
+            
+         <?php } ?>
 
         <li class="list" style="left: 30px; top: 190px; color: red;">
             <a href="../signout.php">

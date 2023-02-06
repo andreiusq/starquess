@@ -2,6 +2,7 @@
 define('BASEPATH', true);
 session_start();
 require('backend/config/db.php');
+$is_administrator = 0;
 
 if(!isset($_SESSION["user"])) {
     header("Location: login.php");

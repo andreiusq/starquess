@@ -2,6 +2,7 @@
 define('BASEPATH', true);
 session_start();
 require('backend/config/db.php');
+$is_administrator = 0;
 
 if(!isset($_SESSION["user"])) {
   header("Location: login.php");
@@ -26,6 +27,7 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="styles/dashboard/teacher.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://unpkg.com/@andreasremdt/simple-translator@latest/dist/umd/translator.min.js" defer></script>
 </head>
 <body>
     
@@ -57,7 +59,6 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
             <?php if($user["rank"] == 11 || $user["rank"] == 4): ?>
             <div class="news-top-buttons">
                 <button class="news-top-buttons-add" onclick="adaugaanunt(event)"><i class="fas fa-plus"></i></button>
-                <button class="news-top-buttons-edit" onclick="editLastResponse(event)"><i class="fas fa-edit"></i></button>
                 <button class="news-top-buttons-delete" onclick="deleteResponse(id)"><i class="fas fa-trash"></i></button>
             </div>
             <?php endif; ?>
@@ -150,39 +151,6 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
   })
 }
 
-function editLastResponse(e) {
-    e.preventDefault();
-    Swal.fire({
-    title: 'Edit last response',
-    input: 'text',
-    inputValue: getLastResponse(),
-    showCancelButton: true,
-    confirmButtonText: 'Submit',
-    showLoaderOnConfirm: true,
-    preConfirm: (input) => {
-      return fetch(`submit.php?action=edit&input=${input}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(response.statusText)
-          }
-          return response.text()
-        })
-        .catch(error => {
-          Swal.showValidationMessage(
-            `Request failed: ${error}`
-          )
-        })
-    },
-    allowOutsideClick: () => !Swal.isLoading()
-  }).then((result) => {
-    if (result.value) {
-      Swal.fire({
-        title: `${result.value}`,
-        type: 'success'
-      })
-    }
-  })
-}
 
 
 </script>

@@ -14,45 +14,51 @@ $stmt->execute();
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+function uploadProfileImage($url, $user) {
 
-// upload logic
-$stmt = $pdo->prepare("SELECT * from user_images WHERE user=:email");
-$stmt->bindParam(':email', $_SESSION['user']);
-$stmt->execute();
+  $pdo = new PDO('mysql:host=localhost;dbname=starquess', 'root', '');
 
-$images = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  $target_dir = "upload/";
+  $image_name = uniqid() . '_' . basename($url["name"]);
+  $target_file = $target_dir . $image_name;
+
+  // Validate the image
+  $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+  $check = getimagesize($url["tmp_name"]);
+  if (!$check) {
+    throw new Exception("File is not an image.");
+  }
+  if ($url["size"] > 500000) {
+    throw new Exception("Image size exceeds maximum limit of 500 KB.");
+  }
+  if ($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg" && $image_file_type != "gif") {
+    throw new Exception("Only JPG, JPEG, PNG & GIF files are allowed.");
+  }
+
+  if (!move_uploaded_file($url["tmp_name"], $target_file)) {
+    throw new Exception("Failed to upload image, try again.");
+  }
+  $url = $target_file;
+
+  // Prepare the insert statement
+  $stmt = $pdo->prepare("INSERT INTO user_images (user, url) VALUES (:user, :url)");
+
+  // Bind the parameters
+  $stmt->bindParam(':user', $user);
+  $stmt->bindParam(':url', $url);
+
+  // Execute the statement
+  if ($stmt->execute()) {
+    return true;
+  } else {
+    throw new Exception("Failed to store image path in database.");
+  }
+}
+
 
 if(isset($_POST['submit'])) {
-  $countfiles = count($_FILES['files']['name']);
-  $query = "INSERT INTO user_images (user,url) VALUES(?,?)";
-  $statement = $conn->prepare($query);
-
-  for($i = 0; $i < $countfiles; $i++) {
-
-      $filename = $_FILES['files']['name'][$i];
-      $target_file = './uploads/'.$filename;
-
-      $file_extension = pathinfo(
-          $target_file, PATHINFO_EXTENSION);
-           
-      $file_extension = strtolower($file_extension);
-
-      $valid_extension = array("png","jpeg","jpg");
-    
-      if(in_array($file_extension, $valid_extension)) {
-
-          if(move_uploaded_file(
-              $_FILES['files']['tmp_name'][$i],
-              $target_file)
-          ) {
-
-              $statement->execute(
-                  array($filename,$target_file));
-          }
-      }
-  }
-   
-  echo "File upload successfully";
+  uploadProfileImage($_FILES['profile_image'], $_SESSION['user']);
 }
 ?>
 
@@ -94,7 +100,7 @@ if(isset($_POST['submit'])) {
     </div>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form" enctype=”multipart/form-data”>
       <div class="form-input">
-          <input type="file" id="file" name="files[]">
+          <input type="file" id="profile_image" name="profile_image">
           
         <div class="btn-input">
           <button type="submit" name="submit" class="primary-btn">Gata</button>

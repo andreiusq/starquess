@@ -3,6 +3,7 @@
 define('BASEPATH', true);
 session_start();
 require('backend/config/db.php');
+$is_administrator = 0;
 
 if(!isset($_SESSION["user"])) {
   header("Location: login.php");
@@ -52,6 +53,9 @@ if($cont["rank"] == 2) {
     <title>Dashboard</title>
     <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="styles/dashboard/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     
@@ -86,7 +90,7 @@ if($cont["rank"] == 2) {
         <div class="performance-box-content">
             <h4 class="performance-box-title">Performanta</h4>
             <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
-            <h3 style="position: relative; top: 100px; left: 60px;">Oopsie! Looks like we can't calculate your performance</h3>
+            <h5 style="position: relative; top: 100px; left: 30px;">Oopsie! Looks like we can't calculate your performance</h5>
 
             <!--<figure class="highcharts-figure">
                 <div id="container-perf"></div>
@@ -155,7 +159,7 @@ if($cont["rank"] == 2) {
                     <p class="message-box-messages-content-message-time-text">10:00</p>
                 </div>-->
                 <i class="fa-solid fa-block-question fa-4x" style="position: relative; left: 260px; top: 80px"></i>
-                <h3 style="position: relative; top: 100px; left: 100px;">Woah! Who knows what is going to be here</h3>
+                <h5 style="position: relative; top: 100px; left: 100px;">Woah! Who knows what is going to be here</h5>
             </div>
         </div>
     </div>
@@ -178,4 +182,22 @@ if($cont["rank"] == 2) {
     </div>
     </div>
 </body>
+
+<script>
+
+$(document).ready(function() {
+    Swal.fire({
+        position: 'top',
+        toast: true,
+        timer: 3500,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        showConfirmButton: false,
+        text: '‎ ‎ Avem un flux mare de utilizatori, te rugăm să aștepți cât timp mărim capacitatea serverului.',
+        icon: 'warning'
+    });
+});
+
+</script>
 </html>
