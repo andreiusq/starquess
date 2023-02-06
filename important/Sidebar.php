@@ -289,10 +289,10 @@ color:red;
             
          <?php } ?>
 
-        <li class="list" style="left: 30px; top: 190px; color: red;">
+        <li class="list" style="left: 30px; top: 190px; color: gray;">
             <a href="../signout.php">
-            <span class="icon"  style="color:red;"><i class="fa-solid fa-door-open"></i></span>
-            <span class="title" style="color:red;">Deconectare</span>
+            <span class="icon"  style="color:gray;"><i class="fa-solid fa-door-open"></i></span>
+            <span class="title" style="color:gray;">Deconectare</span>
             </a>
         </li>
     </ul>
