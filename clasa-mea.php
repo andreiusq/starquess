@@ -126,38 +126,38 @@ $rank = $rank_stmt->fetchColumn();
         <div class="best-classmates">
             <div class="best-classmates-content">
                 <h4 class="best-classmates-title">Cei mai buni elevi</h4>
-                <p class="best-classmates-attention">Pe clasa</p>
+                <p class="best-classmates-attention">Tot timpul</p>
                 <div class="best-classmates-ellipses">
                     <div class="best-classmates-first-box">
                         <div class="firstplace-initials">
                             <p class="firstplace-initials-text">SG</p>
                         </div>
-                        <p class="firstplace-student"> <?php echo $best_classmate['name']; echo ' '; echo $best_classmate['last_name'] ?> </p>
-                        <p class="firstplace-grade">MEDIA <?php echo $best_classmate['max_grade']; ?> </p>
+                        <p class="firstplace-student"> aaaa </p>
+                        <p class="firstplace-grade"> aaaaa </p>
                         <img src="./styles/clasa-mea/img/first-place.png" class="firstplace-image">
                     </div>
                     <div class="best-classmates-second-box">
                         <div class="secondplace-initials">
                             <p class="secondplace-initials-text">SG</p>
                         </div>
-                        <p class="secondplace-student">  <?php echo $best_classmate['name']; echo ' '; echo $best_classmate['last_name'] ?> </p>
-                        <p class="secondplace-grade">MEDIA <?php echo $best_classmate['max_grade']; ?> </p>
+                        <p class="secondplace-student"> aaaaaaa </p>
+                        <p class="secondplace-grade"> aaaaa </p>
                         <img src="./styles/clasa-mea/img/second-place.png" class="secondplace-image">
                     </div>
                     <div class="best-classmates-third-box">
                         <div class="thirdplace-initials">
                             <p class="thirdplace-initials-text">SG</p>
                         </div>
-                        <p class="thirdplace-student"> Ștefan Ghețu </p>
-                        <p class="thirdplace-grade">MEDIA 9.99 </p>
+                        <p class="thirdplace-student"> Scarlet Mihai </p>
+                        <p class="thirdplace-grade"> aaaaa </p>
                         <img src="./styles/clasa-mea/img/third-place.png" class="thirdplace-image">
                     </div>
                     <div class="best-classmates-noplace-box">
                         <div class="noplace-initials">
                             <p class="noplace-initials-text">SG</p>
                         </div>
-                        <p class="noplace-student"> Ștefan Ghețu </p>
-                        <p class="noplace-grade">MEDIA 9.99 </p>
+                        <p class="noplace-student"> aaa </p>
+                        <p class="noplace-grade"> aaaaaa</p>
                     </div>
                 </div>
             </div>
