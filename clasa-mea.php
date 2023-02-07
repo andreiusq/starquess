@@ -87,19 +87,6 @@ $rank = $rank_stmt->fetchColumn();
                             <div class="students-box-list-item-content-left-text">
                                 <h1 class="students-box-list-item-content-left-text-name"><?php echo $classmate['name']; echo ' ';  echo $classmate['last_name']; ?></h1>
                                 <p class="students-box-list-item-content-left-text-email"><?php echo $classmate['email'] ?></p>
-                                <?php if($cont['rank'] > 2) { ?>
-                                <div class="students-box-list-item-actions">
-                                    <div class="students-box-list-item-actions-1">
-                                        <i class="fa-solid fa-pen-to-square" alt="Modifică elev" onclick="modificaelev(event)"></i>
-                                    </div>
-                                    <div class="students-box-list-item-actions-2" onclick="estisigurstergeelev(event)">
-                                        <i class="fa-solid fa-trash" alt="Șterge elev"></i>
-                                    </div>
-                                    <div class="students-box-list-item-actions-3">
-                                        <i class="fa-solid fa-notes" alt="Modifică notiță (pt. profesori)" onclick="modificanotitaelev(event)"></i>
-                                    </div>
-                                    <?php } ?>
-                                </div>
                                 <?php } ?>
                             </div>
                         </div>
