@@ -4,6 +4,25 @@ session_start();
 require('backend/config/db.php');
 $is_administrator = 0;
 
+
+//rank logic
+// users logic 2
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email"); 
+$stmt -> bindParam(':email', $_SESSION['user']);
+
+$stmt->execute(); 
+
+
+$conturi = $stmt->fetchAll(); 
+
+foreach($conturi as $cont);
+
+if($cont['rank'] < 2) {
+    header("Location: index.php");
+    exit();
+}
+
+
 if(!isset($_SESSION["user"])) {
   header("Location: login.php");
   exit();
