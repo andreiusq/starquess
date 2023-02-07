@@ -77,7 +77,7 @@ if(isset($_POST['submit'])){
 
   <ul class="nav-list">
     <li class="nav-items"><a href="/">Acasă</a></li>
-    <li class="nav-items"><a href="/join">Logare</a></li>
+    <li class="nav-items"><a href="/login.php">Logare</a></li>
   </ul>
 </nav>
 <section class="container">
@@ -87,7 +87,7 @@ if(isset($_POST['submit'])){
         Logare<span class="fullstop">.</span>
       </h1>
       <h2 class="secondary-heading">
-        Nu ai un cont? <a class="login-link" href="/register">Înregistrare</a>
+        Nu ai un cont? <a class="login-link" href="/register.php">Înregistrare</a>
       </h2>
     </div>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form">

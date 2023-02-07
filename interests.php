@@ -123,6 +123,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="btn-input">
           <div type="submit" name="submit" class="primary-btn">Gata</div>
         </div>
+        <h3>Hei! Să știi că suntem încă în perioada <b>alpha</b>. Așa că poți să <a href="/index.php">sari peste partea asta.</a></h3>
       </div>
     </form>
   </div>
