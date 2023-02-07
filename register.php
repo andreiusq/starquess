@@ -102,7 +102,7 @@ require 'backend/config/db.php';
 
   <ul class="nav-list">
     <li class="nav-items"><a href="/">Acasă</a></li>
-    <li class="nav-items"><a href="/join">Înregistrare</a></li>
+    <li class="nav-items"><a href="/login.php">Înregistrare</a></li>
   </ul>
 </nav>
 <section class="container">
@@ -112,7 +112,7 @@ require 'backend/config/db.php';
         Înregistrează-te<span class="fullstop">.</span>
       </h1>
       <h2 class="secondary-heading">
-        Deja ai un cont? <a class="login-link" href="/login">Logare</a>
+        Deja ai un cont? <a class="login-link" href="/login.php">Logare</a>
       </h2>
     </div>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form">
