@@ -98,11 +98,12 @@ $rank = $rank_stmt->fetchColumn();
                                     <div class="students-box-list-item-actions-3">
                                         <i class="fa-solid fa-notes" alt="Modifică notiță (pt. profesori)" onclick="modificanotitaelev(event)"></i>
                                     </div>
+                                    <?php } ?>
                                 </div>
-                                
+                                <?php } ?>
                             </div>
                         </div>
-                        <?php } } } else { ?> <h3>You don't have any classmates ;( </h3> <?php } ?>
+                        <?php } else { ?> <h3>You don't have any classmates ;( </h3> <?php } ?>
                     </div>
                 </div>
             </div>
