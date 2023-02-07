@@ -137,9 +137,9 @@ if($cont["rank"] == 2) {
                 </div>
                 <p class="timetable-box-hours-content-hour-text"><?php echo $row['hour7']?>
             </div>
+            <?php } ?>
         </div>
     </div>
-    <?php } ?>
     <!-- messages box -->
     <div class="message-box">
         <div class="message-box-content">
