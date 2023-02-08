@@ -175,13 +175,14 @@ img {
 .primary-heading {
   font-weight: 600;
   font-size: 3rem;
+
 }
 
 .secondary-heading {
   color: var(--light-gray-color);
   font-weight: 600;
   font-size: 1rem;
-  margin-left: 120px;
+  margin-left: -20px;
 }
 
 .login-link {
