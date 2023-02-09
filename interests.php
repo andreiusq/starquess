@@ -54,6 +54,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form">
       <div class="form-input">
+      <select multiple id="interests" name="interests[]">
         <div class="wrapper">
           <div class="rand-3">
           <div class="interes">
@@ -88,7 +89,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
              <div class="rand-3">
           <div class="interes">
-             <img src="styles/register/img/Biologie.png" id="Biologie" class="image"/>
+             <img src="styles/register/img/biologie.png" id="Biologie" class="image"/>
                <span class="nume">Biologie</span>
               </div>
 
@@ -107,19 +108,20 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
              
           <div class="rand-2">
              <div class="interes">
-             <img src="styles/register/img/geografie.png" id="Geografie" class="image"/>
+             <img src="styles/register/img/geografie.png" id="Geografie" class="image" style="width: 90px !important;"/>
                <span class="nume">Geografie</span>
               </div>
 
 
              <div class="interes">
-             <img src="styles/register/img/engleza.png" id="engleza" class="image"/>
+             <img src="styles/register/img/engleza.png" id="engleza" class="image" style="width: 90px !important;" />
               <span class="nume">Engleza</span>
                </div>
              </div>
    
 
         </div>
+</select>
         <div class="btn-input">
           <div type="submit" name="submit" class="primary-btn">Gata</div>
         </div>

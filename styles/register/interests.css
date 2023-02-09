@@ -6,19 +6,19 @@
 
 
 .interes{
-    color: var(--light-gray-color);
+  color: var(--light-gray-color);
   font-weight: 600;
   font-size: 1.2rem;
- align-items:inherit !important;
-    padding:10px;
-    border: 1px solid ;
-    border-color:rgb(38, 109, 171);
-    border-radius:10px;
-    margin-bottom:5px;
-    max-width:400px;
-    padding-right:50px;
-   cursor: pointer;
- transition: 0.7s;
+  align-items:inherit !important;
+  padding:10px;
+  border: 1px solid ;
+  border-color:rgb(38, 109, 171);
+  border-radius:10px;
+  margin-bottom:5px;
+  max-width:400px;
+  padding-right:50px;
+  cursor: pointer;
+  transition: 0.7s;
  }
 
  .link{
@@ -118,7 +118,7 @@ animation: pulse 1s;
     height:50px;
     width:50px;
     position:relative;
-   top:8px;
+    top:8px;
     margin:0;
  }
 
@@ -160,9 +160,7 @@ animation: pulse 1s;
  }
  
  .interes {
- 
    background-color: white;
-   box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
    transition: transform 0.5s;
    -webkit-transition: transform 0.5s;
    -moz-transition: transform 0.5s;
