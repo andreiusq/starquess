@@ -14,52 +14,7 @@ $stmt->execute();
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-function uploadProfileImage($url, $user) {
 
-  $pdo = new PDO('mysql:host=localhost;dbname=starquess', 'root', '');
-
-
-  $target_dir = "upload/";
-  $image_name = uniqid() . '_' . basename($url["name"]);
-  $target_file = $target_dir . $image_name;
-
-  // Validate the image
-  $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-  $check = getimagesize($url["tmp_name"]);
-  if (!$check) {
-    throw new Exception("File is not an image.");
-  }
-  if ($url["size"] > 500000) {
-    throw new Exception("Image size exceeds maximum limit of 500 KB.");
-  }
-  if ($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg" && $image_file_type != "gif") {
-    throw new Exception("Only JPG, JPEG, PNG & GIF files are allowed.");
-  }
-
-  if (!move_uploaded_file($url["tmp_name"], $target_file)) {
-    throw new Exception("Failed to upload image, try again.");
-  }
-  $url = $target_file;
-
-  // Prepare the insert statement
-  $stmt = $pdo->prepare("INSERT INTO user_images (user, url) VALUES (:user, :url)");
-
-  // Bind the parameters
-  $stmt->bindParam(':user', $user);
-  $stmt->bindParam(':url', $url);
-
-  // Execute the statement
-  if ($stmt->execute()) {
-    return true;
-  } else {
-    throw new Exception("Failed to store image path in database.");
-  }
-}
-
-
-if(isset($_POST['submit'])) {
-  uploadProfileImage($_FILES['profile_image'], $_SESSION['user']);
-}
 ?>
 
 <!DOCTYPE html>
