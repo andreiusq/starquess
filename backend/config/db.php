@@ -16,6 +16,4 @@ try{
     echo 'Connection Error: '.$e->getMessage();
 }
 
-
-
 ?>
