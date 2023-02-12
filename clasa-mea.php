@@ -87,6 +87,7 @@ $rank = $rank_stmt->fetchColumn();
                             <div class="students-box-list-item-content-left-text">
                                 <h1 class="students-box-list-item-content-left-text-name"><?php echo $classmate['name']; echo ' ';  echo $classmate['last_name']; ?></h1>
                                 <p class="students-box-list-item-content-left-text-email"><?php echo $classmate['email'] ?></p>
+                                <?php if($cont['rank'] == 2) echo ''?>
                                 <?php } ?>
                             </div>
                         </div>
