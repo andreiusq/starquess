@@ -11,6 +11,7 @@ if(!isset($_SESSION["user"])) {
   exit();
 }
 
+
 // users logic 2
 $stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email"); 
 $stmt -> bindParam(':email', $_SESSION['user']);
@@ -44,7 +45,6 @@ $stmt = $pdo->prepare($query);
 $stmt->bindParam(':day', $timetable_day);
 $stmt->execute();
 $timetable = $stmt->fetchAll();
-
 
 
 if($cont["rank"] == 2) {
