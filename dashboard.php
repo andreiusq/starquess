@@ -103,11 +103,11 @@ if($cont["rank"] == 2) {
     <div class="timetable-box">
         <div class="timetable-box-content">
             <h1 class="timetable-title">Orar</h1>
-            <p class="timetable-subtitle">Azi, 05.02.2023</p>
+            <p class="timetable-subtitle" id="date"></p>
             <?php foreach($timetables as $row) { ?>
     </div>
         <div class="timetable-box-hours">
-            <div class="timetable-box-hours-content">
+            <div class="timetable-box-hours-content" id="timetable-box-hours-content">
                 <div class="timetable-box-hours-content-hour-circle">
                     <p class="timetable-box-hours-content-hour-circle-text">08:00</p>
                 </div>
@@ -199,6 +199,44 @@ $(document).ready(function() {
         icon: 'warning'
     });
 });
+
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    var dayOfWeek = date.getDay();
+    var dayOfWeekText = "";
+    switch (dayOfWeek) {
+        case 0:
+            dayOfWeekText = "Duminica";
+            break;
+        case 1:
+            dayOfWeekText = "Luni";
+            break;
+        case 2:
+            dayOfWeekText = "Marti";
+            break;
+        case 3:
+            dayOfWeekText = "Miercuri";
+            break;
+        case 4:
+            dayOfWeekText = "Joi";
+            break;
+        case 5:
+            dayOfWeekText = "Vineri";
+            break;
+        case 6:
+            dayOfWeekText = "Sambata";
+            break;
+    }
+    if (day < 10) {
+        day = "0" + day;
+    }
+    if (month < 10) {
+        month = "0" + month;
+    }
+    var dateText = dayOfWeekText + ", " + day + "." + month + "." + year;
+    document.getElementById("date").innerHTML = dateText;
 
 </script>
 </html>
