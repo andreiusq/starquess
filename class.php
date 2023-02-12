@@ -31,8 +31,8 @@ if(isset($_GET['class'])) {
 </head>
 <body>
     
-    <?php include './important/rightbar.php'; ?>
-    <?php include './important/sidebar.php'; ?>
+    <?php include './important/Rightbar.php'; ?>
+    <?php include './important/Sidebar.php'; ?>
 
  <div class="students-box">
         <div class="students-box-content">
