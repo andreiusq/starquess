@@ -116,7 +116,7 @@ if($cont["rank"] == 2) {
     <!-- timetable box -->
     <div class="timetable-box">
         <div class="timetable-box-content">
-            <h1 class="timetable-title">Orar</h1>
+            <h1 class="timetable-title" id="timetable-title"></h1>
             <p class="timetable-subtitle" id="date"></p>
             <?php foreach($timetable as $row) { ?>
     </div>
@@ -254,6 +254,12 @@ $(document).ready(function() {
     }
     var dateText = dayOfWeekText + ", " + day + "." + month + "." + year;
     document.getElementById("date").innerHTML = dateText;
+
+    if(dayOfWeek == 0 || dayOfWeek == 6) {
+        document.getElementById("timetable-title").innerHTML = "Orar";
+    } else {
+        document.getElementById("timetable-title").innerHTML = "Orar";
+    }
 
 </script>
 </html>
