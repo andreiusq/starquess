@@ -103,9 +103,6 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
 
-    <button class="button-add-test" onclick="addgrade(event)"><i class="fas fa-plus"></i></button>
-
-
     <div class="classes-box">
       <div class="classes-top">
         <h1 class="classes-title">Clase</h1> <br>
@@ -113,7 +110,7 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
           <?php foreach($classes as $row) { ?>
             <div class="classes-box-content">
               <div class="classes-box-content-classes-ellipse">
-                <p class="classes-box-content-classes-ellipse-text"><a class="classes-box-content-classes-ellipse-text-href" href="https://starquess.kodikas.ro/class/<?php echo $row['class_id'] ?>"><?php echo $row['class_name'];?></a></p>
+                <p class="classes-box-content-classes-ellipse-text"><a class="classes-box-content-classes-ellipse-text-href" href="https://starquess.kodikas.ro/class.php?class=<?php echo $row['class_id'] ?>"><?php echo $row['class_name'];?></a></p>
               </div>
             </div>
         <?php } 
@@ -126,22 +123,6 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
 </html>
 
 <script>
-
-    function addgrade(e) {
-        e.preventDefault();
-        Swal.fire({
-  title: 'Ce notă vrei să pui?',
-  icon: 'question',
-  input: 'range',
-  inputLabel: 'Notă',
-  inputAttributes: {
-      min: 1,
-      max: 10,
-      step: 1
-    },
-    inputValue: 5
-      })
-    }
 
 
     async function adaugaanunt(e) {
