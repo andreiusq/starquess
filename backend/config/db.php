@@ -5,7 +5,6 @@ $host = 'localhost';
 $user = 'root';
 $password = '';
 $dbname = 'starquess';
-$dsn = '';
 
 try{
     $dsn = 'mysql:host='.$host. ';dbname='.$dbname;
