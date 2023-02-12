@@ -28,10 +28,24 @@ $statement->execute();
 $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
 
 // timetable logic
-$stmt = $pdo->prepare("SELECT * FROM timetables WHERE class_id = $cont[class_id]");
-$stmt->execute();
+$day = date("l");
 
-$timetables = $stmt->fetchAll();
+if ($day == "Saturday") {
+    $timetable_day = "Monday";
+} elseif ($day == "Sunday") {
+    $timetable_day = "Monday";
+} else {
+    $timetable_day = $day;
+}
+
+$query = "SELECT * FROM timetables WHERE day = :day AND class_id = $cont[class_id]";
+
+$stmt = $pdo->prepare($query);
+$stmt->bindParam(':day', $timetable_day);
+$stmt->execute();
+$timetable = $stmt->fetchAll();
+
+
 
 if($cont["rank"] == 2) {
     header("Location: teacher.php");
@@ -98,13 +112,13 @@ if($cont["rank"] == 2) {
             </figure>-->
         </div>
     </div>
-
+<?php if($timetable) { ?>
     <!-- timetable box -->
     <div class="timetable-box">
         <div class="timetable-box-content">
             <h1 class="timetable-title">Orar</h1>
             <p class="timetable-subtitle" id="date"></p>
-            <?php foreach($timetables as $row) { ?>
+            <?php foreach($timetable as $row) { ?>
     </div>
         <div class="timetable-box-hours">
             <div class="timetable-box-hours-content" id="timetable-box-hours-content">
@@ -141,6 +155,9 @@ if($cont["rank"] == 2) {
             <?php } ?>
         </div>
     </div>
+    <?php } else {
+        echo "No timetable found for" . $timetable_day;
+    } ?>
     <!-- messages box -->
     <div class="message-box">
         <div class="message-box-content">
