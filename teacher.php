@@ -28,6 +28,15 @@ if(!isset($_SESSION["user"])) {
   exit();
 }
 
+
+//teacher
+$teacher_email = $_SESSION['user'];
+$statement = $pdo->prepare("SELECT * FROM teachers WHERE teacher_email = :teacher_email");
+$statement->execute(array(':teacher_email' => $teacher_email));
+
+$classes = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
 // news logic
 $statement = $pdo->prepare("SELECT * FROM news ORDER BY posted_at DESC");
 $statement->execute();
@@ -93,10 +102,48 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
+
+    <button class="button-add-test" onclick="addgrade(event)"><i class="fas fa-plus"></i></button>
+
+
+    <div class="classes-box">
+      <div class="classes-top">
+        <h1 class="classes-title">Clase</h1> <br>
+        <?php if(count($classes) > 0) { ?>
+          <?php foreach($classes as $row) { ?>
+            <div class="classes-box-content">
+              <div class="classes-box-content-classes-ellipse">
+                <p class="classes-box-content-classes-ellipse-text"><?php echo $row['class_name'];?></p>
+              </div>
+            </div>
+        <?php } 
+          }
+        ?>
+      </div>
+    </div>
+
 </body>
 </html>
 
 <script>
+
+    function addgrade(e) {
+        e.preventDefault();
+        Swal.fire({
+  title: 'Ce notă vrei să pui?',
+  icon: 'question',
+  input: 'range',
+  inputLabel: 'Notă',
+  inputAttributes: {
+      min: 1,
+      max: 10,
+      step: 1
+    },
+    inputValue: 5
+      })
+    }
+
+
     async function adaugaanunt(e) {
         e.preventDefault();
         Swal.fire({
