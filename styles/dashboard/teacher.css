@@ -199,3 +199,26 @@ body {
     left: 9px;
     top: 5px;
  }
+
+    .classes-box::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .classes-box::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+
+    .classes-box::-webkit-scrollbar-thumb {
+        background: #0077FF;
+        border-radius: 20px; 
+    }
+
+    .classes-box::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
+
+    .classes-box-content-classes-ellipse-text-href {
+        color: #fff;
+        text-decoration: none;
+    }
