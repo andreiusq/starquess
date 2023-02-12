@@ -269,23 +269,21 @@ color:red;
          </li>
 
 
-         <li class="list" style="left: 30px">
+         <li class="list" style="left: 30px" data-bs-toggle="dropdown" aria-expanded="false">
             <a href="../administrator.php">
             <span class="icon"><i class="fa-solid fa-hammer"></i></span>
             <span class="title">Acțiuni admin</span>
             </a>
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="../administrator.php">Administrativ</a></li>
+               <li><a class="dropdown-item" href="../administrator.php">Cadre didactice</a></li>
+               <li><a class="dropdown-item" href="../administrator.php">Clase</a></li>
+               <li><a class="dropdown-item" href="../administrator.php">Elevi</a></li>
+               <li><a class="dropdown-item" href="../administrator.php">Orar</a></li>
+            </ul>
          </li>
 
-         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-               <li><a class="dropdown-item" href="#">Action</a></li>
-               <li><a class="dropdown-item" href="#">Another action</a></li>
-               <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-         </div>
+         
             
          <?php } ?>
 
