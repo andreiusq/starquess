@@ -261,5 +261,18 @@ $(document).ready(function() {
         document.getElementById("timetable-title").innerHTML = "Orar";
     }
 
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+    if (minute < 10) {
+        minute = "0" + minute;
+    }
+
+    if(hour > 15) {
+        document.getElementById("timetable-title").innerHTML = "Orar";
+    }
+
 </script>
 </html>
