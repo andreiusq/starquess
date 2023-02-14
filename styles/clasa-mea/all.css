@@ -12,7 +12,7 @@ body {
 }
 
 .students-box::-webkit-scrollbar-thumb {
-    background: #0077FF
+    background: #0077FF;
     border-radius: 20px; 
   }
   
