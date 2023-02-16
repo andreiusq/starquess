@@ -37,9 +37,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <h2>Starquess<span class="fullstop">.</span></h2>
   </div>
  
-  <ul class="nav-list">
-    <li class="nav-items"><a href="/">Acasă</a></li>
-  </ul>
 </nav>
 
 <section class="container">
