@@ -115,7 +115,7 @@ require 'backend/config/db.php';
         Deja ai un cont? <a class="login-link" href="/login.php">Logare</a>
       </h2>
     </div>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form">
+    <form action="" method="post" class="form">
       <div class="form-input">
         <div class="name-input">
           <input type="text" name="fname" id="fname" placeholder="Nume" required="required" />

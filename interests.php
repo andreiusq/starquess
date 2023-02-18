@@ -52,7 +52,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         Pentru că la <span class="fullstop">Starquess</span> ne pasă de elev, trebuie să îți alegi niște interese.
       </h2>
     </div>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form">
+    <form action="" method="post" class="form">
       <div class="form-input">
       <select multiple id="interests" name="interests[]">
         <div class="wrapper">

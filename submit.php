@@ -21,11 +21,11 @@ try {
         $id = $result['id'];
         $statement = $pdo->prepare("UPDATE news SET text = :input WHERE id = :id");
         $statement->execute(array(':input' => $input, ':id' => $id));
-        echo "Response successfully edited: $input";
+        echo htmlspecialchars("Response successfully edited: $input", ENT_QUOTES, 'UTF-8');
     } else {
         $statement = $pdo->prepare("INSERT INTO news (text) VALUES (:text)");
         $statement->execute(array(':text' => $input));
-        echo "Response successfully added: $input";
+        echo htmlspecialchars("Response successfully edited: $input", ENT_QUOTES, 'UTF-8');
     }
 } catch (PDOException $e) {
     echo $e->getMessage();

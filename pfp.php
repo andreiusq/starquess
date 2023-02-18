@@ -53,7 +53,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         Pentru că la <span class="fullstop">Starquess</span> ne pasă de elev și de cum consideră el că își vrea viața online, îți oferim șansa de a avea o poză de profil.
       </h2>
     </div>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form" enctype=”multipart/form-data”>
+    <form action="" method="post" class="form" enctype=”multipart/form-data”>
       <div class="form-input">
           <input type="file" id="profile_image" name="profile_image">
           

@@ -90,7 +90,7 @@ if(isset($_POST['submit'])){
         Nu ai un cont? <a class="login-link" href="/register.php">Înregistrare</a>
       </h2>
     </div>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form">
+    <form action="" method="post" class="form">
       <div class="form-input">
         <input type="email" name="email" id="email" placeholder="Email" required="required" />
         <input type="password" name="pass" id="pass" placeholder="Parolă" required="required" />
