@@ -94,11 +94,9 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
             <div class="news-box-news-content">
                 <div class="news-box-news-content-news-ellipse">
                     <p class="news-box-news-content-news-ellipse-text"><?php echo $row['text'];?></p>
-                </div>
-                <?php } ?>
-            
             </div>
-            
+            </div>
+            <?php } ?>
         </div>
     </div>
 
@@ -123,6 +121,14 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
 </html>
 
 <script>
+const regexPattern = /\b(ass|asshole|bastard|bitch|crap|damn|fuck|shit|muie)\b/i;
+const inputText = document.getElementsByClassName('adauga-anunt');
+if (regexPattern.test(inputText)) {
+  Swal.fire('Oops...', 'Please refrain from using inappropriate language.', 'error');
+} else {
+  // send announcement to database
+}
+
 
 
     async function adaugaanunt(e) {
@@ -133,6 +139,7 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
   showCancelButton: true,
   confirmButtonText: 'Submit',
   showLoaderOnConfirm: true,
+  customClass: 'adauga-anunt',
   preConfirm: (inputValue) => {
     return fetch(`submit.php?action&input=${inputValue}`)
       .then(response => {
