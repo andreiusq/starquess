@@ -71,12 +71,42 @@ foreach ($semesters as $semester) {
     $averages[] = round($average, 5);
 }
 
-// Convert the data to JSON format
+
 $data_json = json_encode(array(
     'module' => $semesters,
     'grades' => array_column($data, 'grade'),
     'averages' => $averages
 ));
+
+
+
+// calcul procentaj
+$today = date('Y-m-d');
+$last_week = date('Y-m-d', strtotime('-1 week'));
+$query = "SELECT * FROM grades WHERE date >= :last_week AND date <= :today";
+$stmt = $pdo->prepare($query);
+$stmt->bindValue(':last_week', $last_week);
+$stmt->bindValue(':today', $today);
+$stmt->execute();
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$grades_this_week = [];
+$grades_last_week = [];
+
+foreach ($data as $row) {
+    if ($row['date'] >= $today) {
+        $grades_this_week[] = $row['grade'];
+    } else {
+        $grades_last_week[] = $row['grade'];
+    }
+}
+
+$average_this_week = count($grades_this_week) > 0 ? array_sum($grades_this_week) / count($grades_this_week) : 0;
+$average_last_week = count($grades_last_week) > 0 ? array_sum($grades_last_week) / count($grades_last_week) : 0;
+
+// Calculate the percentage improvement
+$percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_last_week) / $average_last_week) * 100 : 0;
+
 
 
 ?>
@@ -115,8 +145,12 @@ $data_json = json_encode(array(
     <div class="welcome-box">
         <div class="welcome-box-content">
             <h1>Bine ai revenit, <?php echo $cont["name"] ?> !<img class="mana" src="https://em-content.zobj.net/thumbs/120/apple/325/waving-hand_1f44b.png" alt="Salut!" style="position: absolute; width: 50px; top: -13px;"/></h1>
-            <p class="congrats-text">Eșt mai bun cu <b>70%</b> în această săptămână. Felicitări!</p>
-            
+            <?php if($percent_improvement > 0) : ?>
+                <p class="congrats-text">Ești mai bun cu <b><?php echo number_format($percent_improvement, 2) ?> %</b> în această săptămână. Felicitări!</p>
+            <?php else : ?>
+                <p class="congrats-text">Nu ai avut nicio notă în această săptămână.</p>
+            <?php endif; ?>
+
         </div>
         <div className='welcome-box-image'> 
             <img src="https://i.imgur.com/aFNE7od.png" alt="Salut!" height="200px" style="position: relative; top: -80px; left: 900px" />
