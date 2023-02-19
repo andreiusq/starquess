@@ -1,5 +1,7 @@
 
 <?php
+
+
 require('backend/config/db.php');
 $stmt = $pdo->prepare("SELECT name, last_name FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
@@ -7,11 +9,21 @@ $stmt->execute();
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$stmt = $pdo->prepare("SELECT * FROM user_activities WHERE user_id = :user_id");
+$stmt->bindParam(":user_id", $user_id);
+
+$user_id = $cont['id'];
+
+$stmt->execute();
+$activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 
 <head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap");
 
 
  *{
@@ -130,22 +142,23 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 .activities_list_item_text_date {
    position: absolute;
-   top: 20px;
-   font-size: 0.8em;
+   top: 16px;
+   font-size: 12px;
    font-weight: 400;
    color: #000;
 }
 
 .activities_list_item_date {
    position: relative;
-   top: -13px;
-   right: 5px;
+   top: -10px;
+   right: 10px;
    color: #fff;
+   font-size: 24px;
 }
 
 .activities_list_item_text_description {
    position: absolute;
-   top: 40px;
+   top: 35px;
    font-size: 1.0em;
    font-weight: 400;
    color: #000;
@@ -153,11 +166,11 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 .activities_list_item_text_time {
    position: absolute;
-   font-size: 0.8em;
+   font-size: 12px;
    font-weight: 400;
    color: #000;
-   top: 20px;
-   left: 70px;
+   top: 16px;
+   left: 100px;
 }
 
 .semieclipse-activities {
@@ -193,26 +206,55 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
     
-    <div class="leftbar__calendar">
+    <!--<div class="leftbar__calendar">
         <h5 class="calendar_title">Progresul meu</h5>
-        
 
-    </div>
+    </div>-->
 
     <div class="leftbar_activites">
         <h5 class="activities_title">Activitatile mele</h5>
         <h5 class="activities_seeall">Vezi toate</h5>
         <div class="activities_list">
+         <?php foreach ($activities as $activity) { ?>
+            <?php 
+            
+            // ora
+            $activity_time = $activity["activity_time"];
+            $timestamp = strtotime($activity_time);
+            $formatted_time = date('H:i', $timestamp);
+            //data cu luna
+            $date = new DateTime($activity['activity_date']);
+            $date_formatter = new IntlDateFormatter('ro_RO', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+            $date_formatter->getPattern();
+            $date_formatter->setPattern('d MMMM');
+            $formatted_date = $date_formatter->format($date);
+
+            //doar data
+            $dateString = $activity['activity_date'];
+            $timestamp = strtotime($dateString);
+            $dateNumber = date('j', $timestamp);
+
+            // sterge data automat
+            $activityDate = strtotime($activity['activity_date']);
+            $currentDate = time();
+
+            if ($currentDate > $activityDate) {
+               $stmt = $pdo->prepare("DELETE FROM activities WHERE id = :id");
+               $stmt->bindParam(':id', $activity['id']);
+               $stmt->execute();
+            }
+            ?>
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
-                    <h2 class="activities_list_item_date">8</h2>
+                    <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
                 </div>
                 <div class="activities_list_item_text">
-                    <h6 class="activities_list_item_text_title">Activitatea mea</h6>
-                    <p class="activities_list_item_text_date">8-10 iulie</p> <span class="semieclipse-activities"></span><p class='activities_list_item_text_time'>10:00</p>
-                    <p class="activities_list_item_text_description">Descrierea activitatii</p>
+                    <h6 class="activities_list_item_text_title"><?php echo $activity["activity_name"] ?></h6>
+                    <p class="activities_list_item_text_date"><?php echo $formatted_date ?></p> <span class="semieclipse-activities"></span><p class='activities_list_item_text_time'><?php echo $formatted_time ?></p>
+                    <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
+            <?php } ?>
         </div>
     </div>
 
