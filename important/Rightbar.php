@@ -3,7 +3,7 @@
 
 
 require('backend/config/db.php');
-$stmt = $pdo->prepare("SELECT name, last_name FROM users WHERE email=:email");
+$stmt = $pdo->prepare("SELECT name, last_name, id FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
 
@@ -12,8 +12,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt = $pdo->prepare("SELECT * FROM user_activities WHERE user_id = :user_id");
 $stmt->bindParam(":user_id", $user_id);
 
-$user_id = $cont['id'];
-
+$user_id = $user['id'];
 $stmt->execute();
 $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -192,7 +191,29 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
       color: #000;
  }
 
+
+ .activities-top-buttons-add {
+    background: transparent;
+    border: transparent;
+}
+
+.activities-top-buttons-add:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+.activities-top-buttons-delete {
+    background: transparent;
+    border: transparent;
+}
+
+.activities-top-buttons-delete:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 </head>
 
 <body class="light">
@@ -213,7 +234,10 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="leftbar_activites">
         <h5 class="activities_title">Activitatile mele</h5>
-        <h5 class="activities_seeall">Vezi toate</h5>
+        <h5 class="activities_seeall">
+         <!-- adauga -->
+            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus"></i></button>
+        </h5>
         <div class="activities_list">
          <?php foreach ($activities as $activity) { ?>
             <?php 
@@ -239,7 +263,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $currentDate = time();
 
             if ($currentDate > $activityDate) {
-               $stmt = $pdo->prepare("DELETE FROM activities WHERE id = :id");
+               $stmt = $pdo->prepare("DELETE FROM user_activities WHERE id = :id");
                $stmt->bindParam(':id', $activity['id']);
                $stmt->execute();
             }
@@ -250,11 +274,11 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="activities_list_item_text">
                     <h6 class="activities_list_item_text_title"><?php echo $activity["activity_name"] ?></h6>
-                    <p class="activities_list_item_text_date"><?php echo $formatted_date ?></p> <span class="semieclipse-activities"></span><p class='activities_list_item_text_time'><?php echo $formatted_time ?></p>
+                    <p class="activities_list_item_text_date"><?php echo $formatted_date ?></p><p class='activities_list_item_text_time'><?php echo $formatted_time ?></p>
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
-            <?php } ?>
+            <?php } ?> <br>
         </div>
     </div>
 
@@ -263,3 +287,73 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 </body>
+
+<script>
+    async function adauganou(e) {
+        e.preventDefault();
+         Swal.fire({
+      title: 'Adaugă activitate',
+      html:
+        '<form id="add-activity-form">' +
+          '<div class="form-group">' +
+            '<label for="activity-name">Nume activitate:</label>' +
+            '<input type="text" id="activity-name" name="activity-name" class="swal2-input" required>' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label for="activity-desc">Descriere activitate:</label>' +
+            '<textarea id="activity-desc" name="activity-desc" class="swal2-textarea" required></textarea>' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label for="activity-date">Dată:</label>' +
+            '<input type="date" id="activity-date" name="activity-date" class="swal2-input" required>' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label for="activity-time">Oră:</label>' +
+            '<input type="time" id="activity-time" name="activity-time" class="swal2-input" required>' +
+          '</div>' +
+          '<input type="hidden" id="user-id" name="user-id" value="<?php echo $user['id']; ?>">' +
+        '</form>',
+      showCancelButton: true,
+      confirmButtonText: 'Add Activity',
+      focusConfirm: false,
+      inputAttributes: {
+         maxlength: 250
+      },
+      preConfirm: () => {
+        const name = document.getElementById('activity-name').value
+        const desc = document.getElementById('activity-desc').value
+        const date = document.getElementById('activity-date').value
+        const time = document.getElementById('activity-time').value
+        const user_id = document.getElementById('user-id').value
+
+        return { name: name, desc: desc, date: date, time: time, user_id: user_id }
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const formData = new FormData();
+        formData.append('name', result.value.name);
+        formData.append('desc', result.value.desc);
+        formData.append('date', result.value.date);
+        formData.append('time', result.value.time);
+        formData.append('user_id', result.value.user_id);
+
+        fetch('add_activity.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          if (data.success) {
+            Swal.fire('Success!', data.message, 'success');
+          } else {
+            Swal.fire('Error!', data.message, 'error');
+          }
+        })
+        .catch((error) => {
+         Swal.fire('Success!', data.message, 'success');
+        });
+      }
+    });
+  }
+</script>
