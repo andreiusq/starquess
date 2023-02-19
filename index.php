@@ -52,6 +52,32 @@ if($cont["rank"] == 2) {
     exit();
   }
   
+$user_id = $cont['id'];
+
+// chart
+$query = "SELECT module_id, grade FROM grades WHERE user_id = :user_id";
+$stmt = $pdo->prepare($query);
+$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+$stmt->execute();
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$semesters = array_unique(array_column($data, 'module_id'));
+$averages = array();
+foreach ($semesters as $semester) {
+    $grades = array_filter($data, function($row) use ($semester) {
+        return $row['module_id'] == $semester;
+    });
+    $average = array_sum(array_column($grades, 'grade')) / count($grades);
+    $averages[] = round($average, 5);
+}
+
+// Convert the data to JSON format
+$data_json = json_encode(array(
+    'module' => $semesters,
+    'grades' => array_column($data, 'grade'),
+    'averages' => $averages
+));
+
 
 ?>
 
@@ -67,6 +93,7 @@ if($cont["rank"] == 2) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
     
@@ -100,13 +127,13 @@ if($cont["rank"] == 2) {
     <div class="performance-box">
         <div class="performance-box-content">
             <h4 class="performance-box-title">Performanta</h4>
-            <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
+<!--            <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
             <h5 style="position: relative; top: 100px; left: 30px;">Oopsie! Looks like we can't calculate your performance</h5>
-
-            <!--<figure class="highcharts-figure">
-                <div id="container-perf"></div>
-            </figure>-->
-        </div>
+    -->
+    <figure class="highcharts-figure">
+                <div id="container" style="width: 600px; height: 240px;"></div>
+    </figure>
+            </div>
     </div>
 <?php if($timetable) { ?>
     <!-- timetable box -->
@@ -269,6 +296,35 @@ $(document).ready(function() {
     if(hour > 15) {
         document.getElementById("timetable-title").innerHTML = "Orar";
     }
+
+
+        var data = <?php echo $data_json; ?>;
+        Highcharts.chart('container', {
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: data.module
+            },
+            yAxis: {
+                title: {
+                    text: 'Medie'
+                }
+            },
+            series: [{
+                name: 'Note',
+                data: data.grades,
+                dataLabels: {
+                enabled: true,
+                formatter: function() {
+                    return 'Media ' + this.y;
+                }
+            }
+            }, {
+                name: 'Medie generală',
+                data: data.averages
+            }]
+        });
 
 </script>
 </html>
