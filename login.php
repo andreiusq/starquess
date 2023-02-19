@@ -36,11 +36,11 @@ if(isset($_POST['submit'])){
             $_SESSION['user'] = $email;
             if($user['interests_set'] == 1) {
               $_SESSION['interests_set'] = true;
-              echo '<script>window.location.replace("dashboard.php");</script>';
+              echo '<script>window.location.replace("index.php");</script>';
             }
             else {
               $_SESSION['interests_set'] = false;
-              echo '<script>window.location.replace("interests.php");</script>';
+              echo '<script>window.location.replace("index.php");</script>';
             }
             exit;
             
