@@ -83,7 +83,7 @@ $data_json = json_encode(array(
 // calcul procentaj
 $today = date('Y-m-d');
 $last_week = date('Y-m-d', strtotime('-1 week'));
-$query = "SELECT * FROM grades WHERE date >= :last_week AND date <= :today";
+$query = "SELECT * FROM grades WHERE date >= :last_week AND date <= :today AND user_id = $user_id";
 $stmt = $pdo->prepare($query);
 $stmt->bindValue(':last_week', $last_week);
 $stmt->bindValue(':today', $today);
@@ -127,8 +127,8 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
 </head>
 <body>
     
-    <?php include './important/rightbar.php'; ?>
-    <?php include './important/sidebar.php'; ?>
+    <?php include './important/Rightbar.php'; ?>
+    <?php include './important/Sidebar.php'; ?>
 
 
     <?php if($cont["rank"] == 11) : ?>

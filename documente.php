@@ -44,8 +44,8 @@ $documentsCSE = $stmt->fetchAll();
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 </head>
 <body>
-    <?php include './important/rightbar.php'; ?>
-    <?php include './important/sidebar.php'; ?>
+    <?php include './important/Rightbar.php'; ?>
+    <?php include './important/Sidebar.php'; ?>
 
 
     <div class="documents-box">

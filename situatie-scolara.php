@@ -44,8 +44,8 @@ $grades = $stmt->fetchAll();
 </head>
 <body>
 
-    <?php include './important/rightbar.php'; ?>
-    <?php include './important/sidebar.php'; ?>
+    <?php include './important/Rightbar.php'; ?>
+    <?php include './important/Sidebar.php'; ?>
 
     <div class="my-grades-box">
         <div class="my-grades-box-content">
