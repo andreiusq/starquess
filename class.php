@@ -46,19 +46,18 @@ if(isset($_GET['class'])) {
                                 <img src="https://cdn.discordapp.com/attachments/881100000000000000/881100000000000000/unknown.png" alt="">
                             </div>
                             <?php if (count($results) > 0) {
-                                foreach ($results as $row) { { ?>
+                                foreach ($results as $row) { ?>
                             <div class="students-box-list-item-content-left-text">
                                 <h1 class="students-box-list-item-content-left-text-name"><?php echo $row['name']; echo ' ';  echo $row['last_name']; ?></h1>
                                 <p class="students-box-list-item-content-left-text-email"><?php echo $row['email'] ?></p>
                             </div>
                         </div>
                         <?php } ?>
-                        <?php } ?>
                     </div>
                 </div>
-                <?php } ?>
             </div>
         </div>
+        <?php } ?>
     </div>
 
 </body>
