@@ -28,6 +28,7 @@ if(isset($_GET['class'])) {
     <link rel="stylesheet" href="styles/classes/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
 </head>
 <body>
     
@@ -51,6 +52,12 @@ if(isset($_GET['class'])) {
                                 <h1 class="students-box-list-item-content-left-text-name"><?php echo $row['name']; echo ' ';  echo $row['last_name']; ?></h1>
                                 <p class="students-box-list-item-content-left-text-email"><?php echo $row['email'] ?></p>
                             </div>
+                            <div class="students-box-list-item-content-right">
+                                <form method="POST" onsubmit="event.preventDefault(); addGradeToStudent(<?php echo $row['id']; ?>);">
+                                    <input type="hidden" name="selected_student_id" value="<?php echo $row['id']; ?>">
+                                    <button type="submit" class="add-grade"><i class="fas fa-plus"></i></button>
+                                </form>
+                            </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -62,3 +69,54 @@ if(isset($_GET['class'])) {
 
 </body>
 </html>
+
+<script>
+function addGradeToStudent(selected_student_id) {
+    Swal.fire({
+        title: 'Adaugă notă',
+        input: 'number',
+        inputLabel: 'Introdu nota:',
+        inputAttributes: {
+            min: 0,
+            max: 10,
+            step: 1
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Submit',
+        showLoaderOnConfirm: true,
+        preConfirm: (grade) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const class_id = urlParams.get('class');
+            return fetch('add_grade.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'selected_student_id=' + selected_student_id + '&grade=' + grade + '&class_id=' + class_id
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText)
+                }
+                return response.json()
+            })
+            .catch(error => {
+                Swal.showValidationMessage(
+                    `Request failed: ${error}`
+                )
+            })
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+    })
+    .then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Notă adăugată!',
+                icon: 'success',
+                text: 'Nota a fost adăugată cu succes!',
+            });
+        }
+    });
+}
+
+</script>

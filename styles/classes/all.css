@@ -92,3 +92,16 @@ body {
     margin-bottom: 0px;
     left: -90px;
 }
+
+.add-grade {
+    background: transparent;
+    border: transparent;
+    position: relative;
+    top: -55px;
+    left: -20px;
+}
+
+.add-grade:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
