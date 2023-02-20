@@ -47,6 +47,33 @@ $rank_stmt = $pdo->prepare($rank_query);
 $rank_stmt->execute();
 $rank = $rank_stmt->fetchColumn();
 
+//  
+function get_user_class($pdo, $user_id) {
+    $stmt = $pdo->prepare('SELECT class_id FROM users WHERE id = :user_id');
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $user_data['class_id'];
+}
+
+
+
+function get_class_average($pdo, $class_id) {
+    $stmt = $pdo->prepare('SELECT AVG(grade) AS average_grade FROM grades WHERE class_id = :class_id GROUP BY class_id');
+    $stmt->bindParam(':class_id', $class_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $class_data = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (is_array($class_data)) {
+        return $class_data['average_grade'];
+    } else {
+        return 0;
+    }
+}
+
+$user_id = $cont['id'];
+$class_id = get_user_class($pdo, $user_id);
+$average_grade = get_class_average($pdo, $class_id);
+
 ?>
 
 
@@ -61,6 +88,7 @@ $rank = $rank_stmt->fetchColumn();
     <link rel="stylesheet" href="styles/clasa-mea/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
     
@@ -102,12 +130,7 @@ $rank = $rank_stmt->fetchColumn();
         <div class="performance-box">
             <div class="performance-box-content">
                 <h4 class="performance-box-title">Performanta clasei</h4>
-                <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
-                <h3 style="position: relative; top: 100px; left: 60px;">Oopsie! Looks like we can't calculate the performance</h3>
-
-            <!--<figure class="highcharts-figure">
-                <div id="container-perf"></div>
-            </figure>-->
+                <div id="chart" style="width: 590px; height:280px;"></div>
             </div>
         </div>
 
@@ -228,5 +251,27 @@ if (fruit) {
   Swal.fire(`You selected: ${fruit}`)
 }
 }
+
+Highcharts.chart("chart", {
+    chart: {
+        type: "column"
+    },
+    title: {
+        text: " "
+    },
+    xAxis: {
+        categories: ["Clasa <?php echo $class_id; ?>"]
+    },
+    yAxis: {
+        title: {
+            text: "Medie"
+        }
+    },
+    series: [{
+        name: "Medie",
+        data: [<?php echo $average_grade; ?>]
+    }]
+});
+
 
 </script>
