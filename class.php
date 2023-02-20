@@ -51,8 +51,8 @@ if(isset($_GET['class'])) {
                                 <h1 class="students-box-list-item-content-left-text-name"><?php echo $row['name']; echo ' ';  echo $row['last_name']; ?></h1>
                                 <p class="students-box-list-item-content-left-text-email"><?php echo $row['email'] ?></p>
                             </div>
+                            <?php } ?>
                         </div>
-                        <?php } ?>
                     </div>
                 </div>
             </div>
