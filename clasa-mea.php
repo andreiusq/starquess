@@ -70,9 +70,60 @@ function get_class_average($pdo, $class_id) {
     }
 }
 
+
+// getting every student name & best
+function get_best_students($pdo, $class_id) {
+    $stmt = $pdo->prepare('SELECT g.user_id, g.grade FROM grades g WHERE g.class_id = :class_id ORDER BY g.grade DESC');
+    $stmt->bindParam(':class_id', $class_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $grades_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $best_students = array();
+    $other_students = array();
+    $max_grade = 0;
+
+    foreach ($grades_data as $grade_data) {
+        if ($grade_data['grade'] > $max_grade) {
+            $max_grade = $grade_data['grade'];
+            $best_students = array();
+        }
+        if ($grade_data['grade'] == $max_grade) {
+            $user_id = $grade_data['user_id'];
+            $stmt = $pdo->prepare('SELECT u.name, u.last_name FROM users u WHERE u.id = :user_id');
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+            $name = $user_data['name'] . ' ' . $user_data['last_name'];
+            $initials = substr($user_data['name'], 0, 1) . substr($user_data['last_name'], 0, 1);
+            $best_students[] = array('name' => $name, 'initials' => $initials, 'grade' => $grade_data['grade']);
+        } else {
+            $user_id = $grade_data['user_id'];
+            $stmt = $pdo->prepare('SELECT u.name, u.last_name FROM users u WHERE u.id = :user_id');
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+            $name = $user_data['name'] . ' ' . $user_data['last_name'];
+            $initials = substr($user_data['name'], 0, 1) . substr($user_data['last_name'], 0, 1);
+            $other_students[] = array('name' => $name, 'initials' => $initials, 'grade' => $grade_data['grade']);
+        }
+    }
+    return $best_students;
+}
+
+
+
+function get_class_data($dbh, $class_id) {
+    $stmt = $dbh->prepare('SELECT class_name, AVG(grade) AS average_grade, COUNT(DISTINCT user_id) AS num_students FROM classes c INNER JOIN grades g ON c.class_id = g.class_id WHERE c.class_id = :class_id');
+    $stmt->bindParam(':class_id', $class_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $class_data = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $class_data;
+}
+
 $user_id = $cont['id'];
 $class_id = get_user_class($pdo, $user_id);
 $average_grade = get_class_average($pdo, $class_id);
+$best_students = get_best_students($pdo, $class_id);
 
 ?>
 
@@ -140,37 +191,36 @@ $average_grade = get_class_average($pdo, $class_id);
                 <h4 class="best-classmates-title">Cei mai buni elevi</h4>
                 <p class="best-classmates-attention">Tot timpul</p>
                 <div class="best-classmates-ellipses">
+                    <?php if(isset($best_students[0])) { ?>
                     <div class="best-classmates-first-box">
                         <div class="firstplace-initials">
-                            <p class="firstplace-initials-text">SG</p>
+                            <p class="firstplace-initials-text"><?php echo $best_students[0]['initials'] ?></p>
                         </div>
-                        <p class="firstplace-student"> aaaa </p>
-                        <p class="firstplace-grade"> aaaaa </p>
+                        <p class="firstplace-student"> <?php echo $best_students[0]['name']; ?> </p>
+                        <p class="firstplace-grade"> Media <?php echo $best_students[0]['grade'] ?> </p>
                         <img src="./styles/clasa-mea/img/first-place.png" class="firstplace-image">
                     </div>
+                    <?php } ?>
+                    <?php if(isset($best_students[1]))  { ?>
                     <div class="best-classmates-second-box">
                         <div class="secondplace-initials">
-                            <p class="secondplace-initials-text">SG</p>
+                            <p class="secondplace-initials-text"><?php echo $best_students[1]['initials'] ?></p>
                         </div>
-                        <p class="secondplace-student"> aaaaaaa </p>
-                        <p class="secondplace-grade"> aaaaa </p>
+                        <p class="secondplace-student"> <?php echo $best_students[1]['name']; ?> </p>
+                        <p class="secondplace-grade"> Media <?php echo $best_students[1]['grade'] ?> </p>
                         <img src="./styles/clasa-mea/img/second-place.png" class="secondplace-image">
                     </div>
+                    <?php } ?>
+                    <?php if(isset($best_students[2])  && !empty($best_students[2]))  { ?>
                     <div class="best-classmates-third-box">
                         <div class="thirdplace-initials">
-                            <p class="thirdplace-initials-text">SG</p>
+                            <p class="thirdplace-initials-text"><?php echo $best_students[2]['initials'] ?></p>
                         </div>
-                        <p class="thirdplace-student"> Scarlet Mihai </p>
-                        <p class="thirdplace-grade"> aaaaa </p>
+                        <p class="thirdplace-student"> <?php echo $best_students[2]['name']; ?> </p>
+                        <p class="thirdplace-grade"> Media <?php echo $best_students[2]['grade'] ?> </p>
                         <img src="./styles/clasa-mea/img/third-place.png" class="thirdplace-image">
                     </div>
-                    <div class="best-classmates-noplace-box">
-                        <div class="noplace-initials">
-                            <p class="noplace-initials-text">SG</p>
-                        </div>
-                        <p class="noplace-student"> aaa </p>
-                        <p class="noplace-grade"> aaaaaa</p>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
