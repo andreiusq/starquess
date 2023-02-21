@@ -268,6 +268,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
                $stmt->execute();
             }
             ?>
+            <br>
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>

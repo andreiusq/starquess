@@ -28,6 +28,7 @@ if(isset($_GET['class'])) {
     <link rel="stylesheet" href="styles/classes/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
@@ -57,6 +58,10 @@ if(isset($_GET['class'])) {
                                     <input type="hidden" name="selected_student_id" value="<?php echo $row['id']; ?>">
                                     <button type="submit" class="add-grade"><i class="fas fa-plus"></i></button>
                                 </form>
+                                <form method="POST" onsubmit="event.preventDefault(); addAbsence(<?php echo $row['id']; ?>);">
+                                    <input type="hidden" name="selected_student_id" value="<?php echo $row['id']; ?>">
+                                    <button type="submit" class="add-absence"><i class="fas fa-minus"></i></button>
+                                </form>
                             </div>
                             <?php } ?>
                         </div>
@@ -67,6 +72,16 @@ if(isset($_GET['class'])) {
         <?php } ?>
     </div>
 
+<!-- SweetAlert2 modal -->
+<div id="absenceModal" class="d-none">
+  <form id="absenceForm">
+    <div class="form-group">
+      <label for="absenceDate">Absence Date:</label>
+      <input type="date" class="form-control" id="absenceDate" name="absenceDate" required>
+    </div>
+  </form>
+</div>
+    
 </body>
 </html>
 
@@ -119,4 +134,49 @@ function addGradeToStudent(selected_student_id) {
     });
 }
 
+function addAbsence(selected_student_id) {
+  Swal.fire({
+    title: 'Adaugă absență',
+    html: `<form id="absence-form">
+            <div class="form-group">
+              <label for="absence-date">Dată:</label>
+              <input type="date" id="absence-date" name="absence-date" class="form-control" required>
+            </div>
+          </form>`,
+    showCancelButton: true,
+    confirmButtonText: 'Confirmă',
+    cancelButtonText: 'Anulează',
+    focusConfirm: false,
+    preConfirm: () => {
+      const absenceDate = Swal.getPopup().querySelector('#absence-date').value
+      if (!absenceDate) {
+        Swal.showValidationMessage(`Te rugăm să selectezi o dată.`)
+      }
+      return { absenceDate: absenceDate }
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const absenceDate = result.value.absenceDate;
+      $.ajax({
+        type: 'POST',
+        url: 'add_absence.php',
+        data: { selected_student_id: selected_student_id, absence_date: absenceDate},
+        success: function(response) {
+          if (response.status === 'success') {
+            Swal.fire('Success', 'Absența a fost adăugată.', 'success').then(() => {
+              location.reload();
+            });
+          } else {
+            Swal.fire('Success', 'Absența a fost adăugată.', 'success').then(() => {
+              location.reload();
+            });
+          }
+        },
+        error: function(xhr, status, error) {
+          Swal.fire('Error', 'Failed to set absence.', 'error');
+        }
+      });
+    }
+  })
+}
 </script>

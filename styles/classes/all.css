@@ -105,3 +105,16 @@ body {
     background: #F0F7FF;
     border-radius: 10px;
 }
+
+.add-absence {
+    background: transparent;
+    border: transparent;
+    position: relative;
+    top: -55px;
+    left: -20px;
+}
+
+.add-absence:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
