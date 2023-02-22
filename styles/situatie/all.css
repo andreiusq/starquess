@@ -19,7 +19,6 @@ body {
 .my-grades-box-content-grades {
     position: relative;
     top: 30px;
-    left: 80px;
     color: #000;
 }
 
@@ -32,6 +31,12 @@ body {
     color: #000;
 }
 
+.my-grades-box-content {
+    position: relative;
+    left: 80px;
+    color: #000;
+}
+
 .my-grades-box-content-grades-content-subject {
     position: relative;
     top: 0px;
@@ -40,3 +45,96 @@ body {
     font-weight: 600;
     color: #000;
 }
+
+.my-grades-box-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+
+.my-grades-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.my-grades-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.my-grades-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.my-grades-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+ .my-grades-box-subject {
+    position: relative;
+    top: 15px;
+    left: 80px;
+    color: #fff;
+ }
+
+
+ .my-grades-box-content-grades {
+    position: relative;
+    top: 30px;
+    color: #fff;
+    background-color: #0077FF;
+    border-radius: 30px;
+    width: 300px;
+    height: 50px;
+ }
+
+
+ .grades-box {
+    position: absolute;
+    background: #f1f1f1;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    left: -5px;
+    bottom: -30px;
+ }
+
+ .grades {
+    position: relative;
+    left: 20px;
+    top: 15px;
+ }
+
+ .absences-content-box {
+    background: #ff0000;
+    border-radius: 30px;
+    width: 300px;
+    height: 50px;
+    position: relative;
+    top: -140px;
+    left: 550px;
+    margin-top: 10px;
+ }
+
+ .absences-date {
+    position: relative;
+    left: 20px;
+    top: 15px;
+ }
+
+ .absences-subject {
+    position: relative;
+    top: -25px;
+    left: 180px;
+    color: #fff;
+ }
+
+ .absente-title {
+    position: relative;
+    top: -155px;
+    left: 600px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+ }

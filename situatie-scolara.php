@@ -27,6 +27,12 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $grades = $stmt->fetchAll();
 
+// absences logic
+$sql = "SELECT * FROM absences WHERE user_id = $cont[id]";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$absences = $stmt->fetchAll();
+
 
 ?>
 
@@ -49,29 +55,66 @@ $grades = $stmt->fetchAll();
 
     <div class="my-grades-box">
         <div class="my-grades-box-content">
-            <h1>Situatie scolara</h1>
-            <?php  
-            if($grades) {
-            foreach ($grades as $grade) { ?>
+            <h1 class="my-grades-box-title">Situatie scolara</h1>
+            <br>
+            <?php foreach ($grades as $grade) { ?> 
             <div class="my-grades-box-content-grades">
-                <div class="my-grades-box-content-grades-content">
+            <div class="my-grades-box-content-grades-content">
                     <div class="my-grades-box-content-grades-content-subject">
-                        <h1><?php if($grade['subject_id'] == 1) { 
-                                echo 'Limba Romana'; }
+                        <h5 class="my-grades-box-subject"><?php if($grade['subject_id'] == 1) { 
+                                echo 'Matematica'; }
                                 else if($grade['subject_id'] == 2) {
-                                    echo 'Matematica';
+                                    echo 'Limba Română';
                                 } else if($grade['subject_id'] == 3) {
-                                    echo 'Limba Incepătoare (1)';
+                                    echo 'Istorie';
                                 } else if ($grade['subject_id'] == 4) {
-                                    echo 'Limba Latină';
+                                    echo 'Geografie';
                                 } else if($grade['subject_id'] == 5) {
-                                    echo 'Psihologie'; 
-                                }?></h1>
-                        <h1><?php echo $grade['grade'] ?></h1>
+                                    echo 'Limba Engleza'; 
+                                } else if($grade['subject_id'] == 6) {
+                                    echo 'Limba Franceză';
+                                } else if($grade['subject_id'] == 7) {
+                                    echo 'Limba Germană';
+                                } else if($grade['subject_id'] == 8) {
+                                    echo 'Biologie';
+                                } else if($grade['subject_id'] == 9) {
+                                    echo 'Fizică';
+                                } else if($grade['subject_id'] == 10) {
+                                    echo 'Chimie';
+                                } else if($grade['subject_id'] == 11) {
+                                    echo 'Informatică';
+                                } else if($grade['subject_id'] == 12) {
+                                    echo 'Religie';
+                                } else if($grade['subject_id'] == 13) {
+                                    echo 'Muzică';
+                                } else if($grade['subject_id'] == 14) {
+                                    echo 'Artă';
+                                } else if($grade['subject_id'] == 15) {
+                                    echo 'Educație Fizică';
+                                } else if($grade['subject_id'] == 16) {
+                                    echo 'Psihologie';
+                                } else if($grade['subject_id'] == 17) {
+                                    echo 'Filosofie';
+                                } else if($grade['subject_id'] == 18) {
+                                    echo 'Economie';
+                                }?></h5>
+                        <div class="grades-box">
+                            <h3 class="grades"><?php echo $grade['grade'] ?></h5>
+                        </div>
+
                     </div>
     </div>
-    <?php } } else {?> <h1>Nu ai note. </h1> <?php }?>
+    <?php } ?>
     <div class="absente-box">
+        <h1 class="absente-title">Absente</h1>
+        <?php if($absences) { ?> 
+            <?php foreach($absences as $absence) { ?> 
+                <div class="absences-content-box">
+                    <p class="absences-date"> <?php echo $absence['date'] ?> </p>
+                    <p class="absences-subject"> <?php echo $absence['subject'] ?> </p>
+                </div>
+                <?php } ?>  
+        <?php } ?>
         
     </div>
     
