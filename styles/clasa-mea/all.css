@@ -202,14 +202,14 @@ body {
     color: #000;
     font-size: 0.950em;
     font-weight: 300;
-    top: 5px;
+    top: -2px;
     left: 60px;
 }
 
 .firstplace-image {
     position: relative;
-    left: 200px;
-    top: -40px;
+    left: 210px;
+    top: -75px;
     color: #000;
     font-size: 0.950em;
     font-weight: 300;
@@ -263,14 +263,14 @@ body {
     color: #000;
     font-size: 0.950em;
     font-weight: 300;
-    top: 5px;
+    top: -2px;
     left: 60px;
 }
 
 .secondplace-image {
     position: relative;
-    left: 200px;
-    top: -40px;
+    left: 210px;
+    top: -75px;
     color: #000;
     font-size: 0.950em;
     font-weight: 300;
@@ -323,14 +323,14 @@ body {
     color: #000;
     font-size: 0.950em;
     font-weight: 300;
-    top: 5px;
+    top: -2px;
     left: 60px;
 }
 
 .thirdplace-image {
     position: relative;
-    left: 200px;
-    top: -40px;
+    left: 210px;
+    top: -75px;
     color: #000;
     font-size: 0.950em;
     font-weight: 300;
