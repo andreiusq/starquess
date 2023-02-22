@@ -164,9 +164,8 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
 <!--            <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
             <h5 style="position: relative; top: 100px; left: 30px;">Oopsie! Looks like we can't calculate your performance</h5>
     -->
-    <figure class="highcharts-figure">
+
                 <div id="container" style="width: 600px; height: 240px;"></div>
-    </figure>
             </div>
     </div>
 <?php if($timetable) { ?>
@@ -223,21 +222,12 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
         </div>
         <div class="message-box-messages">
             <div class="message-box-messages-content">
-                <!--<div class="message-box-messages-content-message-circle">
-                    <p class="message-box-messages-content-message-circle-text">IA</p>
-                </div>
-                <p class="message-box-messages-content-message-text">Andrei Iasar</p>
-                <div class="message-box-messages-content-message-description">
-                    <p class="message-box-messages-content-message-description-text">Salut frate, ce faci?</p>
-                </div>
-                <div class="message-box-messages-content-message-time">
-                    <p class="message-box-messages-content-message-time-text">10:00</p>
-                </div>-->
+               
                 <i class="fa-solid fa-block-question fa-4x" style="position: relative; left: 260px; top: 80px"></i>
                 <h5 style="position: relative; top: 100px; left: 100px;">Woah! Who knows what is going to be here</h5>
             </div>
         </div>
-    </div>
+</div>
 
     <!-- news box -->
     <div class="news-box">
