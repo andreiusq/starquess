@@ -61,7 +61,7 @@ $documentsCSE = $stmt->fetchAll();
                         <i class="fa-solid fa-file-excel fa-xl"></i>
                     <?php } else if($documentca['document_type'] == 3) { ?> 
                         <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
-                    <?php if($documentca['document_download'] == 1) { ?> <a href="' . $documentca['document_path'] . '"> <?php } ?> 
+                    <?php if($documentca['document_download'] == 1 && $documentca['']) { ?> <a href="' . $documentca['document_path'] . '"> <?php } ?> 
                         <h4 class="document-title"><?php echo $documentca['document_name'] ?></h4>
                     <h6 class="document-uploaded"><?php echo $documentca['document_uploaded'] ?></h6>
             </div>
