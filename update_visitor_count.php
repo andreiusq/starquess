@@ -1,4 +1,5 @@
 <?php
+define('BASEPATH', true);
 session_start(); // start the session
 
 if(!isset($_SESSION['user']['last_active'])) {

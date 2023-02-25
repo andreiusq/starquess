@@ -249,29 +249,6 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
 
 <script>
 
-
-// check the visitor count every 5 seconds
-setInterval(function() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      // get the visitor count from the server's response
-      var visitors = parseInt(this.responseText);
-      if (visitors >= 20) {
-        // if there are 20 or more visitors, show the SweetAlert2 popup
-        Swal.fire({
-          title: "We have too many connections",
-          text: "Sit tight while we are working on scaling up our system",
-          icon: "warning",
-          confirmButtonText: "OK"
-        });
-      }
-    }
-  };
-  xmlhttp.open("GET", "get_visitor_count.php", true);
-  xmlhttp.send();
-}, 5000);
-
     var date = new Date();
     var day = date.getDate();
     var month = date.getMonth() + 1;
