@@ -116,7 +116,6 @@ font-size:1.5em;
 
 .sidebar ul li:hover{
    color:#0d80f2;
-   background:#fff;
    
  }
  .sidebar ul li a:hover{

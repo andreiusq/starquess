@@ -62,7 +62,7 @@ $absences = $stmt->fetchAll();
             <div class="my-grades-box-content-grades-content">
                     <div class="my-grades-box-content-grades-content-subject">
                         <h5 class="my-grades-box-subject"><?php if($grade['subject_id'] == 1) { 
-                                echo 'Matematica'; }
+                                echo 'Matematică'; }
                                 else if($grade['subject_id'] == 2) {
                                     echo 'Limba Română';
                                 } else if($grade['subject_id'] == 3) {
@@ -70,7 +70,7 @@ $absences = $stmt->fetchAll();
                                 } else if ($grade['subject_id'] == 4) {
                                     echo 'Geografie';
                                 } else if($grade['subject_id'] == 5) {
-                                    echo 'Limba Engleza'; 
+                                    echo 'Limba Engleză'; 
                                 } else if($grade['subject_id'] == 6) {
                                     echo 'Limba Franceză';
                                 } else if($grade['subject_id'] == 7) {

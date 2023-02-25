@@ -63,11 +63,11 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
  .userName {
    top: 2px;
    left: 40px;
-   display: inline-block;
-    position: absolute;
-    font-size: 1.2em;
-    font-weight: 400;
-    color: #000;
+   display: inline;
+   position: absolute;
+   font-size: 1.2em;
+   font-weight: 400;
+   color: #000;
  }
 
  .leftbar .icon {
