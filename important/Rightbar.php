@@ -47,8 +47,8 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
     height: 100%;
     padding: 50px;
     background-color : #fff;
-  left:20px;
-  margin-right:30px;
+    left: 20px;
+    margin-right: 30px;
  } 
 
  .useravatar {
@@ -68,6 +68,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
    font-size: 1.2em;
    font-weight: 400;
    color: #000;
+   white-space: nowrap;
  }
 
  .leftbar .icon {
@@ -78,7 +79,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
  .leftbar__top__img {
       position: absolute;
-      width: 200px;
+      width: 215px;
       height: 60px;
       object-fit: cover;
       border: 15px solid #F0F7FF;
@@ -141,10 +142,12 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 .activities_list_item_text_date {
    position: absolute;
-   top: 16px;
+   top: 15px;
    font-size: 12px;
    font-weight: 400;
    color: #000;
+   display: inline;
+   white-space: nowrap;
 }
 
 .activities_list_item_date {
@@ -250,7 +253,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $date = new DateTime($activity['activity_date']);
             $date_formatter = new IntlDateFormatter('ro_RO', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
             $date_formatter->getPattern();
-            $date_formatter->setPattern('d MMMM');
+            $date_formatter->setPattern('d  MMMM');
             $formatted_date = $date_formatter->format($date);
 
             //doar data
@@ -315,7 +318,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
           '<input type="hidden" id="user-id" name="user-id" value="<?php echo $user['id']; ?>">' +
         '</form>',
       showCancelButton: true,
-      confirmButtonText: 'Add Activity',
+      confirmButtonText: 'Adaugă',
       focusConfirm: false,
       inputAttributes: {
          maxlength: 250
