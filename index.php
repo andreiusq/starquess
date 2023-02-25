@@ -175,7 +175,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
             <h1 class="timetable-title" id="timetable-title"></h1>
             <p class="timetable-subtitle" id="date"></p>
             <?php foreach($timetable as $row) { ?>
-    </div>
+        </div>
         <div class="timetable-box-hours">
             <div class="timetable-box-hours-content" id="timetable-box-hours-content">
                 <div class="timetable-box-hours-content-hour-circle">

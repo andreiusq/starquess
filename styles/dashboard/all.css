@@ -145,6 +145,7 @@ body {
     font-weight: 600;
     color: #000;
     margin-bottom: 20px;
+    left: 20px;
 }
 
 .timetable-box-hours-content-hour-circle {
@@ -153,7 +154,9 @@ body {
     border-radius: 20px;
     background-color: #0077FF;
     margin-right: 10px;
+    margin-bottom: -15px;
     color: #fff;
+    top: -30px;
 }
 
 .timetable-subtitle {
@@ -163,7 +166,7 @@ body {
     margin-bottom: 10px;
     position: relative;
     top: -45px;
-    left: 380px;
+    left: 340px;
 }
 
 .timetable-box-hours-content-hour-circle-text {
@@ -180,7 +183,7 @@ body {
     font-weight: 300;
     color: #fff;
     position: relative;
-    top: -25px;
+    top: -40px;
     left: 25px;
 }
 
@@ -292,7 +295,7 @@ body {
 .news-title {
     position: relative;
     top: 20px;
-    left: 30px;
+    left: 50px;
     color: #000;
     font-size: 1.2em;
     font-weight: 600;
@@ -310,10 +313,10 @@ body {
 .news-box-news-content-news-ellipse {
     position: relative;
     margin-top: 30px;
-    left: 10px;
+    left: 25px;
     font-size: 1.0em;
     font-weight: 400;
-    width: 600px;
+    width: 550px;
     height: 35px;
     color: #fff;
     background: #0077FF;
@@ -326,7 +329,7 @@ body {
     font-size: 1.1em;
     font-weight: 400;
     position: absolute;
-    left: 9px;
+    left: 25px;
     top: 5px;
 }
 
