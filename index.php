@@ -233,7 +233,6 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     <div class="news-box">
         <div class="news-box-content">
             <h1 class="news-title">Noutati</h1>
-            <p class="news-subtitle">Vezi tot</h1>
         </div>
         <div class="news-box-news">
         <?php foreach($news as $row) { ?>
