@@ -157,7 +157,7 @@ color:red;
     <ul style="top: 190px;">
     <?php if($is_administrator == 0) { ?>
         <li class="list active" style="left: 30px;">
-            <a href="../dashboard.php">
+            <a href="../index.php">
             <span class="icon"><i class="fa-solid fa-house"></i></span>
             <span class="title">Acasa</span>
             </a>

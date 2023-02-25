@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
 <body>
 <nav class="nav-container">
   <div class="logo">
-    <div class="circle"></div>
+    <img src="https://cdn.discordapp.com/attachments/987759466495746159/1074133800050774107/Asset_1.png" style="width: 40px; height: 50px;" class="imagine" />
     <h2>Starquess<span class="fullstop">.</span></h2>
   </div>
 

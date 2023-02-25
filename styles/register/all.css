@@ -202,12 +202,8 @@ img {
 }
 
 .circle {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 22%,
-    rgba(38, 94, 194, 1) 63%
-  );
+  background-color: white;
+  background-image: url(https://cdn.discordapp.com/attachments/987759466495746159/1074133800050774107/Asset_1.png);
   height: 30px;
   width: 30px;
   border-radius: 50%;
