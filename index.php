@@ -131,14 +131,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     <?php include './important/Sidebar.php'; ?>
 
 
-    <?php if($cont["rank"] == 11) : ?>
-      <div class="attention-box">
-        <div class="attention-box-content">
-          <h1>Atenție!</h1>
-          <p class="attention-text">Ești logat pe un cont cu permisiuni de <b>Administrator</b>. Te rugăm să nu le folosești în mod ilicit.</p>
-        </div>
-      </div>  
-    <?php endif; ?>
+    
     <!-- welcome box -->
 
    

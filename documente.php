@@ -63,7 +63,6 @@ $documentsCSE = $stmt->fetchAll();
                         <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
                     <?php if($documentca['document_download'] == 1 && $documentca['']) { ?> <a href="' . $documentca['document_path'] . '"> <?php } ?> 
                         <h4 class="document-title"><?php echo $documentca['document_name'] ?></h4>
-                    <h6 class="document-uploaded"><?php echo $documentca['document_uploaded'] ?></h6>
             </div>
         </div>
         <?php } ?>
@@ -84,7 +83,6 @@ $documentsCSE = $stmt->fetchAll();
                         <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
                     <?php if($documentcontab['document_download'] == 1) { ?> <a href="' . $documentcontab['document_path'] . '"> <?php } ?> 
                     <h4 class="document-title"><?php echo $documentcontab['document_name'] ?></h4>
-                    <h6 class="document-uploaded"><?php echo $documentcontab['document_uploaded'] ?></h6>
                 </div>
                 <?php } ?>
             </div>
@@ -106,7 +104,6 @@ $documentsCSE = $stmt->fetchAll();
                         <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
                     <?php if($documentcse['document_download'] == 1) { ?> <a href="' . $documentcse['document_path'] . '"> <?php } ?> 
                     <h4 class="document-title"><?php echo $documentcse['document_name'] ?></h4>
-                    <h6 class="document-uploaded"><?php echo $documentcse['document_uploaded'] ?></h6>
                 </div>
             </div>
             <?php } ?>

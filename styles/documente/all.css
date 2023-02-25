@@ -31,6 +31,7 @@ body {
     font-weight: bold;
     color: #000;
     display: inline;
+    white-space: nowrap;
 }
 
 
@@ -106,6 +107,7 @@ body {
     font-size: 0.795em;
     font-weight: 600;
     color: #000;
+    margin-top: -30px;
  }
 
  .document-title {
@@ -116,6 +118,7 @@ body {
     font-weight: bold;
     color: #000;
     display: inline;
+    white-space: nowrap;
  }
 
 
@@ -156,6 +159,8 @@ body {
     font-size: 15px;
     font-weight: bold;
     color: #000;
+    display: inline;
+    white-space: nowrap;
  }
 
  .consiliu-box-content-documents {
@@ -165,4 +170,8 @@ body {
     font-size: 0.795em;
     font-weight: 600;
     color: #000;
+    white-space: nowrap;
+    display: inline;
+    margin-top: -30px;
+    right: -30px;
  }
