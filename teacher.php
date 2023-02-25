@@ -42,6 +42,17 @@ $statement = $pdo->prepare("SELECT * FROM news ORDER BY posted_at DESC");
 $statement->execute();
 $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
 
+
+// 
+// Prepare the SQL query to count the number of users
+$sql = "SELECT COUNT(*) FROM users";
+
+// Execute the SQL query
+$stmt = $pdo->query($sql);
+
+// Fetch the result and display it
+$count = $stmt->fetchColumn();
+
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +85,7 @@ $news = $statement ->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                     <div class="all-students-stats-content-text">
                         <h1 class="students-title">Elevi</h1>
-                        <h2 class="students-number">100</h2>
+                        <h2 class="students-number"><?php echo $count; ?></h2>
                     </div>
                 </div>
             </div>
