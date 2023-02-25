@@ -133,7 +133,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 .activities_list_item_text {
    position: absolute;
-   top: 10px;
+   top: 5px;
    left: 70px;
    font-size: 0.8em;
    font-weight: 400;
@@ -153,6 +153,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 .activities_list_item_date {
    position: relative;
    top: -10px;
+   left: -10px;
    justify-content: center;
    color: #fff;
    font-size: 24px;
@@ -164,6 +165,8 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
    font-size: 1.0em;
    font-weight: 400;
    color: #000;
+   display: inline;
+   white-space: nowrap;
 }
 
 .activities_list_item_text_time {
@@ -213,6 +216,14 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 .activities-top-buttons-delete:hover {
     background: #F0F7FF;
     border-radius: 10px;
+}
+
+.activities_list_item_text_title {
+   position: absolute;
+   top: -10px;
+   color: #000;
+   display: inline;
+   white-space: nowrap;
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
