@@ -151,7 +151,7 @@ color:red;
 
 <div class="sidebar" style="left: 0px; height: 100%; top: 0px; border-radius: 4 0 px;">
     <div class="logo">
-        <h2> <img src='https://starquess.kodikas.ro/upload/logo.png' width='220px' height='55px' alt='logo' style="position: relative; top: 15px;"/> </h2>
+        <h2> <a href="https://starquess.kodikas.ro"><img src='https://starquess.kodikas.ro/upload/logo.png' width='220px' height='55px' alt='logo' style="position: relative; top: 15px;"/> </a></h2>
     </div>
 
     <ul style="top: 190px;">
