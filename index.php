@@ -144,7 +144,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
    
     <div class="welcome-box">
         <div class="welcome-box-content">
-            <h1>Bine ai revenit, <?php echo $cont["name"] ?> !<img class="mana" src="https://em-content.zobj.net/thumbs/120/apple/325/waving-hand_1f44b.png" alt="Salut!" style="position: absolute; width: 50px; top: -13px;"/></h1>
+            <h1>Bine ai revenit, <?php echo $cont["name"] ?> !</h1>
             <?php if($percent_improvement > 0) : ?>
                 <p class="congrats-text">Ești mai bun cu <b><?php echo number_format($percent_improvement, 2) ?> %</b> în această săptămână. Felicitări!</p>
             <?php else : ?>
@@ -153,19 +153,19 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
 
         </div>
         <div className='welcome-box-image'> 
-            <img src="https://i.imgur.com/aFNE7od.png" alt="Salut!" height="200px" style="position: relative; top: -80px; left: 900px" />
+            <img src="https://i.imgur.com/YCBEE6D.png" alt="Salut!" height="200px" style="position: relative; top: -110px; left: 900px" />
         </div>
     </div>
 
     <!-- performance box -->
     <div class="performance-box">
         <div class="performance-box-content">
-            <h4 class="performance-box-title">Performanta</h4>
+            <h4 class="performance-box-title">Performanță</h4>
 <!--            <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
             <h5 style="position: relative; top: 100px; left: 30px;">Oopsie! Looks like we can't calculate your performance</h5>
     -->
 
-                <div id="container" style="width: 600px; height: 240px;"></div>
+                <div id="container" style="width: 600px; height: 240px; top: 20px;"></div>
             </div>
     </div>
 <?php if($timetable) { ?>
@@ -224,7 +224,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
             <div class="message-box-messages-content">
                
                 <i class="fa-solid fa-block-question fa-4x" style="position: relative; left: 260px; top: 80px"></i>
-                <h5 style="position: relative; top: 100px; left: 100px;">Woah! Who knows what is going to be here</h5>
+                <h5 style="position: relative; top: 100px; left: 100px;">Cine știe ce o să fie aici?</h5>
             </div>
         </div>
 </div>
@@ -232,7 +232,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     <!-- news box -->
     <div class="news-box">
         <div class="news-box-content">
-            <h1 class="news-title">Noutati</h1>
+            <h1 class="news-title">Noutăți</h1>
         </div>
         <div class="news-box-news">
         <?php foreach($news as $row) { ?>
