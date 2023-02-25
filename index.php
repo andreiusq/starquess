@@ -144,7 +144,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
    
     <div class="welcome-box">
         <div class="welcome-box-content">
-            <h1>Bine ai revenit, <?php echo $cont["name"] ?>!</h1>
+            <h1>Bine ai revenit, <?php echo $cont["name"]; echo "!" ?></h1>
             <?php if($percent_improvement > 0) : ?>
                 <p class="congrats-text">Ești mai bun cu <b><?php echo number_format($percent_improvement, 2) ?> %</b> în această săptămână. Felicitări!</p>
             <?php else : ?>
