@@ -192,12 +192,12 @@ color:red;
             </a>
         </li>
 
-        <li class="list" style="left: 30px">
+        <!--<li class="list" style="left: 30px">
             <a href="../setari.php">
             <span class="icon"><i class="fa-solid fa-gear"></i></span>
             <span class="title">Setari</span>
             </a>
-        </li>
+        </li>-->
          <?php } else if($user["rank"] == 2) { ?>
          <li class="list" style="left: 30px">
             <a href="../clase.php">
@@ -287,10 +287,10 @@ color:red;
             
          <?php } ?>
 
-        <li class="list" style="left: 30px; top: 190px; color: gray;">
+        <li class="list" style="left: 30px; top: 190px; color: red;">
             <a href="../signout.php">
-            <span class="icon"  style="color:gray;"><i class="fa-solid fa-door-open"></i></span>
-            <span class="title" style="color:gray;">Deconectare</span>
+            <span class="icon"  style="color:red;"><i class="fa-solid fa-door-open"></i></span>
+            <span class="title" style="color:red;">Deconectare</span>
             </a>
         </li>
     </ul>
