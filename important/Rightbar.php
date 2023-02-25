@@ -153,7 +153,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 .activities_list_item_date {
    position: relative;
    top: -10px;
-   right: 10px;
+   justify-content: center;
    color: #fff;
    font-size: 24px;
 }
