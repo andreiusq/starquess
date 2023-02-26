@@ -15,7 +15,8 @@ require 'backend/config/db.php';
          $pass = $_POST['pass'];
 
          $pass = password_hash($pass, PASSWORD_BCRYPT, array("cost" => 12));
-          
+         $verification_code = uniqid(); 
+
          //Check if email exists
          $sql = "SELECT COUNT(email) AS num FROM users WHERE email =      :email";
          $stmt = $pdo->prepare($sql);
@@ -40,6 +41,8 @@ require 'backend/config/db.php';
     $stmt->bindParam(':fname', $fname);
     $stmt->bindParam(':lname', $lname);
     $stmt->bindParam(':password', $pass);
+
+
     
     
 
