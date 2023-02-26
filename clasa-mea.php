@@ -181,7 +181,7 @@ $best_students = get_best_students($pdo, $class_id);
         <div class="performance-box">
             <div class="performance-box-content">
                 <h4 class="performance-box-title">Performanta clasei</h4>
-                <div id="chart" style="width: 590px; height:280px;"></div>
+                <div id="chart" style="width: 590px; height: 260px; top: 20px;"></div>
             </div>
         </div>
 
