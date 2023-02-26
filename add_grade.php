@@ -111,6 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if($result['teacher_subject'] == "Economie") {
           $subject_id = 20;
         }
+      if($result['teacher_subject'] == "Ed. Antreprenoriala") {
+          $subject_id = 21;
+      }  
 
       try {
           $statement = $pdo->prepare("INSERT INTO grades (user_id, class_id, school_id, grade, subject_id, module_id, date) VALUES (:user_id, :class_id, :school_id, :grade, :subject_id, :module_id, NOW())");

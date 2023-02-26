@@ -94,7 +94,7 @@ $count = $stmt->fetchColumn();
 
     <div class="news-box">
         <div class="news-top">
-            <h1 class="news-title">Noutati</h1>
+            <h1 class="news-title">Noutati</h1> <br>
             <?php if($user["rank"] == 11 || $user["rank"] == 4): ?>
             <div class="news-top-buttons">
                 <button class="news-top-buttons-add" onclick="adaugaanunt(event)"><i class="fas fa-plus"></i></button>

@@ -109,7 +109,7 @@ body {
 .absente-box {
     position: relative;
     left: -200px;
-    top: 0px;
+    top: 60px;
     margin-top: -15px;
 }
 
@@ -139,7 +139,7 @@ body {
 
  .absente-title {
     position: relative;
-    top: -145px;
+    top: -140px;
     left: 600px;
     font-size: 1.2em;
     font-weight: 600;

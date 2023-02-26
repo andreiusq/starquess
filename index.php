@@ -45,12 +45,6 @@ $stmt = $pdo->prepare($query);
 $stmt->bindParam(':day', $timetable_day);
 $stmt->execute();
 $timetable = $stmt->fetchAll();
-
-
-if($cont["rank"] == 2) {
-    header("Location: teacher.php");
-    exit();
-  }
   
 $user_id = $cont['id'];
 

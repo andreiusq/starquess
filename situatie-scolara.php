@@ -95,8 +95,10 @@ $absences = $stmt->fetchAll();
                                     echo 'Psihologie';
                                 } else if($grade['subject_id'] == 17) {
                                     echo 'Filosofie';
-                                } else if($grade['subject_id'] == 18) {
+                                } else if($grade['subject_id'] == 20) {
                                     echo 'Economie';
+                                } else if($grade['subject_id'] == 21) {
+                                    echo 'Ed. Antreprenoriala';
                                 }?></h5>
                         <div class="grades-box">
                             <h3 class="grades"><?php echo $grade['grade'] ?></h5>
@@ -108,8 +110,8 @@ $absences = $stmt->fetchAll();
     <div class="absente-box">
         <h1 class="absente-title">Absente</h1>
         <?php if($absences) { ?> 
-            <?php foreach($absences as $absence) { ?> 
-                <div class="absences-content-box">
+            <?php foreach($absences as $absence) { ?> <br> 
+                <div class="absences-content-box"> 
                     <p class="absences-date"> <?php echo $absence['date'] ?> </p>
                     <p class="absences-subject"> <?php echo $absence['subject'] ?> </p>
                 </div>

@@ -163,7 +163,7 @@ color:red;
         </li>
         <?php } ?>
 
-        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0) { ?> <li class="list" style="left: 30px">
+        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0 || $user['rank'] == 2) { ?> <li class="list" style="left: 30px">
             <a href="../clasa-mea.php">
             <span class="icon"><i class="fa-solid fa-users"></i></span>
             <span class="title">Clasa mea</span>
@@ -191,100 +191,16 @@ color:red;
             </a>
         </li>
 
-        <!--<li class="list" style="left: 30px">
-            <a href="../setari.php">
+        <?php } if($user["rank"] == 2) { ?>
+        <li class="list" style="left: 30px">
+            <a href="../teacher.php">
             <span class="icon"><i class="fa-solid fa-gear"></i></span>
-            <span class="title">Setari</span>
+            <span class="title">Profesor</span>
             </a>
-        </li>-->
-         <?php } else if($user["rank"] == 2) { ?>
-         <li class="list" style="left: 30px">
-            <a href="../clase.php">
-            <span class="icon"><i class="fa-solid fa-users"></i></span>
-            <span class="title">Clase</span>
-            </a>
-         </li>
-         
-         <li class="list" style="left: 30px">
-            <a href="../documente.php">
-            <span class="icon"><i class="fa-regular fa-user-shield"></i></span>
-            <span class="title">Elevi</span>
-            </a>
-         </li>
-         
-         <?php } ?>
-         <?php if($user["rank"] == 11 && $is_administrator == 0) { ?>
-         <li class="list" style="left: 30px">
-               <a href="../admin.php">
-               <span class="icon"><i class="fa-solid fa-hammer"></i></span>
-               <span class="title">Administrativ</span>
-               </a>
-         </li>
-         <?php } else if($user["rank"] == 11 && $is_administrator == 1) { ?>
-            <li class="list" style="left: 30px; top: 450px;">
-               <a href="../dashboard.php">
-               <span class="icon"><i class="fa-solid fa-home"></i></span>
-               <span class="title">Înapoi acasă</span>
-               </a>
-         </li>
-         <?php } ?>
+        </li>
+        <?php } ?>
 
-         <?php if($is_administrator == 1) { ?>
-         
-         
-         <li class="list active" style="left: 30px">
-            <a href="../administrator.php">
-            <span class="icon"><i class="fa-solid fa-home"></i></span>
-            <span class="title">Dashboard</span>
-            </a>
-         </li>
-
-         <li class="list" style="left: 30px">
-            <a href="../cadre-didactice.php">
-            <span class="icon"><i class="fa-solid fa-users"></i></span>
-            <span class="title">Cadre didactice</span>
-            </a>
-         </li>
-
-         <li class="list" style="left: 30px">
-            <a href="../clase.php">
-            <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
-            <span class="title">Clase</span>
-            </a>
-         </li>
-
-         <li class="list" style="left: 30px">
-            <a href="../elevi.php">
-            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
-            <span class="title">Elevi</span>
-            </a>
-         </li>
-
-         <li class="list" style="left: 30px">
-            <a href="../orar.php">
-            <span class="icon"><i class="fa-solid fa-clock"></i></span>
-            <span class="title">Orar</span>
-            </a>
-         </li>
-
-
-         <li class="list" style="left: 30px" data-bs-toggle="dropdown" aria-expanded="false">
-            <a href="../administrator.php">
-            <span class="icon"><i class="fa-solid fa-hammer"></i></span>
-            <span class="title">Acțiuni admin</span>
-            </a>
-            <ul class="dropdown-menu">
-               <li><a class="dropdown-item" href="../administrator.php">Administrativ</a></li>
-               <li><a class="dropdown-item" href="../administrator.php">Cadre didactice</a></li>
-               <li><a class="dropdown-item" href="../administrator.php">Clase</a></li>
-               <li><a class="dropdown-item" href="../administrator.php">Elevi</a></li>
-               <li><a class="dropdown-item" href="../administrator.php">Orar</a></li>
-            </ul>
-         </li>
-
-         
-            
-         <?php } ?>
+        
 
         <li class="list" style="left: 30px; top: 190px; color: red;">
             <a href="../signout.php">
