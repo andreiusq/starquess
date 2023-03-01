@@ -170,13 +170,6 @@ color:red;
             </a>
         </li>
 
-       <!-- <li class="list" style="left: 30px">
-            <a href="#">
-            <span class="icon"><i class="fa-solid fa-messages"></i></span>
-            <span class="title">Mesaje</span>
-            </a>
-        </li> -->
-
         <li class="list" style="left: 30px">
             <a href="../situatie-scolara.php">
             <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
