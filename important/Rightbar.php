@@ -85,6 +85,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
       border: 15px solid #F0F7FF;
       border-radius: 10px;
       background-color: #F0F7FF;
+      left: -50px;
  }
 
 
@@ -234,7 +235,6 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="leftbar" style="position: fixed; margin-left: 1600px; border: 15px solid white; border-radius: 20px; height: 100%; width: 100%; background-color: #fff">
     <div class="leftbar__top">
-        <span class="icon"><i class="fa-solid fa-bell"></i></span>
         <div class="leftbar__top__img">
             <h4 class="userName"><?php echo $user['name']; echo ' '; echo $user['last_name'] ?> </h4>
             <img class="useravatar" src="https://i.imgur.com/0y0t0Xy.jpg" alt="useravatar">
