@@ -58,7 +58,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $conversation = null;
 if (isset($_GET['with_user'])) {
   $with_user_id = intval($_GET['with_user']);
-  $stmt = $pdo->prepare('SELECT messages.*, users.name AS sender_name FROM messages INNER JOIN users ON messages.sender_id = users.id WHERE (sender_id = :user_id AND recipient_id = :with_user_id) OR (sender_id = :with_user_id AND recipient_id = :user_id) ORDER BY timestamp');
+  $stmt = $pdo->prepare('SELECT messages.*, users.name AS sender_name FROM messages INNER JOIN users ON messages.sender_id = users.id WHERE (sender_id = :user_id AND recipient_id = :with_user_id) OR (sender_id = :with_user_id AND recipient_id = :user_id) ORDER BY timestamp DESC');
   $stmt->execute(['user_id' => $user_id, 'with_user_id' => $with_user_id]);
   $conversation = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -76,16 +76,25 @@ if ($with_user) {
 
 // handle message form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $content = $_POST['content'];
-  
-  // insert new message into database
-  $stmt = $pdo->prepare('INSERT INTO messages (sender_id, recipient_id, message_content) VALUES (:sender_id, :recipient_id, :message_content)');
-  $stmt->execute(['sender_id' => $user_id, 'recipient_id' => $with_user, 'message_content' => $content]);
+    // Get the message text from the form input
+    $message = $_POST['message_content'];
+    
+    // Insert the message into the messages table
+    $stmt = $pdo->prepare("INSERT INTO messages (sender_id, recipient_id, message_content) VALUES (?, ?, ?)");
+    $stmt->execute([$user_id, $recipient_id, $message]);
   
   // redirect to current conversation to show new message
   header('Location: ?with_user=' . $with_user);
   exit;
 }
+
+// Retrieve the profile photo path or URL for the selected user
+$stmt = $pdo->prepare("SELECT url FROM user_images WHERE user = ?");
+$stmt->execute([$with_user_name]);
+$user_image_path = $stmt->fetchColumn();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/dashboard/all.css">
+    <link rel="stylesheet" href="styles/messages/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -119,8 +128,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['user_id' => $user_id, 'with_user_id' => $user['id']]);
         $last_message = $stmt->fetch(PDO::FETCH_ASSOC);
       ?>
-      <li>
-        <a href="?with_user=<?php echo $user['id']; ?>">
+      <li> <br> <br>
+        <a class="redirect-user" href="?with_user=<?php echo $user['id']; ?>">
           <?php echo $user['name'] . ' ' . $user['last_name']; ?>
           <?php if ($last_message) : ?>
             <span class="last-message"><?php echo $last_message['message_content']; ?></span>
@@ -131,31 +140,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </ul>
 </div>
 
+
 <!-- display message form if a user has been selected from the conversation list -->
-<?php if ($with_user) : ?>
-  <div class="message-form">
-    <h2>Conversation with <?php echo $with_user_name; ?></h2>
-    <form method="post">
-      <textarea name="content"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-<?php endif; ?>
-        <!-- display conversation -->
-        <?php if ($conversation) : ?>
-        <div class="conversation">
-            <?php foreach ($conversation as $message) : ?>
-            <?php $is_sender = ($message['sender_id'] == $user_id); ?>
-            <?php $message_class = ($is_sender ? 'sender' : 'recipient'); ?>
-            <?php $name = ($is_sender ? 'Tu' : $message['sender_name']); ?>
-            <div class="message <?php echo $message_class; ?>">
-                <div class="name"><?php echo $name; ?></div>
-                <div class="content"><?php echo $message['message_content']; ?></div>
-                <div class="timestamp"><?php echo date('Y-m-d H:i:s', strtotime($message['timestamp'])); ?></div>
+<div class="messages-content">
+    <?php if ($with_user) : ?>
+    <div class="message-form">
+        
+        <h2> <?php echo $with_user_name; ?></h2>
+        <form class="form" method="post">
+    <button type="submit">
+        <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+            <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </button>
+    <input class="input" placeholder="Type your text" required="" type="text" name="message_content">
+    <button class="reset" type="reset">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+</form>
+    </div>
+    <?php endif; ?>
+            <!-- display conversation -->
+            <?php if ($conversation) : ?>
+            <div class="conversation">
+                <?php foreach ($conversation as $message) : ?>
+                <?php $is_sender = ($message['sender_id'] == $user_id); ?>
+                <?php $message_class = ($is_sender ? 'sender' : 'recipient'); ?>
+                <?php $name = ($is_sender ? 'Tu' : $message['sender_name']); ?>
+                <div class="message <?php echo $message_class; ?>">
+                    <b><div class="name"><?php echo $name; ?></div></b>
+                    <div class="content"><?php echo $message['message_content']; ?></div>
+                    <div class="timestamp"><?php echo date('H:i', strtotime($message['timestamp'])); ?></div>
+                </div>
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
     </div>
 
 
