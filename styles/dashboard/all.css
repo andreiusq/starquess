@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
+
+
 body { 
     background: #F0F7FF !important;
     overflow-x: hidden;
 }
 
-.welcome-box, .performance-box,.timetable-box,.message-box,.news-box{
-     
-  margin-left:20px;
+.body *:not(.pencil-loader) {
+    display: none;
   }
-  
+
+
 .welcome-box {
     border: 15px;
     border-radius: 30px;
