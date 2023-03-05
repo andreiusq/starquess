@@ -12,6 +12,11 @@ body {
   }
 
 
+.content {
+    position: relative;
+    left: 30px;
+}
+
 .welcome-box {
     border: 15px;
     border-radius: 30px;
