@@ -112,7 +112,7 @@ body {
 
 
 .timetable-box {
-    width: 500px;
+    width: 580px;
     height: 290px;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ body {
     box-sizing:initial;
     border: 15px;
     position: relative;
-    left: 980px;
+    left: 940px;
     top: -230px;
     overflow-y: scroll;
     overflow-x: hidden;
