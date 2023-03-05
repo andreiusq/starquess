@@ -26,6 +26,7 @@ $user_id = $cont['id'];
     <head>
         <title>Video Call</title>
     </head>
+    
     <body>
         <?php
             // Check if the user is authenticated
