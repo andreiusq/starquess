@@ -54,8 +54,6 @@ $user_id = $cont['id'];
                 }
         ?>
             <br>
-            Call ID: <?php echo $call_id ?><br>
-            Your ID: <?php echo $user_id ?><br>
 
             <script>
                 // Initialize the PeerJS object

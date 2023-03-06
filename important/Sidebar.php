@@ -157,38 +157,38 @@ color:red;
     <?php if($is_administrator == 0) { ?>
         <li class="list active" style="left: 30px;">
             <a href="../index.php">
-            <span class="icon"><i class="fa-solid fa-house"></i></span>
-            <span class="title">Acasa</span>
+               <span class="icon"><i class="fa-solid fa-house"></i></span>
+               <span class="title">Acasa</span>
             </a>
         </li>
         <?php } ?>
 
         <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0 || $user['rank'] == 2) { ?> <li class="list" style="left: 30px">
             <a href="../clasa-mea.php">
-            <span class="icon"><i class="fa-solid fa-users"></i></span>
-            <span class="title">Clasa mea</span>
+               <span class="icon"><i class="fa-solid fa-users"></i></span>
+               <span class="title">Clasa mea</span>
             </a>
         </li>
 
         <li class="list" style="left: 30px">
             <a href="../situatie-scolara.php">
-            <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
-            <span class="title">Situatie scolara</span>
+               <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
+               <span class="title">Situatie scolara</span>
             </a>
         </li>
 
         <li class="list" style="left: 30px">
             <a href="../documente.php">
-            <span class="icon"><i class="fa-solid fa-file"></i></span>
-            <span class="title">Documente</span>
+               <span class="icon"><i class="fa-solid fa-file"></i></span>
+               <span class="title">Documente</span>
             </a>
         </li>
 
         <?php } if($user["rank"] == 2) { ?>
         <li class="list" style="left: 30px">
             <a href="../teacher.php">
-            <span class="icon"><i class="fa-solid fa-gear"></i></span>
-            <span class="title">Profesor</span>
+               <span class="icon"><i class="fa-solid fa-gear"></i></span>
+               <span class="title">Profesor</span>
             </a>
         </li>
         <?php } ?>
