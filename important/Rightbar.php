@@ -17,6 +17,14 @@ $stmt->execute();
 $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
+// get user image
+// Retrieve the file URLs from the database using the user ID
+$userId = $user['id']; // Replace with the actual user ID
+$stmt = $pdo->prepare("SELECT url FROM user_images WHERE user = :user");
+$stmt->bindParam(':user', $userId);
+$stmt->execute();
+$urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
 ?>
 
 <head>
@@ -227,6 +235,12 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
    white-space: nowrap;
 }
 </style>
+<?php
+foreach($urls as $url) {
+   $imgTag = "<img src='$url' alt='user image' class='useravatar'>";
+   $imageTags[] = $imgTag;
+}
+?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 </head>
@@ -237,7 +251,7 @@ $activities = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="leftbar__top">
         <div class="leftbar__top__img">
             <h4 class="userName"><?php echo $user['name']; echo ' '; echo $user['last_name'] ?> </h4>
-            <img class="useravatar" src="https://i.imgur.com/0y0t0Xy.jpg" alt="useravatar">
+            <?php foreach($imageTags as $img) { echo $img; } ?>
         </div>
     </div>
     

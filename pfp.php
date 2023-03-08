@@ -8,12 +8,17 @@ if(!isset($_SESSION["user"])) {
 }
 
 require('backend/config/db.php');
-$stmt = $pdo->prepare("SELECT name FROM users WHERE email=:email");
-$stmt->bindParam(':email', $_SESSION['user']);   
-$stmt->execute();
 
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+// users logic 2
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email"); 
+$stmt -> bindParam(':email', $_SESSION['user']);
 
+$stmt->execute(); 
+
+
+$conturi = $stmt->fetchAll(); 
+
+foreach($conturi as $cont);
 
 ?>
 
@@ -30,6 +35,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="styles/register/radio.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 <body>
 <nav class="nav-container">
@@ -47,20 +54,14 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
   <div class="form-container">
     <div class="section-header">
       <h1 class="primary-heading">
-        Bună, <?php echo $user['name'] ?><span class="fullstop">.</span>
+        Bună, <?php echo $cont['name'] ?><span class="fullstop">.</span>
       </h1>
       <h2 class="secondary-heading">
         Pentru că la <span class="fullstop">Starquess</span> ne pasă de elev și de cum consideră el că își vrea viața online, îți oferim șansa de a avea o poză de profil.
       </h2>
     </div>
-    <form action="" method="post" class="form" enctype=”multipart/form-data”>
-      <div class="form-input">
-          <input type="file" id="profile_image" name="profile_image">
-          
-        <div class="btn-input">
-          <button type="submit" name="submit" class="primary-btn">Gata</button>
-        </div>
-      </div>
+    <form action="upload.php" class="dropzone" id="my-dropzone">
+    <button id="next-button" class="primary-btn" style="display: none;">Mai departe</button>
     </form>
   </div>
   <div class="side-panel">
@@ -69,3 +70,23 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 </section>
 </body>
 </html>
+
+<script>
+// Initialize Dropzone.js
+Dropzone.autoDiscover = false;
+var myDropzone = new Dropzone("#my-dropzone", { url: "upload.php" });
+
+// Listen for the "success" event
+myDropzone.on("success", function(file, response) {
+    // Show the "Next" button if the upload was successful
+    if (response == "success") {
+        $("#next-button").show();
+    }
+});
+
+// Listen for the "complete" event
+myDropzone.on("complete", function() {
+    // Redirect to the next page when the upload is complete
+    window.location.href = "index.php";
+});
+</script>
