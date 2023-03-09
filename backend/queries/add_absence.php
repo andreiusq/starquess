@@ -1,6 +1,6 @@
 <?php
 define('BASEPATH', true);
-require('./backend/config/db.php');
+require('../config/db.php');
 session_start();
 
 // Retrieve the user email from the session variable

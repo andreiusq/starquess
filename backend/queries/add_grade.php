@@ -1,6 +1,6 @@
 <?php
 define('BASEPATH', true);
-require('./backend/config/db.php');
+require('../config/db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $selected_student_id = $_POST['selected_student_id'];

@@ -1,7 +1,7 @@
 <?php
 
 define('BASEPATH', true);
-require("./backend/config/db.php");
+require('../config/db.php');
 include("./important/Rightbar.php");
 
 $stmt = $pdo->prepare("SELECT id FROM users WHERE email=:email"); 

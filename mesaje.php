@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Retrieve the profile photo path or URL for the selected user
 $stmt = $pdo->prepare("SELECT url FROM user_images WHERE user = ?");
-$stmt->execute([$with_user_name]);
+$stmt->execute([$with_user]);
 $user_image_path = $stmt->fetchColumn();
 
 
