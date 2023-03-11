@@ -150,7 +150,7 @@ if (regexPattern.test(inputText)) {
   showLoaderOnConfirm: true,
   customClass: 'adauga-anunt',
   preConfirm: (inputValue) => {
-    return fetch(`../queries/news-stuff.php?action&input=${inputValue}`)
+    return fetch(`../../backend/queries/news-stuff.php?action&input=${inputValue}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)
@@ -188,7 +188,7 @@ if (regexPattern.test(inputText)) {
     confirmButtonText: 'Da, șterge!'
   }).then((result) => {
     if (result.value) {
-      fetch(`../queries/news-stuff.php?action=delete&input=${id}`)
+      fetch(`../../backend/queries/news-stuff.php?action=delete&input=${id}`)
         .then(response => {
           if (!response.ok) {
             throw new Error(response.statusText)
