@@ -1,7 +1,7 @@
 <?php
 define('BASEPATH', true);
 session_start();
-require('backend/config/db.php');
+require('../../../backend/config/db.php');
 
 $is_administrator = 0;
 
@@ -23,7 +23,7 @@ $conturi = $stmt->fetchAll();
 foreach($conturi as $cont);
 
 $user_id = $cont['id'];
-$recipient_id = $cont['id'];
+$recipient_id = $_GET['with_user'];
 
 // Get messages for the selected recipient and sender (if specified)
 if (isset($_GET['sender_id'])) {
@@ -104,8 +104,8 @@ $user_image_path = $stmt->fetchColumn();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/messages/all.css">
+    <link rel="preload" href="../../../styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="../../../styles/messages/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -114,8 +114,8 @@ $user_image_path = $stmt->fetchColumn();
 <body>
 
 
-    <?php include './important/Rightbar.php'; ?>
-    <?php include './important/Sidebar.php'; ?>
+    <?php include '../../../important/Rightbar-pages.php'; ?>
+    <?php include '../../../important/Sidebar-pages.php'; ?>
 
     <div class="content" style="position: relative; left: 300px;">
         <!-- display conversation list -->
