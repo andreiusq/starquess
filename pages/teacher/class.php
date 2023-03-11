@@ -1,7 +1,7 @@
 <?php
 define('BASEPATH', true);
 session_start();
-require('../config/db.php');
+require('../../backend/config/db.php');
 $is_administrator = 0;
 
 
@@ -24,8 +24,8 @@ if(isset($_GET['class'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Dashboard - Classes</title>
-    <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/classes/all.css">
+    <link rel="preload" href="../../styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="../../styles/classes/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -33,8 +33,8 @@ if(isset($_GET['class'])) {
 </head>
 <body>
     
-    <?php include './important/Rightbar.php'; ?>
-    <?php include './important/Sidebar.php'; ?>
+    <?php include '../../important/Rightbar.php'; ?>
+    <?php include '../../important/Sidebar.php'; ?>
 
  <div class="students-box">
         <div class="students-box-content">
