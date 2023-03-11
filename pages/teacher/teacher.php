@@ -68,8 +68,8 @@ $count = $stmt->fetchColumn();
 </head>
 <body>
     
-    <?php include '../../important/Rightbar.php'; ?>
-    <?php include '../../important/Sidebar.php'; ?>
+    <?php include '../../important/Rightbar-pages.php'; ?>
+    <?php include '../../important/Sidebar-pages.php'; ?>
 
     <!-- stats -->
 
