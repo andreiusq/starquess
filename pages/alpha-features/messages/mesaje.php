@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$user_id, $recipient_id, $message]);
   
   // redirect to current conversation to show new message
-  header('Location: ?with_user=' . $with_user);
+  header('Location: ?with_user=' . urlencode($with_user));
   exit;
 }
 

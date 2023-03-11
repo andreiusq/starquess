@@ -60,7 +60,7 @@ $user_id = $cont['id'];
                 // Call the remote user with the specified call ID
                 navigator.mediaDevices.getUserMedia({audio: true, video: true})
                 .then(function(stream) {
-                    var media_connection = peer.call('<?php echo $call_id ?>', stream);
+                    var media_connection = peer.call('<?php echo htmlspecialchars($call_id, ENT_QUOTES) ?>', stream);
                     // Add the user's media stream to the MediaConnection object and render it on the page
                     media_connection.on('stream', function(remote_stream) {
                         document.getElementById('remote_video').srcObject = remote_stream;
