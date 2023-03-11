@@ -1,6 +1,6 @@
 <?php
 define('BASEPATH', true);
-require("./backend/config/db.php");
+require("../config/db.php");
 
 $input = $_GET['input'];
 $action = $_GET['action'];

@@ -2,7 +2,7 @@
 <?php
 
 
-require('backend/config/db.php');
+require('../../backend/config/db.php');
 $stmt = $pdo->prepare("SELECT name, last_name, id FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
@@ -366,7 +366,7 @@ foreach($urls as $url) {
         formData.append('time', result.value.time);
         formData.append('user_id', result.value.user_id);
 
-        fetch('add_activity.php', {
+        fetch('../../backend/queries/add_activity.php', {
           method: 'POST',
           body: formData
         })

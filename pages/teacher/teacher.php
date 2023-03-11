@@ -1,11 +1,9 @@
 <?php
 define('BASEPATH', true);
 session_start();
-require('backend/config/db.php');
+require('../../backend/config/db.php');
 $is_administrator = 0;
 
-
-//rank logic
 // users logic 2
 $stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email"); 
 $stmt -> bindParam(':email', $_SESSION['user']);
@@ -62,16 +60,16 @@ $count = $stmt->fetchColumn();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Dashboard</title>
-    <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/dashboard/teacher.css">
+    <link rel="preload" href="../../styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="../../styles/dashboard/teacher.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://unpkg.com/@andreasremdt/simple-translator@latest/dist/umd/translator.min.js" defer></script>
 </head>
 <body>
     
-    <?php include './important/Rightbar.php'; ?>
-    <?php include './important/Sidebar.php'; ?>
+    <?php include '../../important/Rightbar.php'; ?>
+    <?php include '../../important/Sidebar.php'; ?>
 
     <!-- stats -->
 
@@ -152,7 +150,7 @@ if (regexPattern.test(inputText)) {
   showLoaderOnConfirm: true,
   customClass: 'adauga-anunt',
   preConfirm: (inputValue) => {
-    return fetch(`submit.php?action&input=${inputValue}`)
+    return fetch(`../queries/news-stuff.php?action&input=${inputValue}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)
@@ -190,7 +188,7 @@ if (regexPattern.test(inputText)) {
     confirmButtonText: 'Da, șterge!'
   }).then((result) => {
     if (result.value) {
-      fetch(`submit.php?action=delete&input=${id}`)
+      fetch(`../queries/news-stuff.php?action=delete&input=${id}`)
         .then(response => {
           if (!response.ok) {
             throw new Error(response.statusText)

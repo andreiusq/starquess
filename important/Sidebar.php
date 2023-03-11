@@ -1,6 +1,6 @@
 
 <?php
-require('backend/config/db.php');
+require('../../backend/config/db.php');
 $stmt = $pdo->prepare("SELECT rank FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();

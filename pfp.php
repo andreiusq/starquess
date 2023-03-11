@@ -60,7 +60,7 @@ foreach($conturi as $cont);
         Pentru că la <span class="fullstop">Starquess</span> ne pasă de elev și de cum consideră el că își vrea viața online, îți oferim șansa de a avea o poză de profil.
       </h2>
     </div>
-    <form action="upload.php" class="dropzone" id="my-dropzone">
+    <form action="backend/queries/upload-profilep.php" class="dropzone" id="my-dropzone">
     <button id="next-button" class="primary-btn" style="display: none;">Mai departe</button>
     </form>
   </div>
@@ -74,7 +74,7 @@ foreach($conturi as $cont);
 <script>
 // Initialize Dropzone.js
 Dropzone.autoDiscover = false;
-var myDropzone = new Dropzone("#my-dropzone", { url: "upload.php" });
+var myDropzone = new Dropzone("#my-dropzone", { url: "backend/queries/upload-profilep.php" });
 
 // Listen for the "success" event
 myDropzone.on("success", function(file, response) {

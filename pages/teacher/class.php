@@ -1,7 +1,7 @@
 <?php
 define('BASEPATH', true);
 session_start();
-require('backend/config/db.php');
+require('../config/db.php');
 $is_administrator = 0;
 
 
