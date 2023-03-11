@@ -117,7 +117,7 @@ $count = $stmt->fetchColumn();
           <?php foreach($classes as $row) { ?>
             <div class="classes-box-content">
               <div class="classes-box-content-classes-ellipse">
-                <p class="classes-box-content-classes-ellipse-text"><a class="classes-box-content-classes-ellipse-text-href" href="https://starquess.kodikas.ro/class.php?class=<?php echo $row['class_id'] ?>"><?php echo $row['class_name'];?></a></p>
+                <p class="classes-box-content-classes-ellipse-text"><a class="classes-box-content-classes-ellipse-text-href" href="https://catalog.starquess.ro/class.php?class=<?php echo $row['class_id'] ?>"><?php echo $row['class_name'];?></a></p>
               </div>
             </div>
         <?php } 
