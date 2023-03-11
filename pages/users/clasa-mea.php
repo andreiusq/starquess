@@ -143,8 +143,8 @@ $best_students = get_best_students($pdo, $class_id);
 </head>
 <body>
     
-    <?php include '../../important/Rightbar.php'; ?>
-    <?php include '../../important/Sidebar.php'; ?>
+    <?php include '../../important/Rightbar-pages.php'; ?>
+    <?php include '../../important/Sidebar-pages.php'; ?>
 
     <div class="students-box">
         <div class="students-box-content">
