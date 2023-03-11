@@ -1,7 +1,7 @@
 <?php
 define('BASEPATH', true);
 session_start();
-require('backend/config/db.php');
+require('../../backend/config/db.php');
 $is_administrator = 0;
 
 if(!isset($_SESSION["user"])) {
@@ -135,16 +135,16 @@ $best_students = get_best_students($pdo, $class_id);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/clasa-mea/all.css">
+    <link rel="preload" href="../../styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="../../styles/clasa-mea/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
     
-    <?php include './important/Rightbar.php'; ?>
-    <?php include './important/Sidebar.php'; ?>
+    <?php include '../../important/Rightbar.php'; ?>
+    <?php include '../../important/Sidebar.php'; ?>
 
     <div class="students-box">
         <div class="students-box-content">
@@ -198,7 +198,7 @@ $best_students = get_best_students($pdo, $class_id);
                         </div>
                         <p class="firstplace-student"> <?php echo $best_students[0]['name']; ?> </p>
                         <p class="firstplace-grade"> Media <?php echo $best_students[0]['grade'] ?> </p>
-                        <img src="./styles/clasa-mea/img/first-place.png" class="firstplace-image">
+                        <img src="../../styles/clasa-mea/img/first-place.png" class="firstplace-image">
                     </div>
                     <?php } ?>
                     <?php if(isset($best_students[1]))  { ?>
@@ -208,7 +208,7 @@ $best_students = get_best_students($pdo, $class_id);
                         </div>
                         <p class="secondplace-student"> <?php echo $best_students[1]['name']; ?> </p>
                         <p class="secondplace-grade"> Media <?php echo $best_students[1]['grade'] ?> </p>
-                        <img src="./styles/clasa-mea/img/second-place.png" class="secondplace-image">
+                        <img src="../../styles/clasa-mea/img/second-place.png" class="secondplace-image">
                     </div>
                     <?php } ?>
                     <?php if(isset($best_students[2])  && !empty($best_students[2]))  { ?>
@@ -218,7 +218,7 @@ $best_students = get_best_students($pdo, $class_id);
                         </div>
                         <p class="thirdplace-student"> <?php echo $best_students[2]['name']; ?> </p>
                         <p class="thirdplace-grade"> Media <?php echo $best_students[2]['grade'] ?> </p>
-                        <img src="./styles/clasa-mea/img/third-place.png" class="thirdplace-image">
+                        <img src="../../styles/clasa-mea/img/third-place.png" class="thirdplace-image">
                     </div>
                     <?php } ?>
                 </div>
