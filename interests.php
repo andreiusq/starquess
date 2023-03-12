@@ -93,6 +93,7 @@ $interests = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   text: "Interesele tale au fost adăugate cu succes.",
                 });';
           echo '</script>';
+          header("Location: pfp.php");
         } catch (PDOException $e) {
           $pdo->rollback();
           echo "Error: " . $e->getMessage();
@@ -104,8 +105,11 @@ $interests = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <?php foreach($interests as $interest) { ?>
             <div class="interests-list">
             <label class="checkbox">
-                <input type="checkbox" id="cbx" name="interests[]" value="<?php echo htmlspecialchars($interest['id'], ENT_QUOTES) ?>">
-                <span class="interest-name"><?php echo htmlspecialchars($interest['name'], ENT_QUOTES) ?></span>
+              <div class="checkbox-container">
+                <input type="checkbox" name="interests[]" value="<?php echo htmlspecialchars($interest['id'], ENT_QUOTES, 'UTF-8') ?>">
+                <span class="interest-name"><?php echo htmlspecialchars($interest['name'], ENT_QUOTES, 'UTF-8') ?></span>
+                <span class="checkmark"></span>
+              </div>
             </label> <br>
           </div>
           <?php } ?> <br> <br> <br>
