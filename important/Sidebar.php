@@ -204,7 +204,7 @@ color:red;
         <?php } ?>
 
         <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0 || $user['rank'] == 2) { ?> <li class="list" style="left: 30px">
-            <a href="../clasa-mea.php">
+            <a href="../pages/users/clasa-mea.php">
                <span class="icon"><i class="fa-solid fa-users"></i></span>
                <span class="title">Clasa mea</span>
             </a>
@@ -255,7 +255,7 @@ color:red;
             </a>
          </li>
 
-         
+
 
          <li class="list" style="left: 30px">
          <div class="dropdown">
