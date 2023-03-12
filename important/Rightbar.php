@@ -2,8 +2,6 @@
 <?php
 
 
-//include('../../backend/config/db.php');
-include('./backend/config/db.php');
 $stmt = $pdo->prepare("SELECT name, last_name, id FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
