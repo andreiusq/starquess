@@ -18,7 +18,7 @@ foreach($conturi as $cont);
 // Check if the file was uploaded without errors
 if(isset($_FILES["file"]) && $_FILES["file"]["error"] == 0) {
     $userId = $cont['id'];
-    $target_dir = "uploads/";
+    $target_dir = "../../uploads/";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
     // Move the file to the uploads directory
