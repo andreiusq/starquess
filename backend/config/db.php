@@ -1,5 +1,7 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
+$startTime = microtime(true);
 
 $host = 'localhost';
 $user = 'root';

@@ -2,3 +2,77 @@ body {
     background: #F0F7FF !important;
     overflow-x: hidden;
 }
+
+.stats-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 800px;
+    height: 200px;
+    position: relative;
+    left: 20%;
+    top: 20px;
+}
+
+.stats-box .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.stats-box .value {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.stats-box .value span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.stats-box .value span i {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.stats-box .value span i.fa-caret-up {
+    color: #00c689;
+}
+
+.stats-box .value span i.fa-caret-down {
+    color: #ff5b5b;
+}
+
+.stats-box .value span i.fa-caret-right {
+    color: #ff5b5b;
+}
+
+.stats-box .value span i.fa-caret-left {
+    color: #00c689;
+}
+
+.stats-box .value span i.fa-caret-up:before {
+    content: "\f062";
+}
+
+.stats-box-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stats-box-item-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.stats-box-item-number {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}

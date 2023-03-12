@@ -10,6 +10,31 @@ if(!isset($_SESSION["user"])) {
 
 $is_administrator = 1;
 
+// count users
+$sql = "SELECT COUNT(*) FROM users";
+$stmt = $pdo->query($sql);
+$userscount = $stmt->fetchColumn();
+
+// count messages
+$sql = "SELECT COUNT(*) FROM messages";
+$stmt = $pdo->query($sql);
+$messagescount = $stmt->fetchColumn();
+
+// count activities
+$sql = "SELECT COUNT(*) FROM user_activities";
+$stmt = $pdo -> query($sql);
+$activitiescount = $stmt->fetchColumn();
+
+
+// uptime
+$uptimeSeconds = time() - $startTime;
+
+// Convert the uptime to a human-readable format
+$uptime = sprintf("%d days, %02d:%02d:%02d",
+                  $uptimeSeconds / 86400,
+                  ($uptimeSeconds % 86400) / 3600,
+                  ($uptimeSeconds % 3600) / 60,
+                  $uptimeSeconds % 60);
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +44,8 @@ $is_administrator = 1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/administrator/all.css">
+    <link rel="preload" href="../../styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="../../styles/administrator/all.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://unpkg.com/@andreasremdt/simple-translator@latest/dist/umd/translator.min.js" defer></script>
 </head>
@@ -30,7 +55,28 @@ $is_administrator = 1;
     <?php include '../../important/Rightbar.php'; ?>
     <?php include '../../important/Sidebar.php'; ?>
 
-
+    <div class="stats-box">
+        <div class="stats-box-item">
+            <i class="fa-solid fa-users fa-xl" style="top: -5px;"></i>
+            <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Users</h1>
+            <h2 class="stats-box-item-number"><?php echo $userscount ?></h2>
+        </div>
+        <div class="stats-box-item">
+            <i class="fa-solid fa-messages fa-xl" style="top: -5px;"></i>
+            <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Messages (across all instances)</h1>
+            <h2  class="stats-box-item-number"><?php echo $messagescount ?></h2>
+        </div>
+        <div class="stats-box-item">
+        <i class="fa-solid fa-square-person-confined fa-xl" style="top: -5px;"></i>
+            <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Activities</h1>
+            <h2  class="stats-box-item-number"><?php echo $activitiescount ?></h2>
+        </div>
+        <div class="stats-box-item">
+            <i class="fa-solid fa-heart fa-beat fa-xl" style="--fa-animation-duration: 0.5s; top: -5px;" ></i>
+            <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Platform uptime (this instance)</h1>
+            <h2  class="stats-box-item-number"><?php echo $uptime ?></h2>
+        </div>
+    </div>
 
 </body>
 </html>
