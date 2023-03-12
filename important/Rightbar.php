@@ -2,7 +2,7 @@
 <?php
 
 
-$stmt = $pdo->prepare("SELECT name, last_name, id FROM users WHERE email=:email");
+$stmt = $pdo->prepare("SELECT name, last_name, id, rank FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
 
@@ -73,6 +73,17 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    display: inline;
    position: absolute;
    font-size: 1.2em;
+   font-weight: 400;
+   color: #000;
+   white-space: nowrap;
+ }
+
+ .userRank {
+   top: 25px;
+   left: 40px;
+   display: inline;
+   position: absolute;
+   font-size: 0.7em;
    font-weight: 400;
    color: #000;
    white-space: nowrap;
@@ -250,6 +261,7 @@ foreach($urls as $url) {
     <div class="leftbar__top">
         <div class="leftbar__top__img">
             <h4 class="userName"><?php echo $user['name']; echo ' '; echo $user['last_name'] ?> </h4>
+            <?php if($user['rank'] == 11) { ?> <h5 class="userRank">Administrator </h5> <?php } ?>
             <?php foreach($imageTags as $img) { echo $img; } ?>
         </div>
     </div>
