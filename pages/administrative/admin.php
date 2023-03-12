@@ -10,6 +10,17 @@ if(!isset($_SESSION["user"])) {
 
 $is_administrator = 1;
 
+// users logic 2
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email=:email"); 
+$stmt -> bindParam(':email', $_SESSION['user']);
+
+$stmt->execute(); 
+
+
+$conturi = $stmt->fetchAll(); 
+
+foreach($conturi as $cont);
+
 // count users
 $sql = "SELECT COUNT(*) FROM users";
 $stmt = $pdo->query($sql);
@@ -35,6 +46,28 @@ $uptime = sprintf("%d days, %02d:%02d:%02d",
                   ($uptimeSeconds % 86400) / 3600,
                   ($uptimeSeconds % 3600) / 60,
                   $uptimeSeconds % 60);
+
+
+// get school information
+// User ID (change this to the actual user ID)
+$user_id = $cont['id'];
+
+// SQL query to retrieve user and school information
+$sql = "SELECT u.*, s.school_name AS name, s.school_location AS location
+        FROM users u
+        JOIN schools s ON u.school_id = s.school_id
+        WHERE u.id = :user_id";
+
+// Prepare and execute the query
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+$stmt->execute();
+
+// Fetch the result
+$result = $stmt->fetch();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +109,13 @@ $uptime = sprintf("%d days, %02d:%02d:%02d",
             <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Platform uptime (this instance)</h1>
             <h2  class="stats-box-item-number"><?php echo $uptime ?></h2>
         </div>
+    </div>
+
+    <div class="school-information-box">
+        <h2 class="school-name"> <?php echo $result['name'] ?> </h2>
+        <h4 class="school-location"> <?php echo $result['location'] ?> </h4>
+        <h4 class="school-type"> Public </h4>
+        <a class=""><i class="fa-solid fa-gear fa-2x" style="top: -150px; left: 230px;"></i></a>
     </div>
 
 </body>
