@@ -135,7 +135,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    border: 15px solid #F0F7FF;
    background: #F0F7FF;
    border-radius: 40px;
-   width: 280px;
+   width: 240px;
    height: 80px;
 }
 
