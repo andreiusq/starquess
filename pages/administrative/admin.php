@@ -1,7 +1,7 @@
 <?php
 define('BASEPATH', true);
 session_start();
-require('backend/config/db.php');
+require('../../backend/config/db.php');
 
 if(!isset($_SESSION["user"])) {
   header("Location: login.php");
@@ -27,8 +27,8 @@ $is_administrator = 1;
 <body>
     
 
-    <?php include './important/rightbar.php'; ?>
-    <?php include './important/sidebar.php'; ?>
+    <?php include '../../important/Rightbar.php'; ?>
+    <?php include '../../important/Sidebar.php'; ?>
 
 
 
