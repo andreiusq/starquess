@@ -1,0 +1,191 @@
+body {
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+.students-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.students-box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.students-box::-webkit-scrollbar-thumb {
+    background: #0077FF;
+    border-radius: 20px; 
+  }
+  
+.students-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+ }
+
+ .students-box {
+    position: relative;
+    top: 80px;
+    left: 300px;
+    width: 1200px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.students-box-content {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.students-title {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.students-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+}
+
+.students-box-list {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.students-box-list-item-content-left-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.students-box-list-item-content-right {
+    position: relative;
+    top: -30px;
+    left: 100px;
+}
+
+.students-box-list-item-content-left-text-email {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -60px;
+    left: 700px;
+}
+
+.students-box-list-item-content-left-text-name {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: -90px;
+}
+
+.add-grade {
+    background: transparent;
+    border: transparent;
+    position: relative;
+    top: -55px;
+    left: -20px;
+}
+
+.add-grade:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+.add-absence {
+    background: transparent;
+    border: transparent;
+    position: relative;
+    top: -79px;
+    left: 10px;
+}
+
+.add-absence:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+.stats-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 15%;
+    top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stats-box-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stats-box-item-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+    left: 80px !important;
+}
+
+.stats-box-item-number {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+    top: 30px;
+    right: 60px;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+    background:rgba(0, 0, 0, 0.1);
+    width: 70px;
+    height: 70px;
+}
+
+.students-box-list-item-content-center-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -70px;
+    left: 400px;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;   
+}
+
+.import-stud {
+    background: transparent;
+    border: transparent;
+    position: absolute;
+    top: -50px;
+    left: 490px;
+    white-space: none;
+    display: inline;
+}
+
+.import-stud:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
