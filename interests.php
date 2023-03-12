@@ -102,15 +102,15 @@ $interests = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
         <form method="post">
           <?php foreach($interests as $interest) { ?>
-            <div>
+            <div class="interests-list">
             <label class="checkbox">
                 <input type="checkbox" id="cbx" name="interests[]" value="<?php echo htmlspecialchars($interest['id'], ENT_QUOTES) ?>">
                 <span class="interest-name"><?php echo htmlspecialchars($interest['name'], ENT_QUOTES) ?></span>
             </label> <br>
           </div>
-          <?php } ?>
+          <?php } ?> <br> <br> <br>
           <button type="submit" name="submit" class="primary-btn">Mai departe</button>
-        <h3>Hei! Să știi că suntem încă în perioada <b>alpha</b>. Așa că poți să <a href="/index.php">sari peste partea asta.</a></h3>
+        <h6><a href="pfp.php" class="omite">Omite (nu recomandăm asta)</a></h6>
       </div>
     </form>
   </div>
