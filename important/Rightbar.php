@@ -275,7 +275,7 @@ foreach($urls as $url) {
         <h5 class="activities_title">Activitatile mele</h5>
         <h5 class="activities_seeall">
          <!-- adauga -->
-            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus" style="left: 20px;"></i></button>
+            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus"></i></button>
         </h5>
         <div class="activities_list">
          <?php foreach ($activities as $activity) { ?>
