@@ -23,7 +23,7 @@ $conturi = $stmt->fetchAll();
 foreach($conturi as $cont);
 
 $user_id = $cont['id'];
-$recipient_id = $_GET['with_user'];
+$recipient_id = $cont['id'];
 
 // Get messages for the selected recipient and sender (if specified)
 if (isset($_GET['sender_id'])) {
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Insert the message into the messages table
     $stmt = $pdo->prepare("INSERT INTO messages (sender_id, recipient_id, message_content) VALUES (?, ?, ?)");
-    $stmt->execute([$user_id, $recipient_id, $message]);
+    $stmt->execute([$user_id, $with_user, $message]);
   
   // redirect to current conversation to show new message
   header('Location: ?with_user=' . urlencode($with_user));
@@ -91,7 +91,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Retrieve the profile photo path or URL for the selected user
 $stmt = $pdo->prepare("SELECT url FROM user_images WHERE user = ?");
 $stmt->execute([$with_user]);
+$selected_image_path = $stmt->fetchColumn();
+
+// Retrieve the profile photo path or URL for the current user
+$stmt = $pdo->prepare("SELECT url FROM user_images WHERE user = ?");
+$stmt->execute([$user_id]);
 $user_image_path = $stmt->fetchColumn();
+
 
 
 
@@ -145,7 +151,7 @@ $user_image_path = $stmt->fetchColumn();
 <div class="messages-content">
     <?php if ($with_user) : ?>
     <div class="message-form">
-        
+    <img src="<?php echo $selected_image_path; ?>" alt="profile photo" class="profile-photo" width="140px" height="140px">
         <h2> <?php echo $with_user_name; ?></h2>
         <form class="form" method="post">
     <button type="submit">
@@ -169,8 +175,10 @@ $user_image_path = $stmt->fetchColumn();
                 <?php $is_sender = ($message['sender_id'] == $user_id); ?>
                 <?php $message_class = ($is_sender ? 'sender' : 'recipient'); ?>
                 <?php $name = ($is_sender ? 'Tu' : $message['sender_name']); ?>
+                <?php $user_image_path = ($is_sender ? $user_image_path : $selected_image_path); ?>
                 <div class="message <?php echo $message_class; ?>">
-                    <b><div class="name"><?php echo $name; ?></div></b>
+              <!--  <img src="<?php echo $user_image_path; ?>" alt="profile photo" width="40px" height="40px" style="position: absolute; display: inline;" class="profile-photo">
+                -->  <b><div class="name"><?php echo $name; ?></div></b>
                     <div class="content"><?php echo $message['message_content']; ?></div>
                     <div class="timestamp"><?php echo date('H:i', strtotime($message['timestamp'])); ?></div>
                 </div>
