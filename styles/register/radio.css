@@ -1,1 +1,131 @@
- 
+.checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.checkbox:checked::after {
+    opacity: 1;
+}
+
+.checkbox:hover::after {
+    background: #ccc;
+}
+
+.checkbox:active::after {
+    background: #aaa;
+}
+
+.checkbox:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.checkbox:disabled:after {
+    background: #ccc;
+}
+
+.checkbox:disabled:checked:after {
+    background: #fff;
+}
+
+.interest-name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    left: 40px;
+}
+
+.interest-name:hover {
+    color: #000;
+}
+
+.interest-name:active {
+    color: #000;
+}
+
+.interest-name:disabled {
+    color: #ccc;
+}
+
+
+
+#cbx {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+label::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+label:hover::after {
+    background: #ccc;
+}
+
+#cbx:checked + label::after {
+    opacity: 1;
+}
+
+#cbx:disabled + label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#cbx:disabled + label::after {
+    background: #ccc;
+}
+
+#cbx:disabled:checked + label::after {
+    background: #fff;
+}
+
+.interest-name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    left: 40px;
+}

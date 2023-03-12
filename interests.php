@@ -8,11 +8,20 @@ if(!isset($_SESSION["user"])) {
 }
 
 require('backend/config/db.php');
-$stmt = $pdo->prepare("SELECT name FROM users WHERE email=:email");
+$stmt = $pdo->prepare("SELECT id, name FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// interessts logic
+$stmt = $pdo->prepare("SELECT id, name FROM interests");
+$stmt->execute();
+
+$interests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +35,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="styles/register/all.css">
     <link rel="stylesheet" href="styles/register/interests.css">
     <link rel="stylesheet" href="styles/register/radio.css">
- 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 </head>
@@ -48,79 +56,60 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         Pentru că la <span class="fullstop">Starquess</span> ne pasă de elev, trebuie să îți alegi niște interese.
       </h2>
     </div>
-    <form action="" method="post" class="form">
-      <div class="form-input">
-      <select multiple id="interests" name="interests[]">
-        <div class="wrapper">
-          <div class="rand-3">
-          <div class="interes">
-             <img src="styles/register/img/chimie.png" id="chimie" class="image"/>
-               <span class="nume">Chimie</span>
-              </div>
-
-
-             <div class="interes">
-             <img src="styles/register/img/robotica.png" id="chimie" class="image"/>
-             <span class="nume">Robotica</span>
-               </div>
-
-
-             <div class="interes">
-             <img src="styles/register/img/kodikas.png" id="cod" class="image"/>
-              <span class="nume">Programare</span>
-               </div>
+    <?php
+    if (isset($_POST['submit'])) {
+      $selectedInterests = $_POST['interests'];
+      $userId = $user['id'];  
+      if (count($selectedInterests) > 5) {
+        echo '<script>';
+        echo 'Swal.fire({
+                icon: "error",
+                title: "Eroare!",
+                text: "Poți alege maxim 5 interese.",
+              });';
+        echo '</script>';
+      } else {
+        try {
+          
+          $pdo->beginTransaction();
+          
+          $stmt = $pdo->prepare("DELETE FROM user_interests WHERE user_id = :user_id");
+          $stmt->bindParam(':user_id', $userId);
+          $stmt->execute();
+          
+          $stmt = $pdo->prepare("INSERT INTO user_interests (user_id, interest_id) VALUES (:user_id, :interest_id)");
+          foreach ($selectedInterests as $interest) {
+            $stmt->bindParam(':user_id', $userId);
+            $stmt->bindParam(':interest_id', $interest);
+            $stmt->execute();
+          }
+          
+          $pdo->commit();
+          
+          echo '<script>';
+          echo 'Swal.fire({
+                  icon: "success",
+                  title: "Success!",
+                  text: "Interesele tale au fost adăugate cu succes.",
+                });';
+          echo '</script>';
+        } catch (PDOException $e) {
+          $pdo->rollback();
+          echo "Error: " . $e->getMessage();
+        }
+      }
+    }
+    ?>
+        <form method="post">
+          <?php foreach($interests as $interest) { ?>
+            <div>
+            <label class="checkbox">
+                <input type="checkbox" id="cbx" name="interests[]" value="<?php echo htmlspecialchars($interest['id'], ENT_QUOTES) ?>">
+                <span class="interest-name"><?php echo htmlspecialchars($interest['name'], ENT_QUOTES) ?></span>
+            </label> <br>
           </div>
-             <div class="rand-2">
-             <div class="interes">
-             <img src="styles/register/img/debate.jpg" id="debate" class="image"/>
-               <span class="nume">Debate</span>
-              </div>
-
-
-             <div class="interes">
-             <img src="styles/register/img/sport.png" id="sport" class="image"/>
-              <span class="nume">Sport</span>
-               </div>
-             </div>
-
-             <div class="rand-3">
-          <div class="interes">
-             <img src="styles/register/img/biologie.png" id="Biologie" class="image"/>
-               <span class="nume">Biologie</span>
-              </div>
-
-
-             <div class="interes">
-             <img src="styles/register/img/romana.png" id="romana" class="image"/>
-             <span class="nume">Romana</span>
-               </div>
-
-
-             <div class="interes">
-             <img src="styles/register/img/matematica.png" id="mate" class="image"/>
-              <span class="nume">Matematica</span>
-               </div>
-          </div>
-             
-          <div class="rand-2">
-             <div class="interes">
-             <img src="styles/register/img/geografie.png" id="Geografie" class="image" style="width: 90px !important;"/>
-               <span class="nume">Geografie</span>
-              </div>
-
-
-             <div class="interes">
-             <img src="styles/register/img/engleza.png" id="engleza" class="image" style="width: 90px !important;" />
-              <span class="nume">Engleza</span>
-               </div>
-             </div>
-   
-
-        </div>
-</select>
-        <div class="btn-input">
-          <div type="submit" name="submit" class="primary-btn">Gata</div>
-        </div>
+          <?php } ?>
+          <button type="submit" name="submit" class="primary-btn">Mai departe</button>
         <h3>Hei! Să știi că suntem încă în perioada <b>alpha</b>. Așa că poți să <a href="/index.php">sari peste partea asta.</a></h3>
       </div>
     </form>
@@ -130,4 +119,5 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
   </div>
 </section>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>
