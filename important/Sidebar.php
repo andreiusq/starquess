@@ -141,6 +141,47 @@ color:red;
    scale:0.8;
 }
 
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change background color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
 
 </style>
 
@@ -191,6 +232,29 @@ color:red;
             </a>
         </li>
         <?php } ?>
+
+         <?php if($is_administrator == 1) { ?>
+         <li class="list" style="left: 30px">
+               <a href="../admin.php">
+                <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                <span class="title">Administrator</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+         <div class="dropdown">
+            <a href="./settings">
+            <span class="icon"><i class="fa-solid fa-gear"></i></span>
+            <span class="title">Setări platformă</span>
+            <div class="dropdown-content">
+               <a href="">Optiune 1</a>
+               <a href="">Optiune 2</a>
+               <a href="">Optiune 3</a>
+            </div>
+         </div>
+         </li>
+         <?php } ?>
+
 
         
 
