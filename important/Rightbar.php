@@ -261,7 +261,7 @@ foreach($urls as $url) {
     <div class="leftbar__top">
         <div class="leftbar__top__img">
             <h4 class="userName"><?php echo $user['name']; echo ' '; echo $user['last_name'] ?> </h4>
-            <?php if($user['rank'] == 11) { ?> <h5 class="userRank">Administrator </h5> <?php } ?>
+            <?php if($user['rank'] == 11) { ?> <h5 class="userRank">Starquess TEAM </h5> <?php } ?>
             <?php foreach($imageTags as $img) { echo $img; } ?>
         </div>
     </div>

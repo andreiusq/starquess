@@ -235,11 +235,27 @@ color:red;
 
          <?php if($is_administrator == 1) { ?>
          <li class="list" style="left: 30px">
-               <a href="../admin.php">
-                <span class="icon"><i class="fa-solid fa-gear"></i></span>
-                <span class="title">Administrator</span>
+            <a href="./users.php">
+               <span class="icon"><i class="fa-solid fa-users"></i></span>
+               <span class="title">Elevi</span>
             </a>
          </li>
+
+         <li class="list" style="left: 30px">
+            <a href="./teachers.php">
+               <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+               <span class="title">Profesori</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="./classes.php">
+               <span class="icon"><i class="fa-solid fa-users"></i></span>
+               <span class="title">Clase</span>
+            </a>
+         </li>
+
+         
 
          <li class="list" style="left: 30px">
          <div class="dropdown">
