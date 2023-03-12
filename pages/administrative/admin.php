@@ -115,7 +115,7 @@ $result = $stmt->fetch();
         <h2 class="school-name"> <?php echo $result['name'] ?> </h2>
         <h4 class="school-location"> <?php echo $result['location'] ?> </h4>
         <h4 class="school-type"> Public </h4>
-        <a class=""><i class="fa-solid fa-gear fa-2x" style="top: -150px; left: 230px;"></i></a>
+        <a href="school_edit.php?school_id=<?php echo $result['school_id'] ?>"><i class="fa-solid fa-gear fa-2x" style="top: -140px; left: 230px;"></i></a>
     </div>
 
 </body>
