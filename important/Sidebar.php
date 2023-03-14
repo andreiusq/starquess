@@ -228,7 +228,7 @@ color:red;
         <li class="list active" style="left: 30px;">
             <a href="../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
-               <span class="title">Acasa</span>
+               <span class="title">Acasă</span>
             </a>
         </li>
         <?php } ?>
