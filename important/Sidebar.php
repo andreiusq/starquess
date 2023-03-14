@@ -182,6 +182,36 @@ color:red;
   background-color: #f1f1f1;
 }
 
+.number {
+   position: relative;
+   top: 20px;
+   left: 10px;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 20px;
+   height: 20px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+.alpha-text {
+   position: absolute;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 60px;
+   height: 20px;
+   top: 130px;
+   left: 120px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
 
 </style>
 
@@ -223,6 +253,20 @@ color:red;
                <span class="title">Documente</span>
             </a>
         </li>
+
+        <li class="list" style="left: 30px">
+            <div class="dropdown">
+               <a href="./functionalitati">
+               <span class="icon"><i class="fa-solid fa-gear"></i></span>
+               <span class="title">Funcționalități</span>
+               <span class="number"> 3 </span>
+               <div class="dropdown-content">
+                  <a href="../pages/users/videocalls_list.php"><i class="fa-solid fa-video"></i>‎ Videoconferințe</a>
+                  <a href="../pages/users/library.php"><i class="fa-solid fa-book"></i>‎ Librărie</a>
+                  <a href="../pages/alpha-features/messages/mesaje.php"><i class="fa-solid fa-messages"></i> ‎ Mesaje</a> <span class="alpha-text">ALPHA </span>
+               </div>
+            </div>
+         </li>
 
         <?php } if($user["rank"] == 2) { ?>
         <li class="list" style="left: 30px">

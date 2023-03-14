@@ -143,6 +143,78 @@ color:red;
 }
 
 
+.number {
+   position: relative;
+   top: 20px;
+   left: 10px;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 20px;
+   height: 20px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+.alpha-text {
+   position: absolute;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 60px;
+   height: 20px;
+   top: 130px;
+   left: 120px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change background color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
 </style>
 
 <body>
@@ -150,7 +222,7 @@ color:red;
 
 <div class="sidebar" style="left: 0px; height: 100%; top: 0px; border-radius: 4 0 px;">
     <div class="logo">
-        <h2> <a href="https://dev.starquess.ro"><img src='https://dev.starquess.ro/upload/logo.png' width='220px' height='55px' alt='logo' style="position: relative; top: 15px;"/> </a></h2>
+        <h2> <a href="https://dev.starquess.ro"><img src='https://cdn.starquess.ro/logo.png' width='220px' height='55px' alt='logo' style="position: relative; top: 15px;"/> </a></h2>
     </div>
 
     <ul style="top: 190px;">
@@ -183,6 +255,20 @@ color:red;
                <span class="title">Documente</span>
             </a>
         </li>
+
+        <li class="list" style="left: 30px">
+            <div class="dropdown">
+               <a href="./functionalitati">
+               <span class="icon"><i class="fa-solid fa-gear"></i></span>
+               <span class="title">Funcționalități</span>
+               <span class="number"> 3 </span>
+               <div class="dropdown-content">
+                  <a href="../pages/users/videocalls_list.php"><i class="fa-solid fa-video"></i>‎ Videoconferințe</a>
+                  <a href="../pages/users/library.php"><i class="fa-solid fa-book"></i>‎ Librărie</a>
+                  <a href="../pages/alpha-features/messages/mesaje.php"><i class="fa-solid fa-messages"></i> ‎ Mesaje</a> <span class="alpha-text">ALPHA </span>
+               </div>
+            </div>
+         </li>
 
         <?php } if($user["rank"] == 2) { ?>
         <li class="list" style="left: 30px">
