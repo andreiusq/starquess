@@ -1,6 +1,5 @@
 
 <?php
-
 $stmt = $pdo->prepare("SELECT rank FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
@@ -142,38 +141,6 @@ color:red;
    scale:0.8;
 }
 
-
-.number {
-   position: relative;
-   top: 20px;
-   left: 10px;
-   color: #fff;
-   background-color: #0d80f2;
-   border-radius: 50%;
-   width: 20px;
-   height: 20px;
-   text-align: center;
-   font-size: 12px;
-   line-height: 20px;
-   font-weight: 600;
-}
-
-.alpha-text {
-   position: absolute;
-   color: #fff;
-   background-color: #0d80f2;
-   border-radius: 50%;
-   width: 60px;
-   height: 20px;
-   top: 130px;
-   left: 120px;
-   text-align: center;
-   font-size: 12px;
-   line-height: 20px;
-   font-weight: 600;
-}
-
-
 /* Dropdown container */
 .dropdown {
   position: relative;
@@ -215,6 +182,37 @@ color:red;
   background-color: #f1f1f1;
 }
 
+.number {
+   position: relative;
+   top: 20px;
+   left: 10px;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 20px;
+   height: 20px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+.alpha-text {
+   position: absolute;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 60px;
+   height: 20px;
+   top: 133px;
+   left: 120px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+
 </style>
 
 <body>
@@ -222,7 +220,7 @@ color:red;
 
 <div class="sidebar" style="left: 0px; height: 100%; top: 0px; border-radius: 4 0 px;">
     <div class="logo">
-        <h2> <a href="https://dev.starquess.ro"><img src='https://cdn.starquess.ro/logo.png' width='220px' height='55px' alt='logo' style="position: relative; top: 15px;"/> </a></h2>
+        <h2> <a href="https://starquess.ro"><img src='http://cdn.starquess.ro/logo.png' width='220px' height='55px' alt='logo' style="position: relative; top: 15px;"/> </a></h2>
     </div>
 
     <ul style="top: 190px;">
@@ -230,13 +228,13 @@ color:red;
         <li class="list active" style="left: 30px;">
             <a href="../../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
-               <span class="title">Acasa</span>
+               <span class="title">Acasă</span>
             </a>
         </li>
         <?php } ?>
 
         <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0 || $user['rank'] == 2) { ?> <li class="list" style="left: 30px">
-            <a href="../clasa-mea.php">
+            <a href="../pages/users/clasa-mea.php">
                <span class="icon"><i class="fa-solid fa-users"></i></span>
                <span class="title">Clasa mea</span>
             </a>
@@ -245,7 +243,7 @@ color:red;
         <li class="list" style="left: 30px">
             <a href="../../situatie-scolara.php">
                <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
-               <span class="title">Situatie scolara</span>
+               <span class="title">Situație scolară</span>
             </a>
         </li>
 
@@ -279,12 +277,51 @@ color:red;
         </li>
         <?php } ?>
 
+         <?php if($is_administrator == 1) { ?>
+         <li class="list" style="left: 30px">
+            <a href="./users.php">
+               <span class="icon"><i class="fa-solid fa-users"></i></span>
+               <span class="title">Elevi</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="./teachers.php">
+               <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+               <span class="title">Profesori</span>
+            </a>
+         </li>
+
+         <li class="list" style="left: 30px">
+            <a href="./classes.php">
+               <span class="icon"><i class="fa-solid fa-users"></i></span>
+               <span class="title">Clase</span>
+            </a>
+         </li>
+
+
+
+         <li class="list" style="left: 30px">
+         <div class="dropdown">
+            <a href="./settings">
+            <span class="icon"><i class="fa-solid fa-gear"></i></span>
+            <span class="title">Setări platformă</span>
+            <div class="dropdown-content">
+               <a href="">Optiune 1</a>
+               <a href="">Optiune 2</a>
+               <a href="">Optiune 3</a>
+            </div>
+         </div>
+         </li>
+         <?php } ?>
+
+
         
 
         <li class="list" style="left: 30px; top: 190px; color: red;">
             <a href="../signout.php">
-            <span class="icon"  style="color:red;"><i class="fa-solid fa-door-open"></i></span>
-            <span class="title" style="color:red;">Deconectare</span>
+            <span class="icon"  style="color:#0077ff;"><i class="fa-solid fa-door-open"></i></span>
+            <span class="title" style="color:#0077ff;"> Deconectare</span>
             </a>
         </li>
     </ul>
