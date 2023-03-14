@@ -2,7 +2,7 @@
 <?php
 
 
-$stmt = $pdo->prepare("SELECT name, last_name, id FROM users WHERE email=:email");
+$stmt = $pdo->prepare("SELECT name, last_name, id, rank FROM users WHERE email=:email");
 $stmt->bindParam(':email', $_SESSION['user']);   
 $stmt->execute();
 
@@ -68,11 +68,22 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
  }
 
  .userName {
-   top: 2px;
+   top: -2px;
    left: 40px;
    display: inline;
    position: absolute;
    font-size: 1.2em;
+   font-weight: 400;
+   color: #000;
+   white-space: nowrap;
+ }
+
+ .userRank {
+   top: 19px;
+   left: 40px;
+   display: inline;
+   position: absolute;
+   font-size: 0.7em;
    font-weight: 400;
    color: #000;
    white-space: nowrap;
@@ -116,7 +127,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 .activities_list_item {
    position: relative;
-   top: 200px;
+   top: 170px;
    left: -60px;
    font-size: 0.8em;
    font-weight: 400;
@@ -211,6 +222,9 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
  .activities-top-buttons-add {
     background: transparent;
+	position: relative;
+	left: -22px;
+	bottom: -0.2px;
     border: transparent;
 }
 
@@ -264,6 +278,7 @@ foreach($urls as $url) {
     <div class="leftbar__top">
         <div class="leftbar__top__img">
             <h4 class="userName"><?php echo $user['name']; echo ' '; echo $user['last_name'] ?> </h4>
+            <?php if($user['rank'] == 11) { ?> <h5 class="userRank">Starquess TEAM </h5> <?php } ?>
             <?php foreach($imageTags as $img) { echo $img; } ?>
         </div>
     </div>
@@ -277,7 +292,7 @@ foreach($urls as $url) {
         <h5 class="activities_title">Activitatile mele</h5>
         <h5 class="activities_seeall">
          <!-- adauga -->
-            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus"></i></button>
+            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus fa-xl"></i></button>
         </h5>
         <div class="activities_list">
          <?php foreach ($activities as $activity) { ?>
@@ -310,7 +325,6 @@ foreach($urls as $url) {
             }
             ?>
             <br>
-            <button onclick="seeactivity(event)" class="activities-button">
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
@@ -321,7 +335,6 @@ foreach($urls as $url) {
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
-         </button>
             <?php } ?> <br>
         </div>
     </div>
@@ -400,16 +413,4 @@ foreach($urls as $url) {
       }
     });
   }
-
-
-
-
-async function seeactivity(event)
-{
-   
-
-
-
-
-}
 </script>

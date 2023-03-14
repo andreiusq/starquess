@@ -204,7 +204,7 @@ color:red;
    border-radius: 50%;
    width: 60px;
    height: 20px;
-   top: 132px;
+   top: 133px;
    left: 120px;
    text-align: center;
    font-size: 12px;
