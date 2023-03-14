@@ -276,8 +276,8 @@ color:red;
 
         <li class="list" style="left: 30px; top: 190px; color: red;">
             <a href="../signout.php">
-            <span class="icon"  style="color:red;"><i class="fa-solid fa-door-open"></i></span>
-            <span class="title" style="color:red;">Deconectare</span>
+            <span class="icon"  style="color:#0077ff;"><i class="fa-solid fa-door-open"></i></span>
+            <span class="title" style="color:#0077ff;"> Deconectare</span>
             </a>
         </li>
     </ul>

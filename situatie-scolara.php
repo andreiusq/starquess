@@ -108,7 +108,7 @@ $absences = $stmt->fetchAll();
     </div>
     <?php } ?>
     <div class="absente-box">
-        <h1 class="absente-title">Absente</h1>
+        <h1 class="absente-title">Absențe</h1>
         <?php if($absences) { ?> 
             <?php foreach($absences as $absence) { ?> <br> 
                 <div class="absences-content-box"> 
