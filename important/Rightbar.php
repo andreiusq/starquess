@@ -261,6 +261,11 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 }
 
 
+.activites_button {
+   background: transparent;
+   border: transparent;
+}
+
 </style>
 <?php
 foreach($urls as $url) {
@@ -325,6 +330,7 @@ foreach($urls as $url) {
             }
             ?>
             <br>
+            <button class="activites_button" onclick="checkevent(event)">
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
@@ -335,6 +341,7 @@ foreach($urls as $url) {
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
+         </button>
             <?php } ?> <br>
         </div>
     </div>
@@ -412,5 +419,23 @@ foreach($urls as $url) {
         });
       }
     });
+  }
+
+
+  async function checkevent(e) {
+      e.preventDefault();
+      Swal.fire({
+         title: "Detalii activitate",
+         html:
+               "<h4> <?php echo $activity['activity_name'] ?></h4>" +
+               "<?php echo $activity['activity_description'] ?>",
+         text: "Nume: <?php echo $activity['activity_name'] ?>",
+         footer: "<?php echo $formatted_date ?> <?php echo ' ' ?> <?php echo $formatted_time ?>",
+         confirmButtonText: 'Ok',
+         focusConfirm: false,
+         inputAttributes: {
+            maxlength: 250
+         },
+      });
   }
 </script>
