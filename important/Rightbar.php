@@ -89,8 +89,6 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    white-space: nowrap;
  }
 
-=======
->>>>>>> b321ce79ea6231afcd0499b1f94ee27d59f9cccf
  .leftbar .icon {
       position: absolute;
       top: -55px;
