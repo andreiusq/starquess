@@ -204,7 +204,7 @@ color:red;
    border-radius: 50%;
    width: 60px;
    height: 20px;
-   top: 130px;
+   top: 132px;
    left: 120px;
    text-align: center;
    font-size: 12px;
@@ -228,7 +228,7 @@ color:red;
         <li class="list active" style="left: 30px;">
             <a href="../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
-               <span class="title">Acasa</span>
+               <span class="title">Acasă</span>
             </a>
         </li>
         <?php } ?>
@@ -243,7 +243,7 @@ color:red;
         <li class="list" style="left: 30px">
             <a href="../situatie-scolara.php">
                <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
-               <span class="title">Situatie scolara</span>
+               <span class="title">Situație scolară</span>
             </a>
         </li>
 
