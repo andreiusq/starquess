@@ -1,0 +1,323 @@
+body {
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+ .students-box {
+    position: relative;
+    top: 80px;
+    left: 300px;
+    width: 1200px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.students-box-content {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.students-title {
+    font-size: 3.0em;
+    font-weight: 600;
+}
+
+.students-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+}
+
+.students-box-list {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    color: #000;
+}
+
+.students-box-list-item-content-left-text {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.students-box-list-item-content-right {
+    position: relative;
+    top: -30px;
+    left: 100px;
+}
+
+.students-box-list-item-content-left-text-email {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -60px;
+    left: 700px;
+}
+
+.students-box-list-item-content-left-text-name {
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    position: relative;
+    top: -40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: -90px;
+}
+
+.add-grade {
+    background: transparent;
+    border: transparent;
+    position: relative;
+    top: -55px;
+    left: -20px;
+}
+
+.add-grade:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+.add-absence {
+    background: transparent;
+    border: transparent;
+    position: relative;
+    top: -79px;
+    left: 10px;
+}
+
+.add-absence:hover {
+    background: #F0F7FF;
+    border-radius: 10px;
+}
+
+
+.normal {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #000;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+.normal:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+ .normal:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .normal::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    border-radius: 20px;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .normal:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+
+  .videoconferences-box {
+    position: relative;
+    top: 100px;
+    left: 300px;
+    width: 1200px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+    .videoconferences-box-content {
+        position: relative;
+        top: 30px;
+        left: 80px;
+        color: #000;
+    }
+
+    .videoconferences-title {
+        font-size: 3.0em;
+        font-weight: 600;
+    }
+
+    .videoconferences-text {
+        font-size: 0.950em;
+        font-weight: 300;
+        color: #000;
+    }
+
+
+
+
+
+
+     .red {
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid red;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background: transparent;
+        color: #000;
+        overflow: hidden;
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+      }
+      
+      .red:hover {
+        background: red;
+        box-shadow: 0 0 30px 5px red;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+      
+      .red:hover::before {
+        -webkit-animation: sh02 0.5s 0s linear;
+        -moz-animation: sh02 0.5s 0s linear;
+        animation: sh02 0.5s 0s linear;
+      }
+      
+      .red::before {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 86%;
+        position: absolute;
+        border-radius: 20px;
+        top: 7%;
+        left: 0%;
+        opacity: 0;
+        background: #fff;
+        box-shadow: 0 0 50px 30px #fff;
+        -webkit-transform: skewX(-20deg);
+        -moz-transform: skewX(-20deg);
+        -ms-transform: skewX(-20deg);
+        -o-transform: skewX(-20deg);
+        transform: skewX(-20deg);
+      }
+      
+      @keyframes sh02 {
+        from {
+          opacity: 0;
+          left: 0%;
+        }
+      
+        50% {
+          opacity: 1;
+        }
+      
+        to {
+          opacity: 0;
+          left: 100%;
+        }
+      }
+      
+      .red:active {
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: box-shadow 0.2s ease-in;
+        -moz-transition: box-shadow 0.2s ease-in;
+        transition: box-shadow 0.2s ease-in;
+      }
+    
+    
+      .videoconferences-box {
+        position: relative;
+        top: 100px;
+        left: 300px;
+        width: 1200px;
+        height: 400px;
+        background: #FFF;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+    
+        .videoconferences-box-content {
+            position: relative;
+            top: 30px;
+            left: 80px;
+            color: #000;
+        }
+    
+        .videoconferences-title {
+            font-size: 3.0em;
+            font-weight: 600;
+        }
+    
+        .videoconferences-text {
+            font-size: 0.950em;
+            font-weight: 300;
+            color: #000;
+        }
+    
+        
