@@ -78,17 +78,6 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    white-space: nowrap;
  }
 
- .userRank {
-   top: 25px;
-   left: 40px;
-   display: inline;
-   position: absolute;
-   font-size: 0.7em;
-   font-weight: 400;
-   color: #000;
-   white-space: nowrap;
- }
-
  .leftbar .icon {
       position: absolute;
       top: -55px;
@@ -135,7 +124,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    border: 15px solid #F0F7FF;
    background: #F0F7FF;
    border-radius: 40px;
-   width: 240px;
+   width: 280px;
    height: 80px;
 }
 
@@ -181,11 +170,14 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_list_item_text_description {
    position: absolute;
    top: 35px;
+   width: 150px;
    font-size: 1.0em;
    font-weight: 400;
    color: #000;
    display: inline;
    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .activities_list_item_text_time {
@@ -243,7 +235,18 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    color: #000;
    display: inline;
    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 120px;
 }
+
+
+.activities-button {
+   background: transparent;
+   border: transparent;
+}
+
+
 </style>
 <?php
 foreach($urls as $url) {

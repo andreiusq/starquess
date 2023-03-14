@@ -170,11 +170,14 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_list_item_text_description {
    position: absolute;
    top: 35px;
+   width: 150px;
    font-size: 1.0em;
    font-weight: 400;
    color: #000;
    display: inline;
    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .activities_list_item_text_time {
@@ -232,7 +235,18 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    color: #000;
    display: inline;
    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 120px;
 }
+
+
+.activities-button {
+   background: transparent;
+   border: transparent;
+}
+
+
 </style>
 <?php
 foreach($urls as $url) {
@@ -296,6 +310,7 @@ foreach($urls as $url) {
             }
             ?>
             <br>
+            <button onclick="seeactivity(event)" class="activities-button">
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
@@ -306,6 +321,7 @@ foreach($urls as $url) {
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
+         </button>
             <?php } ?> <br>
         </div>
     </div>
@@ -384,4 +400,16 @@ foreach($urls as $url) {
       }
     });
   }
+
+
+
+
+async function seeactivity(event)
+{
+   
+
+
+
+
+}
 </script>
