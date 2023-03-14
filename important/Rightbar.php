@@ -78,9 +78,8 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    white-space: nowrap;
  }
 
-<<<<<<< HEAD
  .userRank {
-   top: 20px;
+   top: 17px;
    left: 40px;
    display: inline;
    position: absolute;
