@@ -228,7 +228,7 @@ color:red;
     <ul style="top: 190px;">
     <?php if($is_administrator == 0) { ?>
         <li class="list active" style="left: 30px;">
-            <a href="../index.php">
+            <a href="../../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
                <span class="title">Acasa</span>
             </a>
@@ -243,14 +243,14 @@ color:red;
         </li>
 
         <li class="list" style="left: 30px">
-            <a href="../situatie-scolara.php">
+            <a href="../../situatie-scolara.php">
                <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
                <span class="title">Situatie scolara</span>
             </a>
         </li>
 
         <li class="list" style="left: 30px">
-            <a href="../documente.php">
+            <a href="../../documente.php">
                <span class="icon"><i class="fa-solid fa-file"></i></span>
                <span class="title">Documente</span>
             </a>
@@ -263,9 +263,9 @@ color:red;
                <span class="title">Funcționalități</span>
                <span class="number"> 3 </span>
                <div class="dropdown-content">
-                  <a href="../pages/users/videocalls_list.php"><i class="fa-solid fa-video"></i>‎ Videoconferințe</a>
-                  <a href="../pages/users/library.php"><i class="fa-solid fa-book"></i>‎ Librărie</a>
-                  <a href="../pages/alpha-features/messages/mesaje.php"><i class="fa-solid fa-messages"></i> ‎ Mesaje</a> <span class="alpha-text">ALPHA </span>
+                  <a href="../users/videocalls_list.php"><i class="fa-solid fa-video"></i>‎ Videoconferințe</a>
+                  <a href="../users/library.php"><i class="fa-solid fa-book"></i>‎ Librărie</a>
+                  <a href="../alpha-features/messages/mesaje.php"><i class="fa-solid fa-messages"></i> ‎ Mesaje</a> <span class="alpha-text">ALPHA </span>
                </div>
             </div>
          </li>
