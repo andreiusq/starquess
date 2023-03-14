@@ -68,7 +68,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
  }
 
  .userName {
-   top: 2px;
+   top: -2px;
    left: 40px;
    display: inline;
    position: absolute;
@@ -79,7 +79,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
  }
 
  .userRank {
-   top: 25px;
+   top: 20px;
    left: 40px;
    display: inline;
    position: absolute;
@@ -108,7 +108,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 
 .activities_title {
-   position: absolute;
+   position: absoplute;
    top: 150px;
    left: -40px;
    font-size: 1.2em;
@@ -219,6 +219,9 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
  .activities-top-buttons-add {
     background: transparent;
+	position: relative;
+	left: -22px;
+	bottom: -0.2px;
     border: transparent;
 }
 
@@ -275,7 +278,7 @@ foreach($urls as $url) {
         <h5 class="activities_title">Activitatile mele</h5>
         <h5 class="activities_seeall">
          <!-- adauga -->
-            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus"></i></button>
+            <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus fa-xl"></i></button>
         </h5>
         <div class="activities_list">
          <?php foreach ($activities as $activity) { ?>
