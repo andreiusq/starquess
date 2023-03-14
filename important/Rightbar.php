@@ -108,7 +108,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 
 .activities_title {
-   position: absoplute;
+   position: absolute;
    top: 150px;
    left: -40px;
    font-size: 1.2em;
@@ -127,7 +127,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 .activities_list_item {
    position: relative;
-   top: 200px;
+   top: 170px;
    left: -60px;
    font-size: 0.8em;
    font-weight: 400;
