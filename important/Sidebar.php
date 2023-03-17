@@ -57,13 +57,11 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
  }
  .sidebar ul li.active{
-
-background: #F0F7FF;
-border-left:5px solid #0d80f2 ;
-font-size: 1.4em;
-font-weight: 600;
-color: #0d80f2;
- 
+	background: #F0F7FF;
+	border-left:5px solid #0d80f2 ;
+	font-size: 1.4em;
+	font-weight: 600;
+	color: #0d80f2;
  }
 
  

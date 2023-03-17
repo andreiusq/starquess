@@ -72,18 +72,18 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
    left: 40px;
    display: inline;
    position: absolute;
-   font-size: 1.2em;
+   font-size: 1.3em;
    font-weight: 400;
    color: #000;
    white-space: nowrap;
  }
 
  .userRank {
-   top: 19px;
+   top: 18.5px;
    left: 40px;
    display: inline;
    position: absolute;
-   font-size: 0.7em;
+   font-size: 0.85em;
    font-weight: 400;
    color: #000;
    white-space: nowrap;
@@ -110,7 +110,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_title {
    position: absolute;
    top: 150px;
-   left: -40px;
+   left: -35px;
    font-size: 1.2em;
    font-weight: 600;
    color: #000;
@@ -118,21 +118,21 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 .activities_seeall {
    position: absolute;
-   top: 155px;
-   left: 150px;
-   font-size: 0.8em;
+   top: 157.2px;
+   left: 153px;
+   font-size: 0.7em;
    font-weight: 400;
    color: #0d80f2;
 }
 
 .activities_list_item {
    position: relative;
-   top: 170px;
-   left: -60px;
+   top: 165px;
+   left: -55px;
    font-size: 0.8em;
    font-weight: 400;
    color: #000;
-   border: 15px solid #F0F7FF;
+   border: 10px solid #F0F7FF;
    background: #F0F7FF;
    border-radius: 40px;
    width: 280px;
@@ -141,20 +141,20 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 .activities_list_item_icon {
    position: absolute;
-   top: 10px;
+   top: 8px;
    left: 10px;
    width: 40px;
    height: 40px;
    border-radius: 20px;
-   border: 15px solid pink;
-   background: pink;
+   border: 15px #0077ff;
+   background: #0077ff;
 }
 
 .activities_list_item_text {
    position: absolute;
-   top: 5px;
-   left: 70px;
-   font-size: 0.8em;
+   top: 4px;
+   left: 60px;
+   font-size: 1.15em;
    font-weight: 400;
    color: #000;
 }
@@ -162,7 +162,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_list_item_text_date {
    position: absolute;
    top: 15px;
-   font-size: 12px;
+   font-size: 1.0em;
    font-weight: 400;
    color: #000;
    display: inline;
@@ -171,9 +171,10 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 .activities_list_item_date {
    position: relative;
-   top: -10px;
-   left: -10px;
-   justify-content: center;
+   top: -8px;
+   left: 0px;
+   top: 6px;
+   justify-content:left;
    color: #fff;
    font-size: 24px;
 }
@@ -193,7 +194,8 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 .activities_list_item_text_time {
    position: absolute;
-   font-size: 12px;
+   font-size: 1.0em;
+   top: -100px;
    font-weight: 400;
    color: #000;
    top: 16px;
@@ -261,6 +263,11 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 }
 
 
+.activites_button {
+   background: transparent;
+   border: transparent;
+}
+
 </style>
 <?php
 foreach($urls as $url) {
@@ -278,7 +285,7 @@ foreach($urls as $url) {
     <div class="leftbar__top">
         <div class="leftbar__top__img">
             <h4 class="userName"><?php echo $user['name']; echo ' '; echo $user['last_name'] ?> </h4>
-            <?php if($user['rank'] == 11) { ?> <h5 class="userRank">Starquess TEAM </h5> <?php } ?>
+            <?php if($user['rank'] == 11) { ?> <h5 class="userRank"> Starquess Founder </h5> <?php } ?>
             <?php foreach($imageTags as $img) { echo $img; } ?>
         </div>
     </div>
@@ -289,7 +296,7 @@ foreach($urls as $url) {
     </div>-->
 
     <div class="leftbar_activites">
-        <h5 class="activities_title">Activitatile mele</h5>
+        <h5 class="activities_title">Activitățile mele</h5>
         <h5 class="activities_seeall">
          <!-- adauga -->
             <button class="activities-top-buttons-add" onclick="adauganou(event)"><i class="fas fa-plus fa-xl"></i></button>
@@ -325,6 +332,7 @@ foreach($urls as $url) {
             }
             ?>
             <br>
+            <button class="activites_button" onclick="checkevent(event)">
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
@@ -335,6 +343,7 @@ foreach($urls as $url) {
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
+         </button>
             <?php } ?> <br>
         </div>
     </div>
@@ -412,5 +421,23 @@ foreach($urls as $url) {
         });
       }
     });
+  }
+
+
+  async function checkevent(e) {
+      e.preventDefault();
+      Swal.fire({
+         title: "Detalii activitate",
+         html:
+               "<h4> <?php echo $activity['activity_name'] ?></h4>" +
+               "<?php echo $activity['activity_description'] ?>",
+         text: "Nume: <?php echo $activity['activity_name'] ?>",
+         footer: "<?php echo $formatted_date ?> <?php echo ' ' ?> <?php echo $formatted_time ?>",
+         confirmButtonText: 'Ok',
+         focusConfirm: false,
+         inputAttributes: {
+            maxlength: 250
+         },
+      });
   }
 </script>
