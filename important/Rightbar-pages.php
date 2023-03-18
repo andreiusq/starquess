@@ -119,7 +119,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_seeall {
    position: absolute;
    top: 157.2px;
-   left: 153px;
+   left: -153px;
    font-size: 0.7em;
    font-weight: 400;
    color: #0d80f2;
@@ -172,7 +172,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_list_item_date {
    position: relative;
    top: -8px;
-   left: 0px;
+   left: 12px;
    top: 6px;
    justify-content:left;
    color: #fff;
@@ -332,7 +332,6 @@ foreach($urls as $url) {
             }
             ?>
             <br>
-            <button class="activites_button" onclick="checkevent(event)">
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
@@ -343,7 +342,6 @@ foreach($urls as $url) {
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
-         </button>
             <?php } ?> <br>
         </div>
     </div>
