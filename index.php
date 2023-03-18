@@ -227,7 +227,8 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
             <?php } ?>
         </div>
     </div>
-    </div>
+        </div>
+
 </body>
 
 
