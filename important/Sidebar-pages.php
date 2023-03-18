@@ -223,7 +223,7 @@ color:red;
     <ul style="top: 190px;">
     <?php if($is_administrator == 0) { ?>
         <li class="list active" style="left: 30px;">
-            <a href="../index.php">
+            <a href="../../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
                <span class="title">Acasă</span>
             </a>
@@ -238,14 +238,14 @@ color:red;
         </li>
 
         <li class="list" style="left: 30px">
-            <a href="../situatie-scolara.php">
+            <a href="../../situatie-scolara.php">
                <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
                <span class="title">Situație scolară</span>
             </a>
         </li>
 
         <li class="list" style="left: 30px">
-            <a href="../documente.php">
+            <a href="../../documente.php">
                <span class="icon"><i class="fa-solid fa-file"></i></span>
                <span class="title">Documente</span>
             </a>
@@ -253,7 +253,7 @@ color:red;
 
 		<li class="list" style="left: 30px">
     <div class="dropdown">
-        <a href="../functionalitati.php">
+        <a href="../../functionalitati.php">
             <span class="icon"><i class="fa-solid fa-gear"></i></span>
             <span class="title">Funcționalități</span>
             <span class="number">3</span>
