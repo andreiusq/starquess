@@ -332,7 +332,6 @@ foreach($urls as $url) {
             }
             ?>
             <br>
-            <button class="activites_button" onclick="checkevent(event)">
             <div class="activities_list_item">
                 <div class="activities_list_item_icon">
                     <h2 class="activities_list_item_date"><?php echo $dateNumber ?></h2>
@@ -343,7 +342,6 @@ foreach($urls as $url) {
                     <p class="activities_list_item_text_description"><?php echo $activity["activity_description"] ?> </p>
                 </div>
             </div>
-         </button>
             <?php } ?> <br>
         </div>
     </div>
