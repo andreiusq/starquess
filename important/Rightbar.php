@@ -119,7 +119,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_seeall {
    position: absolute;
    top: 157.2px;
-   left: 153px;
+   left: -153px;
    font-size: 0.7em;
    font-weight: 400;
    color: #0d80f2;
@@ -172,7 +172,7 @@ $urls = $stmt->fetchAll(PDO::FETCH_COLUMN);
 .activities_list_item_date {
    position: relative;
    top: -8px;
-   left: 0px;
+   left: 12px;
    top: 6px;
    justify-content:left;
    color: #fff;

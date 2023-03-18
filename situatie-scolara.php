@@ -55,7 +55,7 @@ $absences = $stmt->fetchAll();
 
     <div class="my-grades-box">
         <div class="my-grades-box-content">
-            <h1 class="my-grades-box-title">Situatie scolara</h1>
+            <h1 class="my-grades-box-title">Situație școlară</h1>
             <br>
             <?php foreach ($grades as $grade) { ?> 
             <div class="my-grades-box-content-grades">
@@ -98,7 +98,7 @@ $absences = $stmt->fetchAll();
                                 } else if($grade['subject_id'] == 20) {
                                     echo 'Economie';
                                 } else if($grade['subject_id'] == 21) {
-                                    echo 'Ed. Antreprenoriala';
+                                    echo 'Ed. Antreprenorială';
                                 }?></h5>
                         <div class="grades-box">
                             <h3 class="grades"><?php echo $grade['grade'] ?></h5>
