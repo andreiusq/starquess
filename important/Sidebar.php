@@ -295,7 +295,7 @@ color:red;
         </li>
         
         <li class="list" style="left: 30px">
-            <a href="../alpha-features/messages/mesaje.php">
+            <a href="../mesaje.php">
                <span class="icon"><i class="fa-solid fa-messages"></i></span>
                <span class="title">Mesaje</span>
             </a>
