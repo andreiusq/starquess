@@ -53,7 +53,7 @@ $is_administrator = 0;
 
     <div class="videoconferences-box">
         <div class="videoconferences-box-content">
-            <h1 class="students-title">Videoconferința <b>CONAF</b></h1>
+            <h1 class="students-title">Videoconferința <b>ta</b></h1>
             <p class="students-text">Gestionează vieoconferința actuală</p>
             <div class="videoconferences-box-list">
                 <div class="videoconferences-box-list-item">
@@ -118,13 +118,13 @@ function makeConference() {
 
 function closeConference() { 
     Swal.fire({
-    title: 'Ești sigur?',
-    text: "Conferința va fi închisă și nu vei putea reintra!",
+    title: 'Oopsie...',
+    text: "Această funcționalitate încă nu este implementată, dar poți să o folosești în curând!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Da, închide conferința!'
+    confirmButtonText: 'Ok'
     }).then((result) => {
     if (result.isConfirmed) {
         Swal.fire(
