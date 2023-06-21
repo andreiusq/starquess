@@ -225,7 +225,7 @@ color:red;
 
     <ul style="top: 190px;">
     <?php if($is_administrator == 0) { ?>
-        <li class="list active" style="left: 30px;">
+        <li class="list" style="left: 30px;">
             <a href="../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
                <span class="title">Acasă</span>
@@ -256,8 +256,11 @@ color:red;
         
         <?php } ?>
 
-        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0) { ?> <li class="list" style="left: 30px">
-            <a href="../users/clasa-mea.php">
+        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0) { ?> 
+
+         <li class="list" style="left: 30px">
+         
+            <a href="../pages/users/clasa-mea.php">
                <span class="icon"><i class="fa-solid fa-users"></i></span>
                <span class="title">Clasa mea</span>
             </a>
