@@ -159,7 +159,7 @@ function addAbsence(selected_student_id) {
       const absenceDate = result.value.absenceDate;
       $.ajax({
         type: 'POST',
-        url: 'backend/queries/add_absence.php',
+        url: '/backend/queries/add_absence.php',
         data: { selected_student_id: selected_student_id, absence_date: absenceDate},
         success: function(response) {
           if (response.status === 'success') {

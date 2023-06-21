@@ -82,10 +82,10 @@ body {
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
-    width: 300px;
-    height: 200px;
+    width: 700px;
+    height: 120px;
     position: absolute;
-    left: 65%;
+    left: 15%;
     top: 20px;
 }
 
@@ -106,4 +106,66 @@ body {
     font-size: 17px;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+
+.recomanda-starquess {
+    background: #fff;
+    background-image: url("https://www.adservio.ro/rimages/5c3e46e33620b579b27b..png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 400px;
+    height: 220px;
+    position: absolute;
+    left: 60%;
+    top: 20px;
+    filter: blur(3px);
+}
+
+.title-recommandation {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.text-recommandation {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.recommandation-link {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.recomanda-starquess-text {
+    position: absolute;
+    left: 61%;
+    top: 60px;
+}
+
+.asistenta-stuff {
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 400px;
+    height: 220px;
+    position: absolute;
+    left: 60%;
+    top: 300px;
+}
+
+
+
+.actiuni {
+    position: relative;
+    left: 17%;
+    top: 80px;
 }

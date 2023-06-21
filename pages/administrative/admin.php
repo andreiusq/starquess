@@ -81,6 +81,7 @@ $result = $stmt->fetch();
     <link rel="stylesheet" href="../../styles/administrator/all.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://unpkg.com/@andreasremdt/simple-translator@latest/dist/umd/translator.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
     
@@ -88,7 +89,7 @@ $result = $stmt->fetch();
     <?php include '../../important/Rightbar.php'; ?>
     <?php include '../../important/Sidebar.php'; ?>
 
-    <div class="stats-box">
+    <!--<div class="stats-box">
         <div class="stats-box-item">
             <i class="fa-solid fa-users fa-xl" style="top: -5px;"></i>
             <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Users</h1>
@@ -109,14 +110,66 @@ $result = $stmt->fetch();
             <h1 class="stats-box-item-title" style="position: absolute; left: 40px;">Platform uptime (this instance)</h1>
             <h2  class="stats-box-item-number"><?php echo $uptime ?></h2>
         </div>
+    </div> -->
+
+
+    <div class="card text-bg-dark" style="width: 25em; position: absolute; left: 60%; top: 20px;">
+        <img src="https://www.adservio.ro/rimages/5c3e46e33620b579b27b..png" class="card-img" alt="..." stlye="filter: blur(2px);">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Recomandă Starquess</h5>
+            <p class="card-text">Recomandă Starquess unei unități de învățământ și contribuie la transformarea digitală!</p>
+        </div>
+        </div>
+
+
+    <div class="card" style="width: 50em; position: relative; top: 60px; left: 17%;">
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $result['name'] ?></h5>
+            <p class="card-text"> <?php echo $result['location'] ?> </p>
+           <a href="school_edit.php?school_id=<?php echo $result['school_id'] ?>" class="btn btn-primary">Setări școală</a>
+        </div>
     </div>
 
-    <div class="school-information-box">
-        <h2 class="school-name"> <?php echo $result['name'] ?> </h2>
-        <h4 class="school-location"> <?php echo $result['location'] ?> </h4>
-        <h4 class="school-type"> Public </h4>
-        <a href="school_edit.php?school_id=<?php echo $result['school_id'] ?>"><i class="fa-solid fa-gear fa-2x" style="top: -140px; left: 230px;"></i></a>
+    <div class="asistenta-stuff">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> Asistență </h5>
+                <p class="card-text"> Întâmpini probleme? Contactează-ne! </p>
+                <a href="#" class="btn btn-primary"> Contactează-ne </a>
+            </div>
+        </div>
     </div>
+
+    <div class="actiuni">
+        <h5 class="actiuni-title">Acțiuni</h5>
+        <div class="row">
+        <div class="col-sm-3">
+            <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+
+    <!-- script -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 
 </body>
 </html>

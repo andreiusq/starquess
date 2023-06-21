@@ -57,11 +57,13 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
  }
  .sidebar ul li.active{
-	background: #F0F7FF;
-	border-left:5px solid #0d80f2 ;
-	font-size: 1.4em;
-	font-weight: 600;
-	color: #0d80f2;
+
+background: #F0F7FF;
+border-left:5px solid #0d80f2 ;
+font-size: 1.4em;
+font-weight: 600;
+color: #0d80f2;
+ 
  }
 
  
@@ -202,13 +204,14 @@ color:red;
    border-radius: 50%;
    width: 60px;
    height: 20px;
-   top: 113px;
+   top: 133px;
    left: 120px;
    text-align: center;
    font-size: 12px;
    line-height: 20px;
    font-weight: 600;
 }
+
 
 </style>
 
@@ -221,7 +224,7 @@ color:red;
     </div>
 
     <ul style="top: 190px;">
-    <?php if($is_administrator == 0) { ?>
+    <?php if($is_administrator == 0 && $user['rank'] == 1) { ?>
         <li class="list active" style="left: 30px;">
             <a href="../../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
@@ -229,9 +232,42 @@ color:red;
             </a>
         </li>
         <?php } ?>
+        
+        
 
-        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0 || $user['rank'] == 2) { ?> <li class="list" style="left: 30px">
-            <a href="../pages/users/clasa-mea.php">
+        <?php if($user['rank'] == 2) { ?> <li class="list" style="left: 30px">
+            
+                    <li class="list active" style="left: 30px;">
+            <a href="../parinte/parinte.php">
+               <span class="icon"><i class="fa-solid fa-house"></i></span>
+               <span class="title">Acasă</span>
+            </a>
+        </li>
+            <li class="list" style="left: 30px;" >
+            <a href="../users/clasa-mea.php">
+               <span class="icon"><i class="fa-solid fa-users"></i></span>
+               <span class="title">Clasa lui Mihai</span>
+            </a>
+        </li>
+        
+        <li class="list" style="left: 30px">
+            <a href="../../situatie-scolara.php">
+               <span class="icon"><i class="fa-solid fa-bookmark"></i></span>
+               <span class="title">Situație școlară</span>
+            </a>
+        </li>
+
+        <li class="list" style="left: 30px">
+            <a href="../../documente.php">
+               <span class="icon"><i class="fa-solid fa-file"></i></span>
+               <span class="title">Documente</span>
+            </a>
+        </li>
+        
+        <?php } ?>
+
+        <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0) { ?> <li class="list" style="left: 30px">
+            <a href="../users/clasa-mea.php">
                <span class="icon"><i class="fa-solid fa-users"></i></span>
                <span class="title">Clasa mea</span>
             </a>
@@ -250,25 +286,31 @@ color:red;
                <span class="title">Documente</span>
             </a>
         </li>
+        
+        <li class="list" style="left: 30px">
+            <a href="../users/videocalls_list.php">
+               <span class="icon"><i class="fa-solid fa-video"></i></span>
+               <span class="title">Videoconferințe</span>
+            </a>
+        </li>
 
-		<li class="list" style="left: 30px">
-    <div class="dropdown">
-        <a href="../../functionalitati.php">
-            <span class="icon"><i class="fa-solid fa-gear"></i></span>
-            <span class="title">Funcționalități</span>
-            <span class="number">3</span>
-        </a>
-        <div class="dropdown-content">
-            <a href="../pages/users/videocalls_list.php"><i class="fa-solid fa-video"></i>‎ Videoconferințe</a>
-            <a href="../pages/users/library.php"><i class="fa-solid fa-book"></i>‎ Librărie</a>
-            <a href="../pages/alpha-features/messages/mesaje.php"><i class="fa-solid fa-messages"></i> Mesaje</a>
-            <span class="alpha-text">ALPHA </span>
-        </div>
-    </div>
-		</li>
+        <li class="list" style="left: 30px">
+            <a href="../users/library.php">
+               <span class="icon"><i class="fa-solid fa-book"></i></span>
+               <span class="title">Librărie</span>
+            </a>
+        </li>
+        
+        <li class="list" style="left: 30px">
+            <a href="../alpha-features/messages/mesaje.php">
+               <span class="icon"><i class="fa-solid fa-messages"></i></span>
+               <span class="title">Mesaje</span>
+            </a>
+        </li>
 
 
-        <?php } if($user["rank"] == 2) { ?>
+
+        <?php } if($user["rank"] == 3) { ?>
         <li class="list" style="left: 30px">
             <a href="../teacher.php">
                <span class="icon"><i class="fa-solid fa-gear"></i></span>
@@ -318,7 +360,7 @@ color:red;
 
         
 
-        <li class="list" style="left: 30px; top: 190px; color: red;">
+        <li class="list" style="left: 30px; color: red;">
             <a href="../signout.php">
             <span class="icon"  style="color:#0077ff;"><i class="fa-solid fa-door-open"></i></span>
             <span class="title" style="color:#0077ff;"> Deconectare</span>

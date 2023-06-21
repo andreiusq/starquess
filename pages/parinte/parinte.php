@@ -3,7 +3,7 @@
 
 define('BASEPATH', true);
 session_start();
-require('backend/config/db.php');
+require('../../backend/config/db.php');
 
 $is_administrator = 0;
 
@@ -101,6 +101,47 @@ $average_last_week = count($grades_last_week) > 0 ? array_sum($grades_last_week)
 
 // Calculate the percentage improvement
 $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_last_week) / $average_last_week) * 100 : 0;
+
+
+// informatii parinte & elev
+$parinteId  = $cont['id'];
+
+
+// Obține informațiile despre părinte
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = :parinte_id");
+$stmt->execute(array('parinte_id' => $parinteId));
+$parinte = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Obține informațiile despre elev
+$stmt = $pdo->prepare("SELECT parent_id FROM users WHERE id = :elev_id");
+$stmt->execute(array('elev_id' => $elevId));
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+if($result) {
+    $elevParentId = $result['parent_id'];
+    if($elevParentId = $result['parent_id'] == $cont['id']) {
+        console_log("FUNCTIONEAZA 1");
+    } else {
+        console_log("NU MERGE 1");
+    }
+}
+
+
+$stmt = $pdo->prepare("SELECT u.name
+                      FROM users AS u
+                      WHERE u.parent_id = :parent_id");
+$stmt->execute(array('parent_id' => $parentID));
+$elevi = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if ($elevi) {
+    foreach ($elevi as $elev) {
+        $numeElev = $elev['name'];
+        // Utilizează $numeElev după nevoile tale
+    }
+} else {
+    // Nu există elevi cu părintele specificat sau părintele nu are elevi asignați
+    // Gestionează această situație corespunzător
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -109,9 +150,9 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="preload" href="styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="styles/dashboard/all.css">
+    <title>Părinte</title>
+    <link rel="preload" href="../../styles/FontAwesome/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="../../styles/dashboard/all.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -135,30 +176,30 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
 
 <body>
 
-    <?php require './important/Rightbar.php'; ?>
-    <?php require './important/Sidebar.php'; ?>
+    <?php require '../../important/Rightbar-pages.php'; ?>
+    <?php require '../../important/Sidebar-pages.php'; ?>
 
     <!-- welcome box -->
 
         <div class="welcome-box">
             <div class="welcome-box-content">
-                <h1>Bine ai revenit, <?php echo $cont["name"]; echo "!" ?></h1>
+                <h1>Bine ați revenit, domnule <?php echo $cont["name"]; echo "!" ?></h1>
                 <?php if($percent_improvement > 0) : ?>
-                    <p class="congrats-text">Ești mai bun cu <b><?php echo number_format($percent_improvement, 2) ?> %</b> în această săptămână. Felicitări!</p>
+                    <p class="congrats-text">Copilul dvs. a fost mai bun cu <b><?php echo number_format($percent_improvement, 2) ?> %</b> în această săptămână!</p>
                 <?php else : ?>
-                    <p class="congrats-text">Nu ai avut nicio notă în această săptămână.</p>
+                    <p class="congrats-text">Copilul dvs. nu a primit nicio notă în această săptămână.</p>
                 <?php endif; ?>
 
             </div>
             <div className='welcome-box-image'> 
-                <img src="https://i.imgur.com/YCBEE6D.png" alt="Salut!" height="200px" style="position: relative; top: -110px; left: 900px" />
+                <img src="https://cdn.discordapp.com/attachments/1072237460827951196/1105583787305336942/YCBEE6D_1.png" alt="Salut!" height="200px" style="position: relative; top: -110px; left: 900px" />
             </div>
         </div>
 
         <!-- performance box -->
         <div class="performance-box">
             <div class="performance-box-content">
-                <h4 class="performance-box-title">Performanță</h4>
+                <h4 class="performance-box-title">Performanța lui Mihai </h4>
     <!--            <i class="fa-solid fa-circle-xmark fa-4x" style="color: red; position: relative; top: 80px; left: 260px;"></i>
                 <h5 style="position: relative; top: 100px; left: 30px;">Oopsie! Looks like we can't calculate your performance</h5>
         -->
@@ -230,7 +271,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     <!-- news box -->
     <div class="news-box">
         <div class="news-box-content">
-            <h1 class="news-title">Noutăți</h1>
+            <h1 class="news-title">Anunțuri școlare</h1>
         </div>
         <div class="news-box-news">
         <?php foreach($news as $row) { ?>
@@ -246,12 +287,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     </div>
     </div>
 </body>
-
-
-
 <script>
-
-        
     function viewnews(news) {
         Swal.fire({
             title: "Titlu",
@@ -268,13 +304,13 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     var dayOfWeekText = "";
     switch (dayOfWeek) {
         case 0:
-            dayOfWeekText = "Duminica";
+            dayOfWeekText = "Duminică";
             break;
         case 1:
             dayOfWeekText = "Luni";
             break;
         case 2:
-            dayOfWeekText = "Marti";
+            dayOfWeekText = "Marți";
             break;
         case 3:
             dayOfWeekText = "Miercuri";
@@ -286,7 +322,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
             dayOfWeekText = "Vineri";
             break;
         case 6:
-            dayOfWeekText = "Sambata";
+            dayOfWeekText = "Sâmbătă";
             break;
     }
     if (day < 10) {
@@ -299,9 +335,9 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     document.getElementById("date").innerHTML = dateText;
 
     if(dayOfWeek == 0 || dayOfWeek == 6) {
-        document.getElementById("timetable-title").innerHTML = "Orar";
+        document.getElementById("timetable-title").innerHTML = "Orarul copilului dvs.";
     } else {
-        document.getElementById("timetable-title").innerHTML = "Orar";
+        document.getElementById("timetable-title").innerHTML = "Orarul copilului dvs.";
     }
 
     var hour = date.getHours();
@@ -314,7 +350,7 @@ $percent_improvement = $average_last_week > 0 ? (($average_this_week - $average_
     }
 
     if(hour > 15) {
-        document.getElementById("timetable-title").innerHTML = "Orar";
+        document.getElementById("timetable-title").innerHTML = "Orarul copilului dvs.";
     }
 
 

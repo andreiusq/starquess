@@ -1,0 +1,73 @@
+[08-May-2023 21:58:01 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:01 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:01 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:04 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:04 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:04 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:05 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:05 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:05 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:41 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:41 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:58:41 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:59:29 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:59:29 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:59:29 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:59:31 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:59:31 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 21:59:31 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:00:15 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:00:15 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:00:15 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:01:54 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:01:54 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:01:54 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:17 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:17 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:17 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:18 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:18 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:18 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:20 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:20 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:05:20 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parent/parent.php on line 6
+[08-May-2023 22:07:04 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[08-May-2023 22:07:04 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[08-May-2023 22:07:04 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 15:59:54 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 15:59:54 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 15:59:54 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:27:43 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:27:43 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:27:43 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:28:06 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:28:06 UTC] PHP Warning:  require(backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:28:06 UTC] PHP Fatal error:  require(): Failed opening required 'backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:31:28 UTC] PHP Warning:  require(../backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:31:28 UTC] PHP Warning:  require(../backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:31:28 UTC] PHP Fatal error:  require(): Failed opening required '../backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:31:58 UTC] PHP Warning:  require(../backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:31:58 UTC] PHP Warning:  require(../backend/config/db.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:31:58 UTC] PHP Fatal error:  require(): Failed opening required '../backend/config/db.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 6
+[09-May-2023 16:32:38 UTC] PHP Warning:  require(./../important/Sidebar.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 139
+[09-May-2023 16:32:38 UTC] PHP Warning:  require(./../important/Sidebar.php): failed to open stream: No such file or directory in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 139
+[09-May-2023 16:32:38 UTC] PHP Fatal error:  require(): Failed opening required './../important/Sidebar.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 139
+[16-May-2023 10:22:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function console_log() in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 127
+[16-May-2023 10:22:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function console_log() in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 127
+[16-May-2023 10:22:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function console_log() in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/kodikasr/public_html/app.starquess.ro/pages/parinte/parinte.php on line 127
+[17-May-2023 06:36:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 339
+[17-May-2023 06:36:57 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 339
+[17-May-2023 06:42:14 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 349
+[17-May-2023 06:42:15 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 349
+[17-May-2023 06:42:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 349
+[17-May-2023 06:42:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 349
+[17-May-2023 06:42:28 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/kodikasr/public_html/app.starquess.ro/important/Sidebar-pages.php on line 349

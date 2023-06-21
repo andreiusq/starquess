@@ -109,19 +109,30 @@ body {
 .absente-box {
     position: relative;
     left: -200px;
-    top: 60px;
-    margin-top: -15px;
+    margin-top: 5px;
+    top: -20px;
 }
 
  .absences-content-box {
-    background: #ff0000;
+    background: #ED4245;
     border-radius: 30px;
     width: 300px;
     height: 50px;
     position: relative;
     top: -145px;
     left: 550px;
-    margin-top: 10px;
+    margin-top: 0px;
+ }
+ 
+  .absences-motivat-content-box {
+    background: #57F287;
+    border-radius: 30px;
+    width: 300px;
+    height: 50px;
+    position: relative;
+    top: -145px;
+    left: 550px;
+    margin-top: 0px;
  }
 
  .absences-date {

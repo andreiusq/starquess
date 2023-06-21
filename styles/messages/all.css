@@ -1,206 +1,191 @@
-
 body {
-    background: #F0F7FF !important;
-    overflow-x: hidden;
+  background: #F0F7FF !important;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
+.content {
+  position: relative;
+  left: 300px;
+  height: calc(100vh - 20px);
+}
 
 .conversation-list {
-    background-color: #fff;
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: bold;
-    width: 300px;
-    height: 100%;
-    padding: 10px;
-    top: 20px;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  width: 300px;
+  height: 100%;
+  padding: 10px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #0077FF #f1f1f1;
 }
 
 .conversation-list::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .conversation-list::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 .conversation-list::-webkit-scrollbar-thumb {
-    background: #0077FF;
-    border-radius: 20px; 
-  }
+  background: #0077FF;
+  border-radius: 20px;
+}
 
 .conversation-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 .conversation-list-item {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    width: 280px;
-    height: 50px;
-    background: #0077FF;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    padding: 10px;
-    cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #0077FF;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .conversation-list-item:hover {
-    background: #0055FF;
+  background: #0055FF;
 }
 
 .conversation-list-item-title {
-    position: absolute;
-    top: 0px;
-    left: 25px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #000;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  margin-left: 40px;
+  margin-top: 4px;
 }
 
 .redirect-user {
-    position: absolute;
-    top: 0px;
-    left: 25px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-    margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
 }
 
 .redirect-user:visited {
-    color: #000;
+  color: #000;
 }
 
 .last-message {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 0.795em;
-    font-weight: 600;
-    top: 20px;
-    color: gray;
-
+  font-size: 0.795em;
+  font-weight: 600;
+  color: gray;
+  margin-top: 4px;
+  margin-left: 40px;
 }
 
 .messages-content {
-    position: absolute;
-    top: 20px;
-    left: 300px;
-    width: 600px;
-    height: 300px;
-    background: #FFF;
-    overflow-y: scroll;
-    overflow-x: hidden;
+  position: absolute;
+  top: 20px;
+  left: 300px;
+  width: 900px;
+  height: 830px; /* Adjust the height value as per your preference */
+  background: #FFF;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
+
+
+
 .messages-content::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .messages-content::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 .messages-content::-webkit-scrollbar-thumb {
-    background: #0077FF;
-    border-radius: 20px; 
-  }
-
-.messages-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #0077FF;
+  border-radius: 20px;
 }
 
-/* From uiverse.io by @satyamchaudharydev */
-/* removing default style of button */
+.messages-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
-.form button {
-    border: none;
-    background: none;
-    color: #8b8ba7;
-  }
-  /* styling of whole input container */
-  .form {
-    --timing: 0.3s;
-    --width-of-input: 200px;
-    --height-of-input: 40px;
-    --border-height: 2px;
-    --input-bg: #fff;
-    --border-color: #2f2ee9;
-    --border-radius: 30px;
-    --after-border-radius: 1px;
-    position: relative;
-    width: var(--width-of-input);
-    height: var(--height-of-input);
-    display: flex;
-    align-items: center;
-    padding-inline: 0.8em;
-    border-radius: var(--border-radius);
-    transition: border-radius 0.5s ease;
-    background: var(--input-bg,#fff);
-  }
-  /* styling of Input */
-  .input {
-    font-size: 0.9rem;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    padding-inline: 0.5em;
-    padding-block: 0.7em;
-    border: none;
-  }
-  /* styling of animated border */
-  .form:before {
-    content: "";
-    position: absolute;
-    background: var(--border-color);
-    transform: scaleX(0);
-    transform-origin: center;
-    width: 100%;
-    height: var(--border-height);
-    left: 0;
-    bottom: 0;
-    border-radius: 1px;
-    transition: transform var(--timing) ease;
-  }
-  /* Hover on Input */
-  .form:focus-within {
-    border-radius: var(--after-border-radius);
-  }
-  
-  input:focus {
-    outline: none;
-  }
-  /* here is code of animated border */
-  .form:focus-within:before {
-    transform: scale(1);
-  }
-  /* styling of close button */
-  /* == you can click the close button to remove text == */
-  .reset {
-    border: none;
-    background: none;
-    opacity: 0;
-    visibility: hidden;
-  }
-  /* close button shown when typing */
-  input:not(:placeholder-shown) ~ .reset {
-    opacity: 1;
-    visibility: visible;
-  }
-  /* sizing svg icons */
-  .form svg {
-    width: 17px;
-    margin-top: 3px;
-  }
+.message-form {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.sender {
+  align-self: flex-end;
+  background-color: #0077FF;
+  color: #fff;
+}
 
 .timestamp {
-    position: absolute;
-    top: 3px;
-    left: 100px;
-    font-size: 0.795em;
-    font-weight: 600;
-    color: gray;
+  font-size: 0.795em;
+  font-weight: 600;
+  color: gray;
+  margin-top: 4px;
+  margin-left: 40px;
+}
+
+/* Styles for the input form */
+.input-form {
+  position: fixed;
+  bottom: 0;
+  left: 300px;
+  width: calc(100% - 300px);
+  background: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  flex-grow: 1;
+  height: 40px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.send-button {
+  background: #0077FF;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background: #0055FF;
 }

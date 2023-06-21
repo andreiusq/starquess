@@ -74,43 +74,46 @@ $is_administrator = 0;
 
 function makeConference() {
     const { value: type } = Swal.fire({
-    title: 'Alege tipul de întâlnire',
-    input: 'select',
-    inputOptions: {
-        '1': 'Creează o întâlnire instantanee',
-        '2': 'Programează în Starquess Calendar'
-    },
-    inputPlaceholder: 'Selectează tipul',
-    showCancelButton: true,
-    inputValidator: (value) => {
-        return new Promise((resolve) => {
-        if (value === '1') {
-            const { value: name } = Swal.fire({
-                title: 'Introdu numele conferinței',
-                input: 'text',
-                inputLabel: '',
-                inputPlaceholder: 'Numele conferinței',
-                inputAttributes: {
-                    maxlength: 10,
-                    autocapitalize: 'off',
-                    autocorrect: 'off'
+        title: 'Alege tipul de întâlnire',
+        input: 'select',
+        inputOptions: {
+            '1': 'Creează o întâlnire instantanee',
+            '2': 'Programează în Starquess Calendar'
+        },
+        inputPlaceholder: 'Selectează tipul',
+        showCancelButton: true,
+        inputValidator: (value) => {
+            return new Promise((resolve) => {
+                if (value === '1') {
+                    const { value: name } = Swal.fire({
+                        title: 'Introdu numele conferinței',
+                        input: 'text',
+                        inputLabel: '',
+                        inputPlaceholder: 'Numele conferinței',
+                        inputAttributes: {
+                            maxlength: 10,
+                            autocapitalize: 'off',
+                            autocorrect: 'off'
+                        }
+                    }).then((result) => {
+                        if (result.value) {
+                            Swal.showLoading();
+                            // Redirect the user
+                            window.location.href = 'https://meet.starquess.ro/arm-rom-stq';
+                        }
+                    });
+                } else {
+                    resolve('Funcționalitatea încă nu merge, momentan! :)')
                 }
             })
-
-            if (text) {
-                Swal.showLoading();
-            }
-        } else {
-            resolve('Funcționalitatea încă nu merge, momentan! :)')
         }
-        })
-    }
-    })
+    });
 
-    if (fruit) {
-    Swal.fire(`You selected: ${type}`)
+    if (type) {
+        Swal.fire(`Ai ales: ${type}`);
     }
 }
+
 
 
 function closeConference() { 

@@ -54,18 +54,10 @@ $documentsCSE = $stmt->fetchAll();
                 <h1>Documente Consiliul de Administrație</h1>
             </div>
             <div class="documents-box-content-documents">
-            <?php foreach($documentsCA as $documentca) { ?>
-                    <?php if($documentca['document_type'] == 1) { ?> 
-                        <i class="fa-solid fa-file-pdf fa-xl"></i> 
-                    <?php } else if($documentca['document_type'] == 2) { ?> 
-                        <i class="fa-solid fa-file-excel fa-xl"></i>
-                    <?php } else if($documentca['document_type'] == 3) { ?> 
-                        <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
-			<?php if($documentca['document_download'] == 1 && isset($documentca['document_path']) && !empty($documentca['document_path'])) { ?> <a href="' . $documentca['document_path'] . '"> <?php } ?> 
-                        <h4 class="document-title"><?php echo $documentca['document_name'] ?></h4>
+                    <p>Încă nu a fost adăugat nimic aici!</p>
             </div>
         </div>
-        <?php } ?>
+
             </div>
 
         <div class="contabilitate-box">
@@ -74,17 +66,9 @@ $documentsCSE = $stmt->fetchAll();
                     <h1>Documente Contabilitate</h1>
                 </div>
                 <div class="contabilitate-box-content-documents">
-                <?php foreach($documentsCONTAB as $documentcontab) { ?>
-                    <?php if($documentcontab['document_type'] == 1) { ?> 
-                        <i class="fa-solid fa-file-pdf fa-xl"></i> 
-                    <?php } else if($documentcontab['document_type'] == 2) { ?> 
-                        <i class="fa-solid fa-file-excel fa-xl"></i>
-                    <?php } else if($documentcontab['document_type'] == 3) { ?> 
-                        <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
-                    <?php if($documentcontab['document_download'] == 1) { ?> <a href="' . $documentcontab['document_path'] . '"> <?php } ?> 
-                    <h4 class="document-title"><?php echo $documentcontab['document_name'] ?></h4>
+                    <p>Încă nu a fost adăugat nimic aici!</p>
                 </div>
-                <?php } ?>
+
             </div>
         </div>
 
@@ -92,21 +76,12 @@ $documentsCSE = $stmt->fetchAll();
         <div class="consiliu-box">
             <div class="consiliu-box-content">
                 <div class="consiliu-box-content-title">
-                    <h1>Documente Consiliu Școlar</h1>
+                    <h1>Documente Consiliul Școlar</h1>
                 </div>
                 <div class="consiliu-box-content-documents">
-                <?php foreach($documentsCSE as $documentcse) { ?>
-                    <?php if($documentcse['document_type'] == 1) { ?> 
-                        <i class="fa-solid fa-file-pdf fa-xl"></i> 
-                    <?php } else if($documentcse['document_type'] == 2) { ?> 
-                        <i class="fa-solid fa-file-excel fa-xl"></i>
-                    <?php } else if($documentcse['document_type'] == 3) { ?> 
-                        <i class="fa-solid fa-file-word fa-xl"></i> <?php } ?>
-                    <?php if($documentcse['document_download'] == 1) { ?> <a href="' . $documentcse['document_path'] . '"> <?php } ?> 
-                    <h4 class="document-title"><?php echo $documentcse['document_name'] ?></h4>
+                    <p>Încă nu a fost adăugat nimic aici!</p>
                 </div>
             </div>
-            <?php } ?>
         </div>
 
     </div> 

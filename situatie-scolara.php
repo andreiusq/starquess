@@ -55,7 +55,7 @@ $absences = $stmt->fetchAll();
 
     <div class="my-grades-box">
         <div class="my-grades-box-content">
-            <h1 class="my-grades-box-title">Situație școlară</h1>
+            <h1 class="my-grades-box-title">Situatie scolara</h1>
             <br>
             <?php foreach ($grades as $grade) { ?> 
             <div class="my-grades-box-content-grades">
@@ -98,7 +98,7 @@ $absences = $stmt->fetchAll();
                                 } else if($grade['subject_id'] == 20) {
                                     echo 'Economie';
                                 } else if($grade['subject_id'] == 21) {
-                                    echo 'Ed. Antreprenorială';
+                                    echo 'Ed. Antreprenoriala';
                                 }?></h5>
                         <div class="grades-box">
                             <h3 class="grades"><?php echo $grade['grade'] ?></h5>
@@ -111,10 +111,18 @@ $absences = $stmt->fetchAll();
         <h1 class="absente-title">Absențe</h1>
         <?php if($absences) { ?> 
             <?php foreach($absences as $absence) { ?> <br> 
+                <?php if($absence['absence_motivat'] == 0) { ?>
                 <div class="absences-content-box"> 
                     <p class="absences-date"> <?php echo $absence['date'] ?> </p>
                     <p class="absences-subject"> <?php echo $absence['subject'] ?> </p>
                 </div>
+                    <?php } ?>
+                    <?php if($absence['absence_motivat'] == 1) { ?>
+                                            <div class="absences-motivat-content-box"> 
+                    <p class="absences-date"> <?php echo $absence['date'] ?> </p>
+                    <p class="absences-subject"> <?php echo $absence['subject'] ?> </p>
+                </div>
+                    <?php } ?>
                 <?php } ?>  
         <?php } ?>
         
