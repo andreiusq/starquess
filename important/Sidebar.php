@@ -213,6 +213,22 @@ color:red;
 }
 
 
+.new {
+   position: absolute;
+   color: #fff;
+   background-color: #0d80f2;
+   border-radius: 50%;
+   width: 60px;
+   height: 20px;
+   top: 20px;
+   left: 170px;
+   text-align: center;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 600;
+}
+
+
 </style>
 
 <body>
@@ -301,6 +317,13 @@ color:red;
             </a>
         </li>
 
+        <li class="list" style="left: 30px">
+            <a href="../cursuri.php">
+               <span class="icon"><i class="fa-solid fa-book-open-cover"></i></span>
+               <span class="title">Cursuri</span>
+               <span class="new">NOU!</span>
+            </a>
+        </li>
 
 
         <?php } if($user["rank"] == 3) { ?>
