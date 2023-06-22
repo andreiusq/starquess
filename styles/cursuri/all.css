@@ -128,3 +128,113 @@ body {
     font-weight: 300;
     color: #000;
 }
+
+
+/* cursuri box */
+
+.cursuri-box {
+    position: relative;
+    top: -60px;
+    left: 300px;
+    width: 1200px;
+    height: 300px;
+    background: #FFF;
+    border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.cursuri-box-title {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    font-size: 1.2em;
+    font-weight: 600;
+
+}
+
+.cursuri-box-link {
+    position: relative;
+    top: 0px;
+    left: 1000px;
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #0077FF;
+    text-decoration: none;
+}
+
+.sagetuta {
+    position: relative;
+    top: 0px;
+    left: 1000px;
+    width: 20px;
+    height: 20px;
+    background: #0077FF;
+    border-radius: 50%;
+    color: white;
+}
+
+
+.cursuri-box-content {
+    position: relative;
+    top: 50px;
+    left: 60px;
+    width: 1100px;
+    height: 200px;
+    background: #FFF;
+    border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.curs {
+    position: relative;
+    top: -40px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    background: #FFF;
+    border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.950em;
+    font-weight: 300;
+    color: #000;
+    text-decoration: none;
+}
+
+.curs-box {
+    width: 180px; 
+    height: 30px; 
+    background: #0077FF; 
+    border-radius: 7px;
+    position: absolute;
+    top: 160px;
+}
+
+.curs-box-title {
+    width: 100%; 
+    height: 100%; 
+    color: white; 
+    font-size: 15px; 
+    font-family: Open Sans; 
+    font-weight: 600; 
+    word-wrap: break-word;
+    position: absolute;
+    top: 165px;
+    left: 0px;
+}
+
+
+.curs-image {
+    width: 100%; 
+    height: 100%; 
+    border-radius: 15px
+}
+
+
+

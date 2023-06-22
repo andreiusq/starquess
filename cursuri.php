@@ -71,5 +71,22 @@ if(!isset($_SESSION["user"])) {
 
         <!-- end of stats -->
     
+
+        <!-- cursurile tale -->
+
+        <div class="cursuri-box">
+            <div class="cursuri-box-head">
+                <h3 class="cursuri-box-title">Cursurile tale</h3>
+                <a href="#" class="cursuri-box-link">Vezi toate cursurile</a> <i class="fa-regular fa-arrow-right sagetuta"></i>
+            </div>
+            <div class="cursuri-box-content">
+                <div class="curs">
+                    <img class="curs-image" src="https://via.placeholder.com/144x146" />
+                    <div class="curs-box"></div>
+                    <div class="curs-box-title">Titlu</div>
+                </div>
+            </div>
+        </div>
+
 </body>
 </html>
