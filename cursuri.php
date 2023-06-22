@@ -31,8 +31,45 @@ if(!isset($_SESSION["user"])) {
 </head>
 <body>
 
-<?php include './important/Rightbar.php'; ?>
-    <?php include './important/Sidebar.php'; ?>
+        <?php include './important/Rightbar.php'; ?>
+        <?php include './important/Sidebar.php'; ?>
+
+
+
+        <!-- stats -->
+
+        <div class="all-courses">
+            <div class="rounded-circle">
+                <i class="fa-solid fa-book bookk fa-2xl"></i>
+            </div>
+            <div class="all-courses-text">
+                <h3 class="all-courses-title">300</h3>
+                <p class="all-courses-desc">Cursuri</p>
+            </div>
+        </div>
+
+        <div class="all-tests">
+            <div class="rounded-circle">
+                <i class="fa-solid fa-book-circle-arrow-up bookk fa-2xl"></i>
+            </div>
+            <div class="all-tests-text">
+                <h3 class="all-tests-title">300</h3>
+                <p class="all-tests-desc">Teste</p>
+            </div>
+        </div>
+
+        <div class="all-favorite">
+            <div class="rounded-circle">
+                <i class="fa-solid fa-book-circle-arrow-right bookk fa-2xl"></i>
+            </div>
+            <div class="all-favorite-text">
+                <h3 class="all-favorite-title">300</h3>
+                <p class="all-favorite-desc">Cursuri favorite</p>
+            </div>
+        </div>
+
+
+        <!-- end of stats -->
     
 </body>
 </html>

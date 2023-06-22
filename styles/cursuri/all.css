@@ -1,0 +1,141 @@
+body {
+    background: #F0F7FF !important;
+    overflow-x: hidden;
+}
+
+/* All courses */
+
+.all-courses {
+    position: relative;
+    top: 80px;
+    left: 300px;
+    width: 300px;
+    height: 120px;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.rounded-circle {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0077FF;
+}
+
+.bookk {
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+.all-courses-title {
+    position: absolute;
+    top: -40px;
+    left: 100px;
+    font-size: 2.0em;
+    font-weight: 800;
+}
+
+.all-courses-desc {
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #000;
+}
+
+/* All tests */
+.all-tests {
+    position: relative;
+    top: -40px;
+    left: 650px;
+    width: 300px;
+    height: 120px;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.rounded-circle {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0077FF;
+}
+
+.bookk {
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+.all-tests-title {
+    position: absolute;
+    top: -40px;
+    left: 100px;
+    font-size: 2.0em;
+    font-weight: 800;
+}
+
+.all-tests-desc {
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #000;
+}
+
+/* Favourite courses */
+
+.all-favorite {
+    position: relative;
+    top: -160px;
+    left: 1000px;
+    width: 300px;
+    height: 120px;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.rounded-circle {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0077FF;
+}
+
+.bookk {
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+.all-favorite-title {
+    position: absolute;
+    top: -40px;
+    left: 100px;
+    font-size: 2.0em;
+    font-weight: 800;
+}
+
+.all-favorite-desc {
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #000;
+}
