@@ -76,7 +76,7 @@ $tests_count = $result['row_count'];
                     <i class="fa-solid fa-book-circle-arrow-right bookk fa-2xl"></i>
                 </div>
                 <div class="all-favorite-text">
-                    <h3 class="all-favorite-title">300</h3>
+                    <h3 class="all-favorite-title">0</h3>
                     <p class="all-favorite-desc">Cursuri favorite</p>
                 </div>
             </div>
