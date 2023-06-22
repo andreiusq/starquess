@@ -13,6 +13,17 @@ if(!isset($_SESSION["user"])) {
 
 
 
+  // cursuri count
+$query = "SELECT COUNT(*) AS row_count FROM courses";
+$stmt = $pdo->query($query);
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$courses_count = $result['row_count'];
+
+$query = "SELECT COUNT(*) AS row_count FROM tests";
+$stmt = $pdo->query($query);
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$tests_count = $result['row_count'];
+
 
   ?>
 
@@ -45,7 +56,7 @@ if(!isset($_SESSION["user"])) {
                     <i class="fa-solid fa-book bookk fa-2xl"></i>
                 </div>
                 <div class="all-courses-text">
-                    <h3 class="all-courses-title">300</h3>
+                    <h3 class="all-courses-title"><?php echo $courses_count ?></h3>
                     <p class="all-courses-desc">Cursuri</p>
                 </div>
             </div>
@@ -55,7 +66,7 @@ if(!isset($_SESSION["user"])) {
                     <i class="fa-solid fa-book-circle-arrow-up bookk fa-2xl"></i>
                 </div>
                 <div class="all-tests-text">
-                    <h3 class="all-tests-title">300</h3>
+                    <h3 class="all-tests-title"><?php echo $tests_count ?></h3>
                     <p class="all-tests-desc">Teste</p>
                 </div>
             </div>
