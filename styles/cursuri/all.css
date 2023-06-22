@@ -3,6 +3,15 @@ body {
     overflow-x: hidden;
 }
 
+
+.bookk {
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+
 /* All courses */
 
 .all-courses {
@@ -23,13 +32,6 @@ body {
     height: 60px;
     border-radius: 50%;
     background: #0077FF;
-}
-
-.bookk {
-    color: white;
-    position: absolute;
-    top: 30px;
-    left: 15px;
 }
 
 .all-courses-title {
@@ -70,12 +72,6 @@ body {
     background: #0077FF;
 }
 
-.bookk {
-    color: white;
-    position: absolute;
-    top: 30px;
-    left: 15px;
-}
 
 .all-tests-title {
     position: absolute;
@@ -114,13 +110,6 @@ body {
     height: 60px;
     border-radius: 50%;
     background: #0077FF;
-}
-
-.bookk {
-    color: white;
-    position: absolute;
-    top: 30px;
-    left: 15px;
 }
 
 .all-favorite-title {
