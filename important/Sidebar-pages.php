@@ -271,13 +271,8 @@ color:red;
         <?php if($user['rank'] == 1 || $user['rank'] == 11 && $is_administrator == 0) { ?> 
          
          <li class="list" style="left: 30px;">
-<<<<<<< Updated upstream
-            <a href="../index.php">
-               <span class="icon"><i class="fa-light fa-house"></i></span>
-=======
             <a href="../../index.php">
                <span class="icon"><i class="fa-solid fa-house"></i></span>
->>>>>>> Stashed changes
                <span class="title">Acasă</span>
             </a>
         </li>
