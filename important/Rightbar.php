@@ -296,6 +296,7 @@ foreach($urls as $url) {
 
     </div>-->
 
+
     <div class="leftbar_activites">
         <h5 class="activities_title">Activitatile mele</h5>
         <h5 class="activities_seeall">
