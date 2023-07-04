@@ -272,3 +272,9 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
+.titlu-oopsie {
+    position: relative;
+    top: 50px;
+    left: 60px;
+}

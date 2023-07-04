@@ -18,7 +18,7 @@ $statement->execute();
 
  $course = $statement->fetch(PDO::FETCH_ASSOC);
  if (!$course) {
-     echo 'Course not found';
+     echo '<h2 class="titlu-oopsie">Oopsie.. cursul este de negăsit! Dar nu te îngrijora, încearcă din nou!</h2>';
      exit;
  }
 
