@@ -288,7 +288,7 @@ color:red;
          
          <li class="list" style="left: 30px;">
             <a href="../../index.php">
-               <span class="icon"><i class="fa-solid fa-house"></i></span>
+               <span class="icon"><i class="fa-light fa-house"></i></span>
                <span class="title">Acasă</span>
             </a>
         </li>
@@ -337,7 +337,7 @@ color:red;
 
         <li class="list" style="left: 30px">
             <a href="../../cursuri.php">
-               <span class="icon"><i class="fa-solid fa-book-open-cover"></i></span>
+               <span class="icon"><i class="fa-light fa-book-open-cover"></i></span>
                <span class="title">Cursuri</span>
                <span class="new">NOU!</span>
             </a>
