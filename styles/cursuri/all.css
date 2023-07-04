@@ -200,17 +200,12 @@ body {
 
 .curs {
     position: relative;
-    top: -40px;
-    left: 0px;
-    width: 200px;
-    height: 200px;
-    background: #FFF;
-    border-radius: 10px;
-    overflow-y: hidden;
-    overflow-x: hidden;
     float: left;
     margin: 10px;
     padding: 10px;
+    width: 200px;
+    background: #FFF;
+    border-radius: 10px;
     text-align: center;
     font-size: 0.950em;
     font-weight: 300;
@@ -218,33 +213,25 @@ body {
     text-decoration: none;
 }
 
+.curs-image {
+    width: 100%;
+    height: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
 .curs-box {
-    width: 180px; 
-    height: 30px; 
-    background: #0077FF; 
-    border-radius: 7px;
+    height: 150px; /* Adjust this value based on your needs */
+    overflow: hidden;
     position: absolute;
-    top: 160px;
+    
 }
 
 .curs-box-title {
-    width: 100%; 
-    height: 100%; 
-    color: white; 
-    font-size: 15px; 
-    font-family: Open Sans; 
-    font-weight: 600; 
-    word-wrap: break-word;
-    position: absolute;
-    top: 165px;
-    left: 0px;
-}
-
-
-.curs-image {
-    width: 100%; 
-    height: 100%; 
-    border-radius: 15px
+    background: #0077FF;
+    color: white;
+    border-radius: 7px;
+    margin-top: -5px;
 }
 
 

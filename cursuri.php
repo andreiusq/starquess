@@ -103,16 +103,17 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <a href="#" class="cursuri-box-link">Vezi toate cursurile</a> <i class="fa-regular fa-arrow-right sagetuta"></i>
                 </div>
                 <div class="cursuri-recomandate-box-content">
-                    <?php foreach ($courses as $course): ?>
-                        <a href="/course.php?id=<?php echo $course['id']; ?>">
-                        <div class="curs">
-                            <img class="curs-image" src="<?php echo $course['course_image']; ?>" />
-                            <div class="curs-box"></div>
-                            <div class="curs-box-title"><?php echo $course['course_name']; ?></div>
-                        </div>
-                    </a>
-                    <?php endforeach; ?>
-                </div>
+    <?php foreach ($courses as $course): ?>
+        <a href="/course.php?id=<?php echo $course['id']; ?>">
+            <div class="curs">
+                <img class="curs-image" src="<?php echo $course['course_image']; ?>" />
+                <div class="curs-box"></div>
+                <div class="curs-box-title"><?php echo $course['course_name']; ?></div>
+            </div>
+        </a>
+    <?php endforeach; ?>
+</div>
+
             </div>
         </div>
 
