@@ -125,6 +125,10 @@ body {
     filter: blur(3px);
 }
 
+.card-img {
+    filter: blur(3px);
+}
+
 .title-recommandation {
     font-size: 18px;
     font-weight: 600;

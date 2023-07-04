@@ -144,20 +144,26 @@ $result = $stmt->fetch();
         <h5 class="actiuni-title">Acțiuni</h5>
         <div class="row">
         <div class="col-sm-3">
-            <div class="card" style="width: 20rem;">
+            <div class="card" style="width: 20rem; height:7rem;">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Creează clase</h5>
+                <p class="card-text">Adaugă sau elimină clase</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="card" style="width: 20rem; height: 7rem;">
+            <div class="card-body">
+                <h5 class="card-title">Adaugă elevii noi</h5>
+                <p class="card-text">Importă sau adaugă elevii noi</p>
             </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card" style="width: 20rem;">
+            <div class="card" style="width: 20rem; height: 7rem;">
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Adaugă elevii noi</h5>
+                <p class="card-text">Importă sau adaugă elevii noi</p>
             </div>
             </div>
         </div>

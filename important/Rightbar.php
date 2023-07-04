@@ -290,7 +290,7 @@ foreach($urls as $url) {
             <?php foreach($imageTags as $img) { echo $img; } ?>
         </div>
     </div>
-    
+ 
     <!--<div class="leftbar__calendar">
         <h5 class="calendar_title">Progresul meu</h5>
 
