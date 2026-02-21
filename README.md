@@ -1,6 +1,17 @@
+<h1 align="center">⚠️ OUTDATED VERSION ⚠️</h1>
+
+<p align="center">
+  Aceasta este o versiune veche (legacy) a proiectului <strong>Starquess</strong>.<br />
+  Noua versiune este <strong>closed-source</strong> și a fost rescrisă complet folosind <strong>NestJS</strong>.
+</p>
+
+<hr />
+
 <h1 align="center">Welcome to Starquess 👋</h1>
 <p>
+  <img alt="Status" src="https://img.shields.io/badge/status-legacy-red.svg" />
   <img alt="Version" src="https://img.shields.io/badge/version-Alpha-blue.svg?cacheSeconds=2592000" />
+  <img alt="Maintenance" src="https://img.shields.io/badge/maintenance-stopped-red.svg" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -9,27 +20,37 @@
   </a>
 </p>
 
-> Platformă școlară pentru instituțiile de învățământ din România.
+> ⚠️ Acest repository nu mai este întreținut și nu va mai primi actualizări.
 
-### ✨ [Demo](demo.starquess.ro)
+> 🚀 Starquess este acum disponibil într-o versiune nouă, modernizată, rescrisă complet folosind NestJS (private repository).
 
-## Usage
+---
+
+## 📌 Despre această versiune
+
+Aceasta este versiunea inițială (Alpha) a platformei Starquess — o platformă școlară dedicată instituțiilor de învățământ din România.
+
+Codul este păstrat aici în scop arhivistic și pentru referință.
+
+---
+
+## 🛠 Usage (Legacy)
 
 ```sh
 php -s localhost:8000
 ```
 
-## Author
+---
+## 👤 Author
 
-👤 **Andrei Iașar**
+Andrei Iașar (now Mocanu)
+Github: https://github.com/andreiusq
 
-* Website: https://andreiusq.dev
-* Instagram: [@kodikas](https://instagram.com/andrei.isr)
-* Github: [@andreiusq](https://github.com/andreiusq)
+--- 
+## 🤝 Contribuții
+Contribuțiile nu mai sunt acceptate pentru această versiune.
 
-## 🤝 Contribuie
-Contribuțiile, problemele și funcționalitățile noi sunt binevenite! <br />Poți găsi problemele noastre pe [pagina de buguri](bugs.starquess.ro). Poți, bineînțeles, să te uiți și pe [ghidul contribuitorului](contribuie.starquess.ro)
+---
+## ⭐ Arată-ți suportul
 
-## Arată-ți suportul
-
-Oferă-ne o ⭐️ dacă acest proiect te ajută.
+Dacă acest proiect te-a ajutat în trecut, poți lăsa o ⭐️.
